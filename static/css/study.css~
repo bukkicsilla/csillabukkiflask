@@ -1,0 +1,55 @@
+@font-face {
+    font-family: myFontBlok;
+    src: url(Blokletters-Balpen.ttf);
+}
+
+@font-face {
+    font-family: myFontCourier;
+    src: url(Courier_Prime.ttf);
+}
+
+@font-face {
+    font-family: myFontDroid;
+    src: url(Droidsans.ttf);
+}
+
+@font-face {
+    font-family: myFontShort;
+    src: url(ShortStack-Regular.otf);
+}
+
+#study  a {
+  //color: #46eef4;
+   // color: #27abd3;
+   color: #047890;
+   font-size: 1.5em;
+  //font-family: myFontCourier;
+  text-decoration: none;
+}
+
+#study  a:hover {
+  //color: #5e1234;
+  color: #047890;
+  text-decoration: underline;
+  
+}
+
+
+
+
+.study {
+font-family: myFontShort;
+}
+
+.study a {
+text-decoration: none;
+color: #0478a0;
+}
+
+.study a:hover {
+text-decoration: underline;
+}
+
+#pp {
+background-color: #fffa76;
+}

@@ -1,0 +1,206 @@
+
+@font-face {
+    font-family: myFont;
+    src: url(ArchitectsDaughter.ttf);
+}
+
+@font-face {
+    font-family: myFontCourier;
+    src: url(Courier_Prime.ttf);
+}
+
+@font-face {
+    font-family: myFontBlok;
+    src: url(Blokletters-Balpen.ttf);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #444;
+  //background-color: #46eef4;
+   background-color: #49cdf5;
+  // background-color: #fdfdfd;
+}
+ 
+/*
+ * Create dark grey header with a white logo
+ */
+  
+header {
+  //background-color: #2B2B2B;
+  //background-color: #2590a3;
+   background-color: #0478a0;
+  height: 35px;
+  width: 100%;
+  opacity: .9;
+  //font-family: myFont;
+  //color: #ff0000;
+  margin-bottom: 10px;
+}
+ 
+header h1.owner {
+  margin: 0;
+  font-size: 1.7em;
+  font-family: myFont;
+  color: #fdfdfd;
+  text-transform: uppercase;
+  float: left;
+}
+ 
+/*header h1.korlish:hover {
+  color: #2590a3;
+  text-decoration: none;
+}*/
+ 
+/*
+ * Center the body content
+ */
+  
+.container {
+  width: 940px;
+  margin: 0 auto;
+}
+ 
+div.start {
+  padding: 10px 0 30px 0;
+  background-color: #eeeeee;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+ 
+h2, h3, h4,h5 {
+  
+  font-family: myFont;
+  margin-top: 40px;
+  text-align: center;
+  letter-spacing: -2px;
+  color: #0478a0;
+}
+
+p {
+   font-family: myFont;
+   font-size: 1.25em;
+   color: #0478a0;
+   
+}
+ 
+h2 {
+   font-size: 3em;
+}
+ h3 {
+   font-size: 2.5em;
+}
+h4 {
+   font-size: 1.5em;
+}
+/*h3 {
+  font-size: 1.7em;
+  font-weight: 100;
+  margin-top: 30px;
+  text-align: center;
+  letter-spacing: -1px;
+  color: #49cdf5;
+}*/
+
+/*
+ * Display navigation links inline
+ */
+img.image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+#deeplook img {
+   margin-right: 100px;
+   margin-left: 100px;
+   margin-top:25px;
+   margin-bottom:50px;
+}
+
+#deeplook {
+ background-color: #dddddd;
+}
+
+
+#apps img{
+   margin-right: 40px;
+   margin-left: 40px;
+   margin-top:25px;
+   margin-bottom:25px;
+   
+}
+
+#apps h3{
+color: #49cdf5;
+}
+#apps {
+ background-color: #aa0000;
+ background-color: #0478a0;
+ padding: 20px;
+ padding-bottom: 140px;
+} 
+
+.textwrap{
+float:right;
+padding-left: 50px;
+}
+
+.story{
+  margin-top:20px;
+  color: #014570;
+  font-size: 1.5em;
+  font-family: myFontCourier;
+} 
+
+.info{
+  margin: 20px;
+  color: #014570;
+  font-size: 1.5em;
+  font-family: myFont;
+}
+
+
+.menu {
+  float: right;
+  margin-top: 8px;
+}
+ 
+.menu li {
+  display: inline;
+}
+ 
+.menu li + li {
+  margin-left: 35px;
+}
+ 
+.menu li a, .info a {
+  //color: #46eef4;
+   // color: #27abd3;
+   color: #fdfdfd;
+  //font-family: myFontCourier;
+  text-decoration: none;
+}
+
+.menu li a:hover, .info a:hover {
+  //color: #5e1234;
+  color: #aaaaaa;
+  text-decoration: underline;
+}
+
+.infoclassical a {
+text-decoration: none;
+color: #0478a0;
+}
+.infoclassical a:hover{
+text-decoration: underline;
+}
+
+.infoclassical a:visited{
+color: #FF00FF;
+}

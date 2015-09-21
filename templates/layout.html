@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title></title>   
+  </head>
+  <body>
+   
+    <header>
+      <div class="container">
+        <h1 class="owner">BON VOYAGE</h1>
+           <nav>
+           <ul class="menu">
+              <li><a href="{{ url_for('classical') }}">Classical</a></li>
+              <li><a href="{{ url_for('study') }}">Study</a></li> 
+              <li><a href="{{ url_for('icebreaker') }}">Icebreaker</a></li>
+               <li><a href="{{ url_for('launch') }}">Launch</a></li>
+               <li><a href="{{ url_for('labor') }}">Labor</a></li>
+              <li><a href="{{ url_for('about') }}">About</a></li>
+              
+           </ul>
+         </nav>
+      </div>
+    </header>
+     
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+     
+  </body>
+</html>

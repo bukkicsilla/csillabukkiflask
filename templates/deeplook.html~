@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+ <!--<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">-->
+ 
+{% block content %}
+  <div id="deeplook">
+    <h3>Deep Look, Inc.</h3>
+    <div id="up">
+     </div>
+
+
+
+       <a href="http://deeplookinc.com/" name="deeplook" target="_blank"> <img src="{{ url_for('static', filename='image/flashy-monitor1.png/') }}"  width="268" height="216" border="1"> </a> 
+     
+       <a href="https://play.google.com/store/apps/details?id=org.photos.demoneyes&hl=en" name="daemoneyes" target="_blank"> <img src="{{ url_for('static', filename='image/launcher.png/') }}" width="240" height="240" border="0" > </a> 
+  </div>
+    
+    <div class="story">
+    Once upon a time, there was a funny company...    
+    </div>
+    <!--<script src="{{ url_for('static', filename='javascript/deepscript.js') }}"></script>-->
+{% endblock %}

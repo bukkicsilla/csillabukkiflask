@@ -1,0 +1,244 @@
+<html>
+  <head>
+     
+           <!--<link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}" type="text/css"/>-->
+           <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+           <!--<link rel="stylesheet" href="/home/csillus/sempic/educ/venv/static/style/style.css" type="text/css" />-->   
+           <title> Count Pennies </title>
+                <meta name="viewport" content="width=device-width" />
+                <meta property="og:locale" content="en_US"/>
+                <meta property="og:type" content="website"/>
+  </head>
+<body onload="getCount()">
+<div id="container">
+		
+
+           
+                <div id="header">
+                      <!--<br>  <span id='menu' ><a href="/home/csillus/sempic/educ/venv/templates/calmath.html"> Menu </a></span>-->
+                      <br>  <span id='menu' ><a href="{{ url_for('money') }}"> Menu </a></span>
+
+                </div>
+		<div id="left">
+                <img src="{{ url_for('static', filename='image/pennyhead2.png') }}" width="80" height="80" border="0"> </a> 
+		</div>
+
+		<div  id="right">
+              			
+                                <img src="{{ url_for('static', filename='image/pennyhead2.png') }}" width="80" height="80" border="0"> </a> 
+		</div>
+
+
+
+		<div id="footer">
+			
+		</div> 
+         </div>
+      
+      
+<script>
+
+
+
+var bolreplay = false;
+//var solutions = [];
+function getCount(){
+
+     
+     //var item =  1;
+     var x = Math.floor((Math.random() * (6 - 2)) + 2);
+     //document.getElementById("header").innerHTML = "Welcome!" + x;
+     var solutions = [];
+     //var inputval = [];
+
+     //var imgstring = "<img src='/home/csillus/sempic/educ/venv/static/images/centtrans1.png' width='60px' height='60px' />";
+     var imgstring = "<img src='{{ url_for('static', filename='image/pennyhead2.png') }}' width='60px' height='60px' />";
+     
+     var inputfirst = "<input type='text' name='inputpenny' class='numinput'";
+     var inputsecond = " style='width: 60px; height:50px; text-align: center; background-color: #f0e8f2; margin: 5px;' maxlength='4'>";
+  
+   var resultf = "<input type='text' name='result' id='result' class='numinput' style='width: 80px; height:80px; text-align: center; background-color: #f0e8f2; margin: 6px;' maxlength='4'>";
+
+     var text = "";
+
+     //if (item > 0 && item < 4) {
+      document.getElementById("right").style.backgroundImage ="none";
+      document.getElementById("right").style.background ="#ffdddd";
+     document.getElementById("header").style.color="#885588";
+     document.getElementById("header").style.textAlign="center";
+     document.getElementById("header").style.fontSize="24px";
+    /*if (!bolreplay){
+        document.getElementById("count").style.display = "none";
+        document.getElementById("pay").style.display = "none";
+        document.getElementById("matchprice").style.display = "none";
+        document.getElementById("problemsolving").style.display = "none";
+     }*/
+    //}
+
+     
+        
+        //document.getElementById("header").innerHTML = "<br> Counting with Pennies <span id='menu' onclick='showMenu()'> Menu </span>";
+        document.getElementById("left").innerHTML = "<img src='{{ url_for('static', filename='image/pennyhead2.png') }}' width='40px' height='40px'/><span class='imgspan'> 1 cent </span><br><br> <img src='{{ url_for('static', filename='image/pennynumber1.png') }}' width='40px' height='40px'/><span class='imgspan'> 1 cent </span> ";
+        
+      for (var i = 0; i < x; i++) {
+    		text += imgstring;
+                //solutions[i] = i+1;
+                 solutions.push(i+1);
+                
+		}
+                //solutions[x] = x;
+               solutions.push(x);
+
+     text += "<form id='formpenny' name='pennies'>";
+     
+     for (var j = 0; j < x; j++) {
+                var idhelp = "numinput" + j;
+                //document.getElementById("footer").innerHTML = idhelp;
+    		text += inputfirst + "id='"+ idhelp + "'" + inputsecond;
+		}
+text +="<br><br>" + resultf;
+text += "</form> <br> <h3 id='check'> Check </h3>";
+       //document.getElementById("right").innerHTML = solutions[x];
+       document.getElementById("right").innerHTML = "Find the value of the pennies. <span class='replay' onclick='getCount()'> Replay </span><br><br>" + text;
+
+       //good idea to hide input field?
+       //var a = "numinput" + (x - 3);
+       //document.getElementById(a).style.display = "none";
+
+       
+       document.getElementById("result").addEventListener("keyup" , function(){ 
+                check(solutions);
+                //document.getElementById("footer").innerHTML = "";
+                if ( document.getElementById("result").value == solutions[x]) { 
+		document.getElementById("result").style.color = "blue";
+                   }
+               else {
+              document.getElementById("result").style.color = "red";
+                 }
+		}, false);
+              
+            document.getElementById("check").addEventListener("click" , function(){ 
+                document.getElementById("footer").innerHTML = "OKOK";
+                check(solutions);
+                   }, false);
+            
+
+            /*var values = document.getElementById("formpenny").inputpenny; 
+             // document.getElementById("footer").innerHTML = values;
+    		for ( var v = 0; v < values.length; v++ ){
+    		
+         values[v].addEventListener("keyup",  function() { 
+           document.getElementById("footer").innerHTML = values[0].value;
+            if (values[v].value == '1'){
+             
+                //document.getElementById("footer").innerHTML += values[v].value;
+                document.getElementById("footer").innerHTML = values;
+               values[v].style.color = "blue";
+               } 
+           else {
+
+            values[v].style.color = "red";
+        }
+          }, false);//function
+    }//for*/
+            
+          /* document.getElementById("numinput0").addEventListener("keyup" , function(){ 
+
+                if ( document.getElementById("numinput0").value == solutions[0]) { 
+		document.getElementById("numinput0").style.color = "blue";
+                   }
+               else {
+              document.getElementById("numinput0").style.color = "red";
+                 }
+		}, false);
+             
+            document.getElementById("numinput1").addEventListener("keyup" , function(){ 
+                if ( document.getElementById("numinput1").value == solutions[1]) { 
+		document.getElementById("numinput1").style.color = "blue";
+                   }
+               else {
+              document.getElementById("numinput1").style.color = "red";
+                 }
+		}, false);
+
+             document.getElementById("numinput2").addEventListener("keyup" , function(){ 
+                if ( document.getElementById("numinput2").value == solutions[2]) { 
+		document.getElementById("numinput2").style.color = "blue";
+                   }
+               else {
+              document.getElementById("numinput2").style.color = "red";
+                 }
+		}, false);
+    
+   document.getElementById("numinput3").addEventListener("keyup" , function(){ 
+                if ( document.getElementById("numinput3").value == solutions[3]) { 
+		document.getElementById("numinput3").style.color = "blue";
+                   }
+               else {
+              document.getElementById("numinput3").style.color = "red";
+                 }
+		}, false);
+           
+     document.getElementById("numinput4").addEventListener("keyup" , function(){ 
+                if ( document.getElementById("numinput4").value == solutions[4]) { 
+		document.getElementById("numinput4").style.color = "blue";
+                   }
+               else {
+              document.getElementById("numinput4").style.color = "red";
+                 }
+		}, false);
+              */
+
+
+            
+        
+}
+
+//window.onload=getClount;
+function check(array){
+ var values = document.getElementById("formpenny").inputpenny; 
+  //document.getElementById("footer").innerHTML = values;
+    		for ( var v = 0; v < values.length; v++ ){
+    		
+        //values[v].keyup = function() { 
+             if (values[v].value == array[v]){
+              
+                //document.getElementById("footer").innerHTML += values[v].value;
+                values[v].style.color = "blue";
+               } 
+           else {
+
+            values[v].style.color = "red";
+        }
+          //}//function
+    }//for
+}
+
+
+function showMenu(){
+bolreplay = false;
+var getcount = "getCount('0')";
+var menutext = "<select id='count' onclick='getCount()'><option value='1' > Count Pennies </option><option value='2'> Count Nickels </option> <option value='3'> Count Dime </option></select><select id='pay'> <option value='1'> Pay with Pennies </option><option value='2'> Pay with Nickels </option><option value='3' > Pay with Dimes </option></select><select id='matchprice' > <option value='1'> Price with Pennies </option> <option value='2'> Price with Nickels </option> </select>  <select id='problemsolving'> <option value='1'> Problem with Pennies </option> <option value='2'> Problem with Nickels </option> </select>";
+ 
+    document.getElementById("header").innerHTML = menutext;
+    document.getElementById("left").innerHTML = "";
+    document.getElementById("right").innerHTML = "";
+    //document.getElementById("right").style.backgroundImage = "url('/static/images/backcoins.png')";
+    }
+
+
+    function hideMenu(){
+   //document.getElementById("countcoins").style.display="none";
+ }
+
+function doTest(){
+   document.getElementById("menu").style.color = "white";
+}
+	
+</script>  
+
+
+ 
+
+</body>
+</html>

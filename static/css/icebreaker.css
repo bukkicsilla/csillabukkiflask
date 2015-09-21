@@ -1,0 +1,46 @@
+@font-face {
+    font-family: myFontBlok;
+    src: url(Blokletters-Balpen.ttf);
+}
+
+@font-face {
+    font-family: myFontCourier;
+    src: url(Courier_Prime.ttf);
+}
+
+@font-face {
+    font-family: myFontDroid;
+    src: url(Droidsans.ttf);
+}
+
+@font-face {
+    font-family: myFontShort;
+    src: url(ShortStack-Regular.otf);
+}
+
+#ice  a {
+   //color: #46eef4;
+   // color: #27abd3;
+   //color: #8b008b;
+   //color: #5e1234;
+   color:#ededed;
+   font-size: 1.5em;
+  //font-family: myFontCourier;
+  text-decoration: none;
+}
+
+#ice  a:hover {
+  //color: #5e1234;
+  color: #047890;
+  
+  
+}
+
+
+
+
+.ice {
+font-family: myFontBlok;
+}
+
+

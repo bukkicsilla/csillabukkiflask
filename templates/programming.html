@@ -1,0 +1,50 @@
+
+{% extends "layout.html" %}
+ 
+{% block content %}
+
+ <h4>Distributed Parallel Multipole Tree Algorithm</h4>
+ 
+<div id="pp"> 
+ <span class="study">We evaluated <a href="{{ url_for('static', filename='zip/dpmta.zip') }}" name="DPMTA" target="_self">dpmta package zip</a> in Visual C++ (VC.Net).    
+<br><br>
+ We have created projects in Visual C++ , it can be downloaded , built and executed.
+Cpp-application contains some original testprogramms and c-application some new testprogramms, which define different structure of the particles.
+<br><br>
+<a href="{{ url_for('static', filename='zip/FM.zip') }}" name ="cpp-application" target="_self">cpp-application zip </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{{ url_for('static', filename='zip/C2.zip') }}" name ="c-application" target="_self">c-application zip</a>
+
+<br><br>
+
+The original and new testprogramms  can be executed in Cygwin too.
+<br><br>
+<a href="{{ url_for('static', filename='zip/cygwin.zip') }}" name ="cygwin" target="_self"> cygwin zip </a>
+<br><br>
+This is a documentation, what we have done in VC.net and Cygwin.
+<BR></BR>
+
+
+<a href="{{ url_for('static', filename='pdf/cReadMe.pdf') }}" name ="cReadMe" target="_blank">cReadMe </a>
+<br><br>
+To make self a new application in VC.Net or in cygwin you need the dpmta package and some additional programm files (see in cReadMe). 
+<br><br>
+<a href="{{ url_for('static', filename='zip/additional.zip') }}" name ="add" target="_self"> additional programm files zip</a>
+<br><br>
+The programm code changes can be seen also here.
+<br><br>
+<a href="{{ url_for('static', filename='txt/sourcecode.txt') }}" name="sourcecode" target="_blank"> source code changes for VC.Net</a>
+<br><br>
+
+
+On the following website  can be found more about Fast Multipole Algorithm.
+<br><br>
+<a href="http://www2.cs.uh.edu/~johnsson/heap.html" name="DPMTAfortran" target="_blank"> Nonadaptive and adaptive O(N) hierarchical N-body methods in Fortran</a>
+<br></br>
+<a href="http://www-2.cs.cmu.edu/~scandal/alg/nbody.html" name="DPMTAnesl" target="_blank"> Parallel N-Body Simulations in Nesl</a>
+<br></br>
+</span>
+
+</div>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/study.css') }}">
+{% endblock %}

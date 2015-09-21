@@ -1,0 +1,56 @@
+
+{% extends "layout.html" %}
+ 
+{% block content %}
+  
+    <h1>Voronoi Spiel</h1>
+
+ 
+<!--In dieser Diplomarbeit wird das sogenannte Voronoi Spiel betrachtet und analysiert, das man anschaulich folgendermaßen beschreiben kann: 
+<br>  
+<br> 
+
+<h3> Das Voronoi Spiel im Kreis:</h3>  Es gibt n Personen (durchnummeriert von 1 bis n) zuf&auml;lligerweise in einem kreisf&ouml;rmigen Raum. Am Anfang kommt der erste Spieler mit Spielnummer 1 an die Reihe, die andere d&uuml;rfen sich nicht bewegen. Der erste Spieler soll so lange im Raum spazieren, bis er am weitesten entfernt von den anderen Spielern im Raum ankommt, das heisst, der minimale Abstand zu allen anderen Spieler maximiert wird, dann bleibt er stehen und  kommt der zweite Spieler an die Reihe. Er muss auch weit wie m&ouml;glich von den anderen Spielern weggehen. Dann kommt der Dritte, danach der Vierte und so weiter. Nach dem letzten Spieler mit Spielnummer n kommt wieder der erste Spieler an die Reihe und das Spiel wird beliebig lange weitergespielt. Wir m&ouml;chten gern wissen, wo sich die Spieler nach langer Zeit befinden, falls sich jeder schon beliebig vielmal bewegen durfte. 
+<br>  
+<br> 
+<A href="Circle_vd1.html" name="homepages" target="_self">Punkte im Kreis</A>  
+<br>  
+<br> 
+<h3> Das Voronoi Spiel auf der Kugeloberfl&auml;che:</h3> Jetzt sind die n Personen auf einem kugelf&ouml;rmigen Planeten. Sie k&ouml;nnen nur auf der Oberfl&auml;che des Planeten spazieren. Die Spielregeln sind gleich wie im Fall des Kreises: am Anfang haben die Spieler zuf&auml;llige Positionen, in jedem Schritt kann sich nur ein Spieler (nach Spielnummer) bewegen und er muss die weiteste Stelle auf dem Planeten von den anderen Mitbewohnern finden. Die Frage lautet auch hier so, wo sich die Spieler nach beliebig viele Iterationsschritten auf dem Planeten befinden.
+<br>  
+<br>  
+<A href="Sphere3D1.html" name="homepages" target="_self">Punkte auf der Kugeloberfl&auml;che</A>	
+<br>  
+<br>
+F&uuml;r beide F&auml;lle stellt sich die Frage, ob dieses Verfahren &uuml;berhaupt gegen eine stabile Konfiguration konvergiert. Die Charakterisierung der stabilen Konfiguration ist auch spannend und im allgemein Fall nichttrivial.  
+<br>  
+<br>  
+Bei der mathematischen Betrachtung des Spieles sind die Spieler durch Punkte innerhalb des Kreises bzw. auf der Kugeloberfl&auml;che zu repr&auml;sentieren. Die folgenden Applets zeigen, was mit den Punkten im Kreis bzw. auf der Kugeloberfl&auml;che passiert.
+<br>  
+<br> 
+<h4>Der Sinn des Voronoi-Diagramms  </h4> 
+Die neue Position des aktuellen beweglichen Punktes (Spieleres) wird mit wenigem Aufwand berechnet, falls man nur die Voronoi-Knoten des Voronoi-Diagramms von den restlichen Punkten (Spieler) und im Falle des Kreises noch die Randpunkte betrachtet. 
+<br> 
+Um zu erfahren, welche zwei Ecken (Punktpaare) auf der Kugeloberfl&auml;che miteinander verbunden sein sollen, das Polyeder, eigentlich die konvexe H&uuml;lle der Punkte, zu berechnen, kann man Hyperebenetest oder Voronoinachbarschafttest durchf&uuml;hren. Beim letzteren wird die folgende Tatsache ausgenutzt: Zwei Punkte sind genau dann Voronoi-benachbart, dass heisst sie sind mit einer Delauney-Kante in Delauney-Zerlegung verbunden, wenn sie im Polyeder mit einer Kante verbunden sind. Die Voronoinachbarschaft kann man in einer Matrix speichern.  Das Polyeder wird dadurch visualisiert, dass man die Voronoi-banachbarte Punkte mit eine Linie verbindet. 
+
+<br>
+
+<hr>
+Hier ist eine Dokumentation &uuml;ber theoretische und numerische Ergebnisse:
+<br>
+<A href="diplom.pdf" name="homepages" target="_self"> Diplomarbeit </A>
+<br>
+<A href="dafolien.pdf" name="homepages" target="_self"> Folien </A>
+
+<br>
+<A href="ausdruck.pdf" name="homepages" target="_self"> Projektor </A>
+
+<br>
+
+
+<hr>
+<br><br>
+    <address><a href="csilla.bukki@gmail.com"></a></address>-->
+{% endblock %}
+
+

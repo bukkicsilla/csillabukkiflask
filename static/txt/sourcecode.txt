@@ -1,0 +1,316 @@
+
+
+comm
+
+                                           comm_prims.cpp/c 
+
+Header stdlib.h must be included 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+mpole
+ 
+                                           mpe_fft.cpp/c
+Header stdlib.h must be included.
+
+                                           ffttest.cpp/c
+Header ffttest.h must be included.  
+Header time.h  must be included. 
+
+Ln 29  instead of 
+
+main(int argc, char **argv) 
+
+must be pasted 
+
+ffttest_main(char **argv) 
+
+Ln 51 instead of  
+
+ p = atoi(argv[1]); 
+ np = atoi(argv[2]); 
+
+must be pasted 
+  
+ p = 20; 
+ np = atoi(argv[3]);
+
+Ln 46 must be deleted   
+
+if ( argc != 3 ) {
+     fprintf(stderr,"Usage: %s <mp> <nparts>\n",argv[0]);
+     exit(-1); } 
+
+Ln 81 must be added  
+ 
+ /* Seed the random-number generator with current time so that
+   * the numbers will be different every time we run.
+   */ 
+   srand( (unsigned)time( NULL ) ); 
+
+and instead of 
+
+for ( i=0; i < np; i++) {
+    vp1[i].x = drand48() - 0.5;
+    vp1[i].y = drand48() - 0.5;
+    vp1[i].z = drand48() - 0.5;
+    q1[i] = 10.0 * (Real)(((i%2)*2)-1);
+  }
+
+must be pasted 
+
+for ( i=0; i<np; i++) {
+    vp1[i].x = (Real)rand()/(Real)RAND_MAX - 0.5;
+	printf("x1 : %6g\t" ,  vp1[i].x );
+    vp1[i].y =  (Real)rand()/(Real)RAND_MAX - 0.5;
+    printf("y1 : %6g\t" ,  vp1[i].y );
+    vp1[i].z =  (Real)rand()/(Real)RAND_MAX - 0.5;
+    q1[i] = 10.0 * (Real)(((i%2)*2)-1); 
+    printf("z1 : %6g\n" ,  vp1[i].z );
+  }
+
+
+instead of 
+
+\begin{verbatim}
+ for ( i=0; i<np; i++) {
+    vp2[i].x = drand48() - 0.5;
+    vp2[i].y = drand48() - 0.5;
+    vp2[i].z = drand48() - 0.5;
+    q2[i] = 10 * (Real)(((i%2)*2)-1);
+  }
+
+
+must be pasted
+
+
+for ( i=0; i<np; i++) {
+    vp2[i].x = (Real)rand()/(Real)RAND_MAX  - 0.5;
+    printf("x2 : %6g\t" ,  vp2[i].x );
+	vp2[i].y =  (Real)rand()/(Real)RAND_MAX - 0.5;
+    printf("y2 : %6g\t" ,  vp2[i].y );
+    vp2[i].z =  (Real)rand()/(Real)RAND_MAX - 0.5;
+    printf("z2 : %6g\n" ,  vp2[i].z );
+    q2[i] = 10 * (Real)(((i%2)*2)-1);
+  }
+
+
+
+                                 mpe_testC.cpp 
+  
+Header mpe_testC.h must be included 
+
+Ln 26 instead of 
+
+
+main(int argc, char **argv)
+
+must be pasted 
+
+mpe_testC_main(char **argv)
+
+
+                                mpe_testLJ.cpp 
+
+Header mpe_tetsLJ.h must be included 
+
+Ln 25 instead of
+
+main(int argc, char **argv)
+
+must be pasted 
+
+mpe_testLJ_main(char **argv)
+
+                             mpe$\_$mpoleC.cpp/c
+
+Ln 710  instead of 
+
+alpha = M_PI_2;
+
+must be pasted 
+
+alpha = 3.14/2.0;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+src
+
+
+                          dpmta_config.h    [cpp,c]
+\end{center}  
+
+SERIAL flag must be defined. 
+
+
+
+                         dpmta_serial.cpp/c
+ 
+Ln 58   function void Sort_Particles() of dpmta_serial.cpp  takes 2 parameters:  
+
+(int, PmtaParticlePtr)  (see at definition Ln 431)
+
+dpmta_slvcompute.cpp/c
+
+Ln 444  function void Dist_Delete() of dpmta_discmisc.h/cp  does not take 1 parameter:  (Dpmta_NumLevels) 
+
+Ln 446 function void Partition_Delete() of dpmta_distpart.h/cpp  does not take 2 parameters: (Dpmta_NumLevels, Dpmta_Nproc)
+
+
+                          dpmta_slvmkiil.cpp/c
+
+Ln 127  instead of 
+
+#ifndef SERIAL
+#include "comm.h"
+#include "dpmta_message.h"
+#endif
+
+must be pasted 
+
+#include "comm.h"
+#include "dpmta_message.h"
+
+                           dpmta_timer.cpp/c 
+ 
+
+
+Ln 175-176 in function void Init_Times:
+   
+    instead of 
+
+  
+  {/* get clock ticks setting */}
+  myclkticks = (double)sysconf(_SC_CLK_TCK);
+    
+must be pasted
+
+  /* get clock ticks setting */
+
+    #if defined WIN32 
+    myclkticks = (double)CLOCKS_PER_SEC;
+
+    #else
+    myclkticks = (double)sysconf(_SC_CLK_TCK);
+
+    #endif  
+
+Ln 251   in function void Start_E_Time
+    must be deleted
+
+
+gettimeofday(&runstruct,0);
+
+Ln 268   in function void Store_E_Time
+    must be deleted
+
+
+gettimeofday(&runstruct,0);
+
+
+                            dpmta_timer.h   [cpp,c]
+
+
+It has to be defined 
+
+typedef struct timeval {
+    long    tv_sec;         // seconds 
+    long    tv_usec;        // and microseconds
+    } TimeVal;
+
+                          dpmta_slviter.cpp/c
+ 
+
+In Ln 759 instead of 
+void Delete_Local_Buffers();
+
+must be pasted
+
+void Delete_Local_Buffers1();
+
+In Ln 740 instead of 
+
+void Init_Local_Buffers();
+
+must be pasted
+
+void Init_Local_Buffers1();
+
+                            dpmta_slviter.h     [cpp,(c)]
+In Ln 56 instead of 
+
+void Delete_Local_Buffers();
+
+must be pasted
+
+void Delete_Local_Buffers1();
+
+In Ln 57 instead of 
+
+void Init_Local_Buffers();
+
+must be pasted
+
+void Init_Local_Buffers1();
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+test
+
+                            dpmta_test.cpp/c   
+
+
+Ln 50 instead of 
+
+int main( int argc, char *argv[] )
+
+must be pasted 
+
+int dpmta_test_main( char *argv[] )
+
+Ln  141 instead of 
+
+/* check and load command line arguments */
+if (argc != 9) {
+         fprintf(stderr,
+            "%s <#procs> <#lvls> <#parts> <fft> <mp> <theta> <iter> <pbc>\n",
+            argv[0]);
+
+must be pasted 
+
+/* check and load command line arguments */
+      if (9 != 9) {
+         fprintf(stderr,
+            "%s <#procs> <#lvls> <#parts> <fft> <mp> <theta> <iter> <pbc>\n",
+            argv[0]);
+
+Ln 152 instead of 
+	
+    nprocs = atoi(argv[1]);
+
+must be pasted 
+
+   nprocs = atoi(argv[2]);
+
+Ln 155 intead of 
+
+      initdata.nlevels = atoi(argv[2]);
+      num_parts = atoi(argv[3]);
+      initdata.fft = atoi(argv[4]);
+      initdata.mp = atoi(argv[5]);
+      initdata.theta = atof(argv[6]);
+      iter = atoi(argv[7]);
+      initdata.pbc = atoi(argv[8]);
+
+must be pasted 
+
+      initdata.nlevels = atoi(argv[3]);
+      num_parts = atoi(argv[4]);
+      initdata.fft = atoi(argv[5]);
+      initdata.mp = atoi(argv[6]);
+      initdata.theta = atof(argv[7]);
+      iter = atoi(argv[8]);
+      initdata.pbc = atoi(argv[9]);
+
+
+

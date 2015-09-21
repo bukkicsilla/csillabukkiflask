@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block content %}
+  <!--<div class="start">-->
+    <!--<h2>Welcome to my Website</h2>-->
+    <br><br>
+     <span class="infoclassical">
+    <p><a href="https://www.youtube.com/watch?v=X5QAKup4jxM" name="debussy" target="_blank"> Claude Debussy Reverie  </a></p> 
+    <p><a href="https://www.youtube.com/watch?v=hsyhF6YHPgA" name="bach" target="_blank"> Johann Sebastian Bach Concerto for 4 pianos in A minor, BWV 1065 </a></p>
+     <p><a href="https://www.youtube.com/watch?v=k46fdX_3xDM" name="beethoven" target="_blank"> Ludwig van Beethoven Piano Concerto No 3 in C minor, Op 37</a></p>
+    <p><a href="https://www.youtube.com/watch?v=-s68kHOnpiE" name="mozart" target="_blank"> Wolfgang Amadeus Mozart Piano Concerto No 23 in A major, K 488</a></p>
+    <p><a href="https://www.youtube.com/watch?v=l7J7L53b8U0" name="bartok" target="_blank"> B&eacute;la Bart&oacute;k Piano Concerto No 3 in E major, Sz 119</a></p>
+    <p><a href="https://www.youtube.com/watch?v=T_GecdMywPw" name="chopin" target="_blank"> Fr&eacute;d&eacute;ric Chopin Piano Concerto No 2 in F minor, Op 21</a></p>
+   <p><a href="https://www.youtube.com/watch?v=rEGOihjqO9w" name="rachmaninoff" target="_blank"> Sergei Rachmaninoff Piano Concerto No 2 in C minor, Op 18</a></p>
+    <p><a href="https://www.youtube.com/watch?v=I1Yoyz6_Los" name="grieg" target="_blank"> Edvard Grieg Piano Concerto in A minor, Op 16</a></p>
+    <p><a href="https://www.youtube.com/watch?v=ItSJ_woWnmk" name="tchaikovsky" target="_blank"> Pyotr Ilyich Tchaikovsky Piano Concerto in B Flat minor, Op 23</a></p>
+    </span>
+  
+  <!--</div>-->
+    <!--<img class="image" src="http://www.moonmentum.com/blog/wp-content/uploads/2011/01/Tr%C3%ADgono-Luna-Saturno.jpg" alt="Luna Saturno" width="540" height="338">-->
+{% endblock %}
