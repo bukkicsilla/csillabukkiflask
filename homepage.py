@@ -20,17 +20,21 @@ def launch():
 def amhelp():
    return render_template('amhelp.html')
    
-@app.route('/icebreaker')  
-def icebreaker():
-   return render_template('icebreaker.html')
+#@app.route('/icebreaker')  
+#def icebreaker():
+#   return render_template('icebreaker.html')
 
-@app.route('/money')  
-def money():
-   return render_template('math.html')
+#@app.route('/money')  
+#def money():
+#   return render_template('math.html')
 
-@app.route('/money/countpenny')  
-def countpenny():
-   return render_template('countpenny.html')
+#@app.route('/money/countpenny')  
+#def countpenny():
+#   return render_template('countpenny.html')
+
+@app.route('/interest')  
+def interest():
+   return render_template('interest.html')
    
 @app.route('/study')  
 def study():
