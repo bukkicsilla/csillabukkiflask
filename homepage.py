@@ -39,7 +39,15 @@ def interest():
 @app.route('/piano')
 def piano():
    return render_template('index.html')
-   
+
+@app.route('/piano/fivelittleducks')
+def fivelittle():
+   return render_template('fivelittleducks.html')
+
+@app.route('/piano/fivelittleducks/print')
+def fivelittleprint():
+   return render_template('printfivelittleducks.html')
+
 @app.route('/study')  
 def study():
    return render_template('study.html')
