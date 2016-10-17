@@ -31,7 +31,7 @@ body {
 header {
   //background-color: #2B2B2B;
   //background-color: #2590a3;
-   background-color: #0478a0;
+   //background-color: #0478a0;
   //height: 35px;
   width: 100%;
   opacity: .9;
@@ -168,7 +168,7 @@ padding-left: 50px;
 
 
 .menu {
-  //float: right;
+  float: right;
   margin-top: 8px;
 }
  
@@ -191,9 +191,9 @@ padding-left: 50px;
 }
 
 .menu li a:hover, .info a:hover {
-  //color: #5e1234;
-  color: #aaaaaa;
-  text-decoration: underline;
+  color: #5e1234;
+  //color: #aaaaaa;
+  //text-decoration: underline;
 }
 
 .infoclassical a {
