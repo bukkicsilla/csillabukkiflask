@@ -35,6 +35,10 @@ def amhelp():
 @app.route('/interest')  
 def interest():
    return render_template('interest.html')
+
+@app.route('/piano')
+def piano():
+   return render_template('index.html')
    
 @app.route('/study')  
 def study():
