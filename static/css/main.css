@@ -32,7 +32,7 @@ header {
   //background-color: #2B2B2B;
   //background-color: #2590a3;
    background-color: #0478a0;
-  height: 35px;
+  //height: 35px;
   width: 100%;
   opacity: .9;
   //font-family: myFont;
@@ -40,13 +40,13 @@ header {
   margin-bottom: 10px;
 }
  
-header h1.owner {
+h1.owner {
   margin: 0;
   font-size: 1.7em;
   font-family: myFont;
   color: #fdfdfd;
   text-transform: uppercase;
-  float: left;
+  float: right;
 }
  
 /*header h1.korlish:hover {
@@ -139,6 +139,7 @@ img.image {
 #apps h3{
 color: #49cdf5;
 }
+
 #apps {
  background-color: #aa0000;
  background-color: #0478a0;
@@ -167,16 +168,18 @@ padding-left: 50px;
 
 
 .menu {
-  float: right;
+  //float: right;
   margin-top: 8px;
 }
  
 .menu li {
   display: inline;
+  font-size: 24px;
 }
  
 .menu li + li {
   margin-left: 35px;
+  
 }
  
 .menu li a, .info a {
