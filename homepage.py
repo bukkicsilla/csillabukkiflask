@@ -48,6 +48,11 @@ def fivelittle():
 def fivelittleprint():
    return render_template('printfivelittleducks.html')
 
+@app.route('/confusion')
+def confusion():
+   return render_template('gulp/app/index.html')
+
+
 @app.route('/study')  
 def study():
    return render_template('study.html')

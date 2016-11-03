@@ -21,12 +21,12 @@ angular.module('confusionApp', ['ui.router'])
                 }
             })
 
-    /*.state({
+    .state({
         name: 'ok',
         url: '/ok',
         template: '<h3> ok </h3>'
 
-    })*/
+    })
         // route for the aboutus page
             .state('app.aboutus', {
                 url:'aboutus',
@@ -69,10 +69,10 @@ angular.module('confusionApp', ['ui.router'])
                    }
                 }
             });
-           $urlRouterProvider.otherwise('https://ui-router.github.io/tutorial/ng1/helloworld'); 
+           //$urlRouterProvider.otherwise('https://ui-router.github.io/tutorial/ng1/helloworld'); 
     });
   
- 
+ $urlRouterProvider.otherwise('https://ui-router.github.io/tutorial/ng1/helloworld'); 
 
 
   
