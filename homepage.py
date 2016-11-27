@@ -36,6 +36,10 @@ def amhelp():
 def interest():
    return render_template('interest.html')
 
+@app.route('/mfp')
+def mfp():
+   return render_template('mfps.html')
+
 @app.route('/piano')
 def piano():
    return render_template('index.html')
@@ -50,7 +54,7 @@ def fivelittleprint():
 
 @app.route('/confusion')
 def confusion():
-   return render_template('gulp/app/index.html')
+   return render_template('confusion.html')
 
 
 @app.route('/study')  
