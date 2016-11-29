@@ -73,6 +73,22 @@ def dfps2to10():
 def dfps2to12():
    return render_template('dfps2to12.html')
 
+@app.route('/mfp/afps2to6')
+def afps2to6():
+   return render_template('afps2to6.html')
+
+@app.route('/mfp/afps7to10')
+def afps7to10():
+   return render_template('afps7to10.html')
+
+@app.route('/mfp/afps2to10')
+def afps2to10():
+   return render_template('afps2to10.html')
+
+@app.route('/mfp/afps2to12')
+def afps2to12():
+   return render_template('afps2to12.html')
+
 @app.route('/piano')
 def piano():
    return render_template('index.html')
