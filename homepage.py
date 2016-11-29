@@ -5,8 +5,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def classical():
-    #return render_template('home.html')
-    return render_template('mfps.html')
+    return render_template('home.html')
+    #return render_template('mfps.html')
 
 @app.route('/labor')  
 def labor():
