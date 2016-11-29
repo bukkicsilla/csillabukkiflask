@@ -24,7 +24,13 @@ width: 120px;
 margin-left: 10px;
 
 }
+#mu {
+color: blue;
+}
 
+#mfps{
+background-color: #49cdf5;
+}
 .mfp {
   font-size: 22px; 
 }
