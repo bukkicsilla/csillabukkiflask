@@ -24,8 +24,11 @@ width: 120px;
 margin-left: 10px;
 
 }
-#mu {
-color: blue;
+
+
+.op {
+  color: blue;
+  font-size: 32px;
 }
 
 #mfps{

@@ -6,6 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def classical():
     return render_template('home.html')
+    #return render_template('mfps.html')
 
 @app.route('/labor')  
 def labor():
@@ -55,6 +56,22 @@ def mfps2to10():
 @app.route('/mfp/mfps2to12')
 def mfps2to12():
    return render_template('mfps2to12.html')
+
+@app.route('/mfp/dfps2to6')
+def dfps2to6():
+   return render_template('dfps2to6.html')
+
+@app.route('/mfp/dfps7to10')
+def dfps7to10():
+   return render_template('dfps7to10.html')
+
+@app.route('/mfp/dfps2to10')
+def dfps2to10():
+   return render_template('dfps2to10.html')
+
+@app.route('/mfp/dfps2to12')
+def dfps2to12():
+   return render_template('dfps2to12.html')
 
 @app.route('/piano')
 def piano():
