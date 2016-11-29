@@ -40,6 +40,10 @@ def interest():
 def mfp():
    return render_template('mfps.html')
 
+@app.route('/mfp/mfps2to12')
+def mfps2to12():
+   return render_template('mfps2to12.html')
+
 @app.route('/piano')
 def piano():
    return render_template('index.html')
