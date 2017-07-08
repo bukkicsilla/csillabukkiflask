@@ -5,8 +5,8 @@
      </br> </br> </br> </br>
 
    <span class="ice">
-        <!--<a href="{{ url_for('money') }}" name="money" target="target" > Practice Math with Money </a></span>-->  
-        <a href="" name="money" target="_self" > Practice Math with Money </a></span>  
+        <a href="{{ url_for('money') }}" name="money" target="_blank" > Practice Math with Money </a></span>  
+          
       
   </div>
     

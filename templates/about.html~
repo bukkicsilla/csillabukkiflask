@@ -2,5 +2,6 @@
   
 {% block content %}
   <!--<h2>About</h2>-->
-  <h5>This webpage is a collection of work, education and hobby. </h5>
+  <!--<h4>This webpage is a collection of work, education and hobby.</h4>-->
+  <h4> This site is still under construction. </h4>
 {% endblock %}
