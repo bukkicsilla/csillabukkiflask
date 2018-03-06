@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">	
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+   </head>
+   <body>
+
+     <div class="container">
+        <div class="row row-content">
+           <div id="vexflow1" class="col-xs-12 col-sm-8"></div>
+           <div class="col-xs-12 col-sm-2">
+              <!--<p style="padding:50px;"></p>
+              <a id="reserve-link" type="button" class="btn btn-block btn-danger" onclick="playsong(1)"> Play </a>-->
+           </div>
+        </div>
+         <div class="row row-content">
+           <div id="vexflow2" class="col-xs-12 col-sm-8"></div>
+            <div class="col-xs-12 col-sm-2">
+              <!--<p style="padding:50px;"></p>
+              <a id="reserve-link" type="button" class="btn btn-block btn-danger" onclick="playsong(2)"> Play </a>-->
+           </div>
+        </div>
+       <div class="row row-content">
+           <div id="vexflow3" class="col-xs-12 col-sm-8"></div>
+           <div class="col-xs-12 col-sm-2">
+              <!--<p style="padding:50px;"></p>
+              <a id="reserve-link" type="button" class="btn btn-block btn-danger" onclick="playsong(3)"> Play </a>-->
+           </div>
+        </div>
+         <div class="row row-content">
+           <div id="vexflow4" class="col-xs-12 col-sm-8"></div>
+            <div class="col-xs-12 col-sm-2">
+              <!--<p style="padding:50px;"></p>
+              <a id="reserve-link" type="button" class="btn btn-block btn-danger" onclick="playsong(4)"> Play </a>-->
+           </div>
+        </div>
+        <div class="row row-content">
+           <div id="playall" class="col-xs-12 col-sm-3">
+           <!--<p style="padding:0px;"></p>
+              <a id="reserve-link" type="button" class="btn btn-block btn-success" onclick="playsong(0)"> Play All</a>-->
+           </div>
+           <div class="col-xs-12 col-sm-1">
+                 
+           </div>
+           <!--<div id="print" class="col-xs-12 col-sm-3">
+           <p style="padding:0px;"></p>
+              <a id="reserve-link" type="button" class="btn btn-block btn-info" href="print.html"> Print </a>
+           </div>-->
+        </div>
+        <div class="row row-content">
+           <div id="end" class="col-xs-12 col-sm-12">
+           <p style="padding:20px;">  </p>
+            
+           </div>
+         
+        </div>
+
+     </div>
+     <!--<script src="js/vexflow-min.js"></script>--> 
+      <script src="{{ url_for('static', filename='javascript/vexflow-min.js') }}"></script>
+     
+     <script>
+
+       var r1 = 800;
+       var r2 = 220;
+       var hi = 110;
+       var le = 350;
+       var xx = 10;
+       var yy = 20;
+
+       
+
+       function createNote(note_data) {
+            return new Vex.Flow.StaveNote(note_data);
+       }
+
+       VF = Vex.Flow;
+       /********************************************************************************************************************************/
+
+       var div = document.getElementById("vexflow1");
+       var renderer = new VF.Renderer(div, VF.Renderer.Backends.SVG);
+       renderer.resize(r1, r2);
+       var ctx = renderer.getContext();
+       
+       // bar 1 treble
+       var staveBart1 = new Vex.Flow.Stave(xx, yy, le);
+
+       staveBart1.addClef("treble").addKeySignature('F').addTimeSignature('4/4').setContext(ctx).draw();
+
+       
+       var note_t1 = [
+     { keys: ["f/4"], duration: "q"},
+     { keys: ["g/4"], duration: "q"},
+     { keys: ["a/4"], duration: "q"},
+     { keys: ["f/4"], duration: "q"}
+      ];
+      var notesBart1 = note_t1.map(createNote);
+       Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart1, notesBart1);
+
+       //bar 1 bass
+       var staveBarb1 = new Vex.Flow.Stave(xx, hi, le);
+       staveBarb1.addClef("bass").addKeySignature('F').addTimeSignature('4/4').setContext(ctx).draw();
+
+       
+    var note_b1 = [
+     { clef:'bass', keys: ["f/3"], duration: "q", stem_direction: -1},
+     { clef:"bass", keys: ["c/3"], duration: "q"},
+     { clef:"bass", keys: ["f/3"], duration: "h", stem_direction: -1},
+     
+      ];
+      var notesBarb1 = note_b1.map(createNote);
+
+       Vex.Flow.Formatter.FormatAndDraw(ctx, staveBarb1, notesBarb1);
+      
+     //bar 2 treble 
+     var staveBart2 = new Vex.Flow.Stave(staveBart1.width + staveBart1.x, staveBart1.y, le);
+     staveBart2.setContext(ctx).draw(); 
+    var note_t2 = [
+     { keys: ["f/4"], duration: "q"},
+     { keys: ["g/4"], duration: "q"},
+     { keys: ["a/4"], duration: "q"},
+     { keys: ["f/4"], duration: "q"}
+      ];
+      var notesBart2 = note_t2.map(createNote);
+       Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart2, notesBart2);
+
+      //bar 2 bass 
+      var staveBarb2 = new Vex.Flow.Stave(staveBarb1.width + staveBarb1.x, staveBarb1.y, le);
+      staveBarb2.setContext(ctx).draw();
+      var note_b2 = [
+          { clef:'bass', keys: ["f/3"], duration: "q", stem_direction: -1},
+     { clef:"bass", keys: ["c/3"], duration: "q"},
+     { clef:"bass", keys: ["f/3"], duration: "h", stem_direction: -1},
+     
+           ];
+       var notesBarb2 = note_b2.map(createNote);
+       Vex.Flow.Formatter.FormatAndDraw(ctx, staveBarb2, notesBarb2);
+
+       
+       //right 0
+       var brace = new Vex.Flow.StaveConnector(staveBart1, staveBarb1).setType(2);
+       var lineRight = new Vex.Flow.StaveConnector(staveBart1, staveBarb1).setType(0);
+       brace.setContext(ctx).draw();
+       lineRight.setContext(ctx).draw();
+       var lineRight2 = new Vex.Flow.StaveConnector(staveBart2, staveBarb2).setType(0);
+       var lineLeft2 = new Vex.Flow.StaveConnector(staveBart2, staveBarb2).setType(0);
+       lineLeft2.setContext(ctx).draw();
+       lineRight2.setContext(ctx).draw();
+       
+       /********************************************************************************************************************************/
+  
+       var div2 = document.getElementById("vexflow2");
+       var renderer2 = new VF.Renderer(div2, VF.Renderer.Backends.SVG);
+       renderer2.resize(r1, r2);
+       var ctx2 = renderer2.getContext();
+       
+       // bar 3 treble
+       var staveBart3 = new Vex.Flow.Stave(xx, yy, le);
+
+       staveBart3.addClef("treble").addKeySignature('F').addTimeSignature('4/4').setContext(ctx2).draw();
+
+       
+       var note_t3 = [
+     { keys: ["a/4"], duration: "q"},
+     { keys: ["b/4"], duration: "q"},
+     { keys: ["c/5"], duration: "h"}
+      ];
+      var notesBart3 = note_t3.map(createNote);
+       Vex.Flow.Formatter.FormatAndDraw(ctx2, staveBart3, notesBart3);
+       
+
+       //bar 3 bass
+       var staveBarb3 = new Vex.Flow.Stave(xx, hi, le);
+       staveBarb3.addClef("bass").addKeySignature('F').addTimeSignature('4/4').setContext(ctx2).draw();
+
+       
+    var note_b3 = [
+      { clef:'bass', keys: ["f/3"], duration: "q",stem_direction: -1},
+     { clef:"bass", keys: ["g/3"], duration: "q", stem_direction: -1},
+     { clef:"bass", keys: ["a/3"], duration: "q", stem_direction: -1},
+     { clef:"bass", keys: ["f/3"], duration: "q", stem_direction: -1}
+      ];
+      var notesBarb3 = note_b3.map(createNote);
+       Vex.Flow.Formatter.FormatAndDraw(ctx2, staveBarb3, notesBarb3);
+       
+       // bar 4 treble
+       var staveBart4 = new Vex.Flow.Stave(staveBart3.width + staveBart3.x, staveBart3.y, le);
+       staveBart4.setContext(ctx2).draw();
+
+       
+       var note_t4 = [
+    { keys: ["a/4"], duration: "q"},
+     { keys: ["b/4"], duration: "q"},
+     { keys: ["c/5"], duration: "h"}
+      ];
+      var notesBart4 = note_t4.map(createNote);
+       Vex.Flow.Formatter.FormatAndDraw(ctx2, staveBart4, notesBart4);
+
+       //bar 4 bass
+       //var staveBarb3 = new Vex.Flow.Stave(10, 190, 400);
+       var staveBarb4 = new Vex.Flow.Stave(staveBarb3.width + staveBarb3.x, staveBarb3.y, le);
+       staveBarb4.setContext(ctx2).draw();
+
+       
+    var note_b4 = [
+      { clef:'bass', keys: ["f/3"], duration: "q",stem_direction: -1},
+     { clef:"bass", keys: ["g/3"], duration: "q", stem_direction: -1},
+     { clef:"bass", keys: ["a/3"], duration: "q", stem_direction: -1},
+     { clef:"bass", keys: ["f/3"], duration: "q", stem_direction: -1}
+      ];
+      var notesBarb4 = note_b4.map(createNote);
+
+       Vex.Flow.Formatter.FormatAndDraw(ctx2, staveBarb4, notesBarb4);
+       
+
+      var brace3 = new Vex.Flow.StaveConnector(staveBart3, staveBarb3).setType(2);
+       var lineRight3 = new Vex.Flow.StaveConnector(staveBart3, staveBarb3).setType(0);
+       brace3.setContext(ctx2).draw();
+       lineRight3.setContext(ctx2).draw();
+       var lineRight4 = new Vex.Flow.StaveConnector(staveBart4, staveBarb4).setType(0);
+       var lineLeft4 = new Vex.Flow.StaveConnector(staveBart4, staveBarb4).setType(0);
+       lineLeft4.setContext(ctx2).draw();
+       lineRight4.setContext(ctx2).draw();
+
+    /********************************************************************************************************************************/
+
+
+       var div = document.getElementById("vexflow3");
+       var renderer = new VF.Renderer(div, VF.Renderer.Backends.SVG);
+       renderer.resize(r1, r2);
+       var ctx = renderer.getContext();
+       
+       // bar 5 treble
+       var staveBart1 = new Vex.Flow.Stave(xx, yy, le);
+
+       staveBart1.addClef("treble").addKeySignature('F').addTimeSignature('4/4').setContext(ctx).draw();
+
+       
+       var note_t1 = [
+     { keys: ["c/5"], duration: "8", stem_direction: -1},
+     { keys: ["d/5"], duration: "8", stem_direction: -1},
+     { keys: ["c/5"], duration: "8", stem_direction: -1},
+     { keys: ["b/4"], duration: "8", stem_direction: -1},
+     { keys: ["a/4"], duration: "q"},
+     { keys: ["f/4"], duration: "q"}
+      ];
+      var notesBart1 = note_t1.map(createNote);
+       
+       var groupt1 = notesBart1.slice(0, 4);
+       var beamt1 = new Vex.Flow.Beam(groupt1);
+       var notesBart1 = groupt1.concat(notesBart1.slice(4,5)).concat(notesBart1.slice(5,6));
+       Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart1, notesBart1);
+       beamt1.setContext(ctx).draw();
+
+       //bar 5 bass
+       var staveBarb1 = new Vex.Flow.Stave(xx, hi, le);
+       staveBarb1.addClef("bass").addKeySignature('F').addTimeSignature('4/4').setContext(ctx).draw();
+
+       
+    var note_b1 = [
+     { clef:'bass', keys: ["a/3"], duration: "q", stem_direction: -1},
+     { clef:"bass", keys: ["b/3"], duration: "q", stem_direction: -1},
+     { clef:"bass", keys: ["c/4"], duration: "h", stem_direction: -1}
+      ];
+      var notesBarb1 = note_b1.map(createNote);
+
+       Vex.Flow.Formatter.FormatAndDraw(ctx, staveBarb1, notesBarb1);
+      
+     //bar 6 treble 
+     var staveBart2 = new Vex.Flow.Stave(staveBart1.width + staveBart1.x, staveBart1.y, le);
+     staveBart2.setContext(ctx).draw(); 
+    var note_t2 = [
+     { keys: ["c/5"], duration: "8", stem_direction: -1},
+     { keys: ["d/5"], duration: "8", stem_direction: -1},
+     { keys: ["c/5"], duration: "8", stem_direction: -1},
+     { keys: ["b/4"], duration: "8", stem_direction: -1},
+     { keys: ["a/4"], duration: "q"},
+     { keys: ["f/4"], duration: "q"}
+      ];
+      var notesBart2 = note_t2.map(createNote);
+       
+       var groupt2 = notesBart2.slice(0, 4);
+       var beamt2 = new Vex.Flow.Beam(groupt2);
+       var notesBart2 = groupt2.concat(notesBart2.slice(4,5)).concat(notesBart2.slice(5,6));
+       Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart2, notesBart2);
+       beamt2.setContext(ctx).draw();
+
+      //bar 6 bass 
+      var staveBarb2 = new Vex.Flow.Stave(staveBarb1.width + staveBarb1.x, staveBarb1.y, le);
+      staveBarb2.setContext(ctx).draw();
+      var note_b2 = [
+       { clef:'bass', keys: ["a/3"], duration: "q", stem_direction: -1},
+     { clef:"bass", keys: ["b/3"], duration: "q", stem_direction: -1},
+     { clef:"bass", keys: ["c/4"], duration: "h", stem_direction: -1}
+      ];
+       var notesBarb2 = note_b2.map(createNote);
+       Vex.Flow.Formatter.FormatAndDraw(ctx, staveBarb2, notesBarb2);
+
+       
+       //right 0
+       var brace = new Vex.Flow.StaveConnector(staveBart1, staveBarb1).setType(2);
+       var lineRight = new Vex.Flow.StaveConnector(staveBart1, staveBarb1).setType(0);
+       brace.setContext(ctx).draw();
+       lineRight.setContext(ctx).draw();
+       var lineRight2 = new Vex.Flow.StaveConnector(staveBart2, staveBarb2).setType(0);
+       var lineLeft2 = new Vex.Flow.StaveConnector(staveBart2, staveBarb2).setType(0);
+       lineLeft2.setContext(ctx).draw();
+       lineRight2.setContext(ctx).draw();
+      
+      
+       
+       /********************************************************************************************************************************/
+  
+       var div2 = document.getElementById("vexflow4");
+       var renderer2 = new VF.Renderer(div2, VF.Renderer.Backends.SVG);
+       renderer2.resize(r1, r2);
+       var ctx = renderer2.getContext();
+       
+       // bar 7 treble
+       var staveBart3 = new Vex.Flow.Stave(xx, yy, le);
+
+       staveBart3.addClef("treble").addKeySignature('F').addTimeSignature('4/4').setContext(ctx).draw();
+
+       
+       var note_t3 = [
+     { keys: ["f/4"], duration: "q"},
+     { keys: ["c/4"], duration: "q"},
+     { keys: ["f/4"], duration: "h"}
+      ];
+      var notesBart3 = note_t3.map(createNote);
+       Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart3, notesBart3);
+       
+
+       //bar 7 bass
+       var staveBarb3 = new Vex.Flow.Stave(xx, hi, le);
+       staveBarb3.addClef("bass").addKeySignature('F').addTimeSignature('4/4').setContext(ctx).draw();
+
+       
+    var note_b3 = [
+     { clef:'bass', keys: ["c/4"], duration: "8", stem_direction: -1},
+     { clef:"bass", keys: ["d/4"], duration: "8", stem_direction: -1},
+     { clef:"bass", keys: ["c/4"], duration: "8", stem_direction: -1},
+     { clef:"bass", keys: ["b/3"], duration: "8", stem_direction: -1},
+     { clef:"bass", keys: ["a/3"], duration: "q", stem_direction: -1},
+     { clef:"bass", keys: ["f/3"], duration: "q", stem_direction: -1}
+      ];
+      var notesBarb3 = note_b3.map(createNote);
+       var groupb3 = notesBarb3.slice(0,4);
+      var beamb3 = new Vex.Flow.Beam(groupb3);         
+      var notesBarb3 = groupb3.concat(notesBarb3.slice(4,5)).concat(notesBarb3.slice(5,6));
+       Vex.Flow.Formatter.FormatAndDraw(ctx, staveBarb3, notesBarb3);
+       beamb3.setContext(ctx).draw();
+    
+       // bar 8 treble
+       var staveBart4 = new Vex.Flow.Stave(staveBart3.width + staveBart3.x, staveBart3.y, le);
+       staveBart4.setContext(ctx).draw();
+
+       
+       var note_t4 = [
+     { keys: ["f/4"], duration: "q"},
+     { keys: ["c/4"], duration: "q"},
+     { keys: ["f/4"], duration: "h"}
+      ];
+      var notesBart4 = note_t4.map(createNote);
+       Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart4, notesBart4);
+
+       //bar 8 bass
+       //var staveBarb3 = new Vex.Flow.Stave(10, 190, 400);
+       var staveBarb4 = new Vex.Flow.Stave(staveBarb3.width + staveBarb3.x, staveBarb3.y, le);
+       staveBarb4.setContext(ctx).draw();
+
+       
+    var note_b4 = [
+     { clef:'bass', keys: ["c/4"], duration: "8", stem_direction: -1},
+     { clef:"bass", keys: ["d/4"], duration: "8", stem_direction: -1},
+     { clef:"bass", keys: ["c/4"], duration: "8", stem_direction: -1},
+     { clef:"bass", keys: ["b/3"], duration: "8", stem_direction: -1},
+     { clef:"bass", keys: ["a/3"], duration: "q", stem_direction: -1},
+     { clef:"bass", keys: ["f/3"], duration: "q", stem_direction: -1}
+      ];
+      var notesBarb4 = note_b4.map(createNote);
+var groupb4 = notesBarb4.slice(0,4);
+      var beamb4 = new Vex.Flow.Beam(groupb4);         
+      var notesBarb4 = groupb4.concat(notesBarb4.slice(4,5)).concat(notesBarb4.slice(5,6));
+       Vex.Flow.Formatter.FormatAndDraw(ctx, staveBarb4, notesBarb4);
+       beamb4.setContext(ctx).draw();
+
+      var brace3 = new Vex.Flow.StaveConnector(staveBart3, staveBarb3).setType(2);
+       var lineRight3 = new Vex.Flow.StaveConnector(staveBart3, staveBarb3).setType(0);
+       brace3.setContext(ctx).draw();
+       lineRight3.setContext(ctx).draw();
+       var lineRight4 = new Vex.Flow.StaveConnector(staveBart4, staveBarb4).setType(6);
+       var lineLeft4 = new Vex.Flow.StaveConnector(staveBart4, staveBarb4).setType(0);
+       lineLeft4.setContext(ctx).draw();
+       lineRight4.setContext(ctx).draw();
+
+    /********************************************************************************************************************************/
+
+     </script>
+   </body>
+</html>

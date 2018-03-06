@@ -121,6 +121,11 @@ def fivelittleprint():
 def frerejaques():
    return render_template('frerejaques.html')
 
+@app.route('/piano/frerejaques/print')
+def frerejaquesprint():
+   return render_template('printfrerejaques.html')
+
+
 @app.route('/confusion')
 def confusion():
    return render_template('confusion.html')
