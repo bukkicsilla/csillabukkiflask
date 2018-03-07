@@ -125,6 +125,13 @@ def frerejaques():
 def frerejaquesprint():
    return render_template('printfrerejaques.html')
 
+@app.route('/piano/londonbridge')
+def londonbridge():
+   return render_template('londonbridge.html')
+
+@app.route('/piano/londonbridge/print')
+def londonbridgeprint():
+   return render_template('printlondonbridge.html')
 
 @app.route('/confusion')
 def confusion():

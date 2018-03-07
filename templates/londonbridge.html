@@ -196,7 +196,7 @@
            </div>
            <div id="print" class="col-xs-12 col-sm-2">
            <p style="padding:0px;"></p>
-              <a id="reserve-link" type="button" class="btn btn-block btn-info" href="{{ url_for('frerejaquesprint') }}" target="_blank"> Print </a>
+              <a id="reserve-link" type="button" class="btn btn-block btn-info" href="{{ url_for('londonbridgeprint') }}" target="_blank"> Print </a>
            </div>
            
            <div id="home" class="col-xs-12 col-sm-2">
@@ -466,11 +466,11 @@
             var ctx = renderer.getContext();
             // bar 1 treble
             var staveBart1 = new VF.Stave(xx, yy, le);
-            staveBart1.addClef("treble").addKeySignature('F').addTimeSignature('4/4').setContext(ctx).draw();
+            staveBart1.addClef("treble").addKeySignature('C').addTimeSignature('4/4').setContext(ctx).draw();
             var staveBart2 = new VF.Stave(staveBart1.width + staveBart1.x, staveBart1.y, le);
             staveBart2.setContext(ctx).draw();
             var staveBarb1 = new VF.Stave(xx, hi, le);
-            staveBarb1.addClef("bass").addKeySignature('F').addTimeSignature('4/4').setContext(ctx).draw();
+            staveBarb1.addClef("bass").addKeySignature('C').addTimeSignature('4/4').setContext(ctx).draw();
             var staveBarb2 = new VF.Stave(staveBarb1.width + staveBarb1.x, staveBarb1.y, le);
             staveBarb2.setContext(ctx).draw();   
             //right 0
@@ -494,11 +494,11 @@
             renderer.resize(r1, r2);
             var ctx = renderer.getContext();
             var staveBart1 = new VF.Stave(xx, yy, le);
-            staveBart1.addClef("treble").addKeySignature('F').addTimeSignature('4/4').setContext(ctx).draw();
+            staveBart1.addClef("treble").addKeySignature('C').addTimeSignature('4/4').setContext(ctx).draw();
             var staveBart2 = new VF.Stave(staveBart1.width + staveBart1.x, staveBart1.y, le);
             staveBart2.setContext(ctx).draw();
             var staveBarb1 = new VF.Stave(xx, hi, le);
-            staveBarb1.addClef("bass").addKeySignature('F').addTimeSignature('4/4').setContext(ctx).draw();
+            staveBarb1.addClef("bass").addKeySignature('C').addTimeSignature('4/4').setContext(ctx).draw();
             var staveBarb2 = new VF.Stave(staveBarb1.width + staveBarb1.x, staveBarb1.y, le);
             staveBarb2.setContext(ctx).draw();   
             //right 0
@@ -517,20 +517,20 @@
        if (divname == "vexflow1"){
          if (hand == "both" || hand=="right"){
             var note_t1 = [
-     { keys: ["f/4"], duration: "q"},
-     { keys: ["g/4"], duration: "q"},
-     { keys: ["a/4"], duration: "q"},
-     { keys: ["f/4"], duration: "q"}
+     { keys: ["g/4"], duration: "4"},
+     { keys: ["a/4"], duration: "8"},
+     { keys: ["g/4"], duration: "4"},
+     { keys: ["f/4"], duration: "4"}
       ];
        
       var notesBart1 = note_t1.map(createNote);
+        notesBart1[0].addDotToAll();     
        Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart1, notesBart1);
        
        var note_t2 = [
+     { keys: ["e/4"], duration: "q"},
      { keys: ["f/4"], duration: "q"},
-     { keys: ["g/4"], duration: "q"},
-     { keys: ["a/4"], duration: "q"},
-     { keys: ["f/4"], duration: "q"}
+     { keys: ["g/4"], duration: "h"}
       ];
       var notesBart2 = note_t2.map(createNote);
        
@@ -540,18 +540,19 @@
         }
        if (hand == "both" || hand == "left"){
            var note_b1 = [
-     { clef:'bass', keys: ["f/3"], duration: "q", stem_direction: -1},
-     { clef:"bass", keys: ["c/3"], duration: "q"},
-     { clef:"bass", keys: ["f/3"], duration: "h", stem_direction: -1},
+     { clef:'bass', keys: ["c/3"], duration: "q"},
+     { clef:"bass", keys: ["f/3"], duration: "8", stem_direction: -1},
+     { clef:"bass", keys: ["e/3"], duration: "q", stem_direction: -1},
+     { clef:"bass", keys: ["d/3"], duration: "q", stem_direction: -1}
      
       ];
       var notesBarb1 = note_b1.map(createNote);
-
+      notesBarb1[0].addDotToAll();
        Vex.Flow.Formatter.FormatAndDraw(ctx, staveBarb1, notesBarb1);
       var note_b2 = [
-       { clef:'bass', keys: ["f/3"], duration: "q", stem_direction: -1},
        { clef:'bass', keys: ["c/3"], duration: "q", stem_direction: 1},
-       { clef:'bass', keys: ["f/3"], duration: "h", stem_direction: -1}
+       { clef:'bass', keys: ["d/3"], duration: "q", stem_direction: -1},
+       { clef:'bass', keys: ["e/3"], duration: "h", stem_direction: -1}
       ];
        var notesBarb2 = note_b2.map(createNote);
        Vex.Flow.Formatter.FormatAndDraw(ctx, staveBarb2, notesBarb2);
@@ -563,18 +564,18 @@
          if (hand == "both" || hand=="right"){
          
        var note_t3 = [
-     { keys: ["a/4"], duration: "q"},
-     { keys: ["b/4"], duration: "q"},
-     { keys: ["c/5"], duration: "h"}
+     { keys: ["d/4"], duration: "q"},
+     { keys: ["e/4"], duration: "q"},
+     { keys: ["f/4"], duration: "h"}
       ];
       var notesBart3 = note_t3.map(createNote);
        Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart1, notesBart3);
 
 
    var note_t4 = [
-     { keys: ["a/4"], duration: "q"},
-     { keys: ["b/4"], duration: "q"},
-     { keys: ["c/5"], duration: "h"}
+     { keys: ["e/4"], duration: "q"},
+     { keys: ["f/4"], duration: "q"},
+     { keys: ["g/4"], duration: "h"}
       ];
       var notesBart4 = note_t4.map(createNote);
        
@@ -584,20 +585,14 @@
          if (hand == "both" || hand=="left"){
     
     var note_b3 = [
-     { clef:'bass', keys: ["f/3"], duration: "q",stem_direction: -1},
-     { clef:"bass", keys: ["g/3"], duration: "q", stem_direction: -1},
-     { clef:"bass", keys: ["a/3"], duration: "q", stem_direction: -1},
-     { clef:"bass", keys: ["f/3"], duration: "q", stem_direction: -1}
+     { clef:'bass', keys: ["g/3"], duration: "w"},
+     
       ];
       var notesBarb3 = note_b3.map(createNote);
-      //notesBarb3[2].addAccidental(0, new VF.Accidental("#"));
        Vex.Flow.Formatter.FormatAndDraw(ctx, staveBarb1, notesBarb3);
 
     var note_b4 = [
-     { clef:'bass', keys: ["f/3"], duration: "q", stem_direction: -1},
-     { clef:"bass", keys: ["g/3"], duration: "q", stem_direction: -1},
-     { clef:"bass", keys: ["a/3"], duration: "q", stem_direction: -1},
-     { clef:"bass", keys: ["f/3"], duration: "q", stem_direction: -1}
+     { clef:'bass', keys: ["g/3"], duration: "w"}
       ];
       var notesBarb4 = note_b4.map(createNote);
 
@@ -609,55 +604,42 @@
          if (hand == "both" || hand=="right"){
 
    var note_t1 = [
-     { keys: ["c/5"], duration: "8", stem_direction: -1},
-     { keys: ["d/5"], duration: "8", stem_direction: -1},
-     { keys: ["c/5"], duration: "8", stem_direction: -1},
-     { keys: ["b/4"], duration: "8", stem_direction: -1},
-     { keys: ["a/4"], duration: "q"},
-     { keys: ["f/4"], duration: "q"}
+     { keys: ["g/4"], duration: "4"},
+     { keys: ["a/4"], duration: "8"},
+     { keys: ["g/4"], duration: "4"},
+     { keys: ["f/4"], duration: "4"}
       ];
       var notesBart1 = note_t1.map(createNote);
-       
-       var groupt1 = notesBart1.slice(0, 4);          
-       var beamt1 = new Vex.Flow.Beam(groupt1);         
-       var notesBart1 = groupt1.concat(notesBart1.slice(4,5)).concat(notesBart1.slice(5,6));
+       notesBart1[0].addDotToAll();
        Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart1, notesBart1);
-       beamt1.setContext(ctx).draw(); 
 
              var note_t2 = [
-     { keys: ["c/5"], duration: "8", stem_direction: -1},
-     { keys: ["d/5"], duration: "8", stem_direction: -1},
-     { keys: ["c/5"], duration: "8", stem_direction: -1},
-     { keys: ["b/4"], duration: "8", stem_direction: -1},
-     { keys: ["a/4"], duration: "q"},
-     { keys: ["f/4"], duration: "q"}
+     { keys: ["e/4"], duration: "4"},
+     { keys: ["f/4"], duration: "4"},
+     { keys: ["g/4"], duration: "2"}
+     
       ];
              
       var notesBart2 = note_t2.map(createNote);
-       var groupt2 = notesBart2.slice(0,4);
-      var beamt2 = new Vex.Flow.Beam(groupt2);         
-       var notesBart2 = groupt2.concat(notesBart2.slice(4,5)).concat(notesBart2.slice(5,6));
-     
        Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart2, notesBart2);
-        beamt2.setContext(ctx).draw(); 
+    
          }
            
-           
-           
-         if (hand == "both" || hand=="left"){
+     if (hand == "both" || hand=="left"){
 var note_b1 = [
-     { clef:'bass', keys: ["a/3"], duration: "q", stem_direction: -1},
-     { clef:"bass", keys: ["b/3"], duration: "q", stem_direction: -1},
-     { clef:"bass", keys: ["c/4"], duration: "h", stem_direction: -1}
-      ];
+     { clef:'bass', keys: ["c/3"], duration: "q"},
+     { clef:"bass", keys: ["f/3"], duration: "8", stem_direction: -1},
+     { clef:"bass", keys: ["e/3"], duration: "q", stem_direction: -1},
+     { clef:"bass", keys: ["d/3"], duration: "q", stem_direction: -1}
+    ];
       var notesBarb1 = note_b1.map(createNote);
-
+      notesBarb1[0].addDotToAll();
        Vex.Flow.Formatter.FormatAndDraw(ctx, staveBarb1, notesBarb1);
 
 var note_b2 = [
-       { clef:'bass', keys: ["a/3"], duration: "q", stem_direction: -1},
-       { clef:'bass', keys: ["b/3"], duration: "q", stem_direction: -1},
-       { clef:'bass', keys: ["c/4"], duration: "h", stem_direction: -1}
+       { clef:'bass', keys: ["c/3"], duration: "q", stem_direction: 1},
+       { clef:'bass', keys: ["d/3"], duration: "q", stem_direction: -1},
+       { clef:'bass', keys: ["e/3"], duration: "h", stem_direction: -1}
       ];
        var notesBarb2 = note_b2.map(createNote);
        Vex.Flow.Formatter.FormatAndDraw(ctx, staveBarb2, notesBarb2);
@@ -667,55 +649,37 @@ var note_b2 = [
      if (divname == "vexflow4"){
          if (hand == "both" || hand=="right"){
       var note_t3 = [
-     { keys: ["f/4"], duration: "q"},
-     { keys: ["c/4"], duration: "q"},
-     { keys: ["f/4"], duration: "h"}
+     { keys: ["d/4"], duration: "h"},
+     { keys: ["g/4"], duration: "h"}
       ];
       var notesBart3 = note_t3.map(createNote);
-       
-       Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart1, notesBart3);
+      Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart1, notesBart3);
        
  
    var note_t4 = [
-     { keys: ["f/4"], duration: "q"},
-     { keys: ["c/4"], duration: "q"},
-     { keys: ["f/4"], duration: "h"}
+     { keys: ["e/4"], duration: "q"},
+     { keys: ["c/4"], duration: "h"}
       ];
       var notesBart4 = note_t4.map(createNote);
-       
+             notesBart4[1].addDotToAll();
        Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart2, notesBart4);
          }
        
          if (hand == "both" || hand=="left"){
      var note_b3 = [
-     { clef:'bass', keys: ["c/4"], duration: "8", stem_direction: -1},
-     { clef:"bass", keys: ["d/4"], duration: "8", stem_direction: -1},
-     { clef:"bass", keys: ["c/4"], duration: "8", stem_direction: -1},
-     { clef:"bass", keys: ["b/3"], duration: "8", stem_direction: -1},
-     { clef:"bass", keys: ["a/3"], duration: "q", stem_direction: -1},
-     { clef:"bass", keys: ["f/3"], duration: "q", stem_direction: -1}
+     { clef:'bass', keys: ["g/3"], duration: "1"}
       ];
       var notesBarb3 = note_b3.map(createNote);
-      var groupb3 = notesBarb3.slice(0,4);
-      var beamb3 = new Vex.Flow.Beam(groupb3);         
-      var notesBarb3 = groupb3.concat(notesBarb3.slice(4,5)).concat(notesBarb3.slice(5,6));
       Vex.Flow.Formatter.FormatAndDraw(ctx, staveBarb1, notesBarb3);
-      beamb3.setContext(ctx).draw();
     
              var note_b4 = [
-     { clef:'bass', keys: ["c/4"], duration: "8", stem_direction: -1},
-     { clef:"bass", keys: ["d/4"], duration: "8", stem_direction: -1},
-     { clef:"bass", keys: ["c/4"], duration: "8", stem_direction: -1},
-     { clef:"bass", keys: ["b/3"], duration: "8", stem_direction: -1},
-     { clef:"bass", keys: ["a/3"], duration: "q", stem_direction: -1},
-     { clef:"bass", keys: ["f/3"], duration: "q", stem_direction: -1}
+     { clef:'bass', keys: ["g/3"], duration: "q"},
+     { clef:"bass", keys: ["e/3"], duration: "h"}
       ];
       var notesBarb4 = note_b4.map(createNote);
-      var groupb4 = notesBarb4.slice(0,4);
-      var beamb4 = new Vex.Flow.Beam(groupb4);         
-      var notesBarb4 = groupb4.concat(notesBarb4.slice(4,5)).concat(notesBarb4.slice(5,6));
+       notesBarb4[1].addDotToAll();
        Vex.Flow.Formatter.FormatAndDraw(ctx, staveBarb2, notesBarb4);
-       beamb4.setContext(ctx).draw();
+    
          }
        }//if
      }
