@@ -225,7 +225,7 @@
        //auditory part
 
       var playleft = function(part){
-         var f = 0.6;
+         var f = 0.54;
          var l = 3.0;
          //intrument piano 0, organ 1, acoustic 2
          var i = 0;
@@ -234,9 +234,9 @@
 
          if (part == 0 || part == 1){
         
-        setTimeout(function() { Synth.play(i, 'C', 3, 1*f*l)} , 1000*f);
+        setTimeout(function() { Synth.play(i, 'C', 3, 1.5*f*l)} , 1000*f);
        
-        setTimeout(function() { Synth.play(i, 'F', 3, 1*f*l)} , 2500*f); 
+        setTimeout(function() { Synth.play(i, 'F', 3, 0.5*f*l)} , 2500*f); 
         
         
         setTimeout(function() { Synth.play(i, 'E', 3, 1*f*l)} , 3000*f);
@@ -249,166 +249,121 @@
      setTimeout(function() { Synth.play(i, 'C', 3, 1*f*l)} , 5000*f);
      
      setTimeout(function() { Synth.play(i, 'D', 3, 1*f*l)} , 6000*f);
-     setTimeout(function() { Synth.play(i, 'E', 3, 1*f*l)} , 7000*f);
+     setTimeout(function() { Synth.play(i, 'E', 3, 2*f*l)} , 7000*f);
     
   }
    
  if (part == 0 || part == 2){
        if (part == 0) k = 8000;
        
-     setTimeout(function() { Synth.play(i, 'G', 3, 1*f*l)} , (k+1000)*f); //9000
-     setTimeout(function() { Synth.play(i, 'G', 3, 1*f*l)} , (k+5000)*f);  //13000
+     setTimeout(function() { Synth.play(i, 'G', 3, 4*f*l)} , (k+1000)*f); //9000
+     setTimeout(function() { Synth.play(i, 'G', 3, 4*f*l)} , (k+5000)*f);  //13000
         
      }
-    //I am here ******************************************************************
+
           
      if (part == 0 || part == 3){
        if (part == 0) k = 16000;
-         //setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} ,(k+1000)*f);//17000
-     setTimeout(function() { Synth.play(i, 'A', 3, 1*f*l)} , (k+1000)*f);//17000
-     //setTimeout(function() { Synth.play(i, 'G', 4, 0.5*f*l)} , (k+2000)*f);//18000
-     setTimeout(function() { Synth.play(i, 'A#', 3, 1*f*l)} , (k+2000)*f);//18000
-     //setTimeout(function() { Synth.play(i, 'G', 4, 0.5*f*l)} , (k+2500)*f);//18500
-     //setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} , (k+3000)*f);//19000
-     setTimeout(function() { Synth.play(i, 'C', 4, 1*f*l)} , (k+3000)*f);//19000
-     //setTimeout(function() { Synth.play(i, 'B', 4, 1*f*l)} , (k+4000)*f);//20000
-     //setTimeout(function() { Synth.play(i, 'G', 3, 1*f*l)} , (k+4000)*f);//20000
-
-     //setTimeout(function() { Synth.play(i, 'D', 5, 1*f*l)} , (k+5000)*f);//21000
-     setTimeout(function() { Synth.play(i, 'A', 3, 1*f*l)} , (k+5000)*f);//21000
-     //setTimeout(function() { Synth.play(i, 'B', 4, 1*f*l)} , (k+6000)*f);//22000
-     setTimeout(function() { Synth.play(i, 'A#', 3, 1*f*l)} , (k+6000)*f);//22000
-     //setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} , (k+7000)*f);//23000
-     setTimeout(function() { Synth.play(i, 'C', 4, 1*f*l)} , (k+7000)*f);//23000
-     //setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} , (k+8000)*f);//24000
-     //setTimeout(function() { Synth.play(i, 'D', 4, 1*f*l)} , (k+8000)*f);//24000   
+     setTimeout(function() { Synth.play(i, 'C', 3, 1.5*f*l)} , (k+1000)*f);//17000
+    
+     setTimeout(function() { Synth.play(i, 'F', 3, 0.5*f*l)} , (k+2500)*f);//180500
+     
+     setTimeout(function() { Synth.play(i, 'E', 3, 1*f*l)} , (k+3000)*f);//19000
+     
+     setTimeout(function() { Synth.play(i, 'D', 3, 1*f*l)} , (k+4000)*f);//20000
+     
+     setTimeout(function() { Synth.play(i, 'C', 3, 1*f*l)} , (k+5000)*f);//21000
+     
+     setTimeout(function() { Synth.play(i, 'D', 3, 1*f*l)} , (k+6000)*f);//22000
+        
+     setTimeout(function() { Synth.play(i, 'E', 3, 2*f*l)} , (k+7000)*f);//23000
+         
+ 
          }
 
    if (part == 0 || part == 4){
        if (part == 0) k = 24000;
-          //setTimeout(function() { Synth.play(i, 'A', 4, 1*f*l)} , (k+1000)*f);//25000
-          setTimeout(function() { Synth.play(i, 'C', 4, 1*f*l)} , (k+1000)*f);//25000
-          setTimeout(function() { Synth.play(i, 'D', 4, 1*f*l)} , (k+1500)*f);//25500
-          //setTimeout(function() { Synth.play(i, 'A', 4, 1*f*l)} , (k+2000)*f);//26000
-          setTimeout(function() { Synth.play(i, 'C', 4, 1*f*l)} , (k+2000)*f);//26000
-          setTimeout(function() { Synth.play(i, 'A#', 3, 1*f*l)} , (k+2500)*f);//26500
-          //setTimeout(function() { Synth.play(i, 'D', 4, 1*f*l)} , (k+3000)*f);//27000
-          setTimeout(function() { Synth.play(i, 'A', 3, 1*f*l)} , (k+3000)*f); //27000
-          //setTimeout(function() { Synth.play(i, 'E', 4, 0.5*f*l)} , (k+4000)*f);//28000
-          setTimeout(function() { Synth.play(i, 'F', 3, 1*f*l)} , (k+4000)*f);//28000
-          //setTimeout(function() { Synth.play(i, 'F#', 4, 0.5*f*l)} , (k+4500)*f);//28500
+          setTimeout(function() { Synth.play(i, 'G', 3, 4*f*l)} , (k+1000)*f);//25000
  
-          //setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} , (k+5000)*f);//29000
-          setTimeout(function() { Synth.play(i, 'C', 4, 1*f*l)} , (k+5000)*f);//29000
-          setTimeout(function() { Synth.play(i, 'D', 4, 1*f*l)} , (k+5500)*f);//29500
-          //setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} , (k+6000)*f);//30000
-          setTimeout(function() { Synth.play(i, 'C', 4, 1*f*l)} , (k+6000)*f);//30000
-          setTimeout(function() { Synth.play(i, 'A#', 3, 1*f*l)} , (k+6500)*f);//30500
-          //setTimeout(function() { Synth.play(i, 'G', 4, 2*f*l)} , (k+7000)*f);//31000
-          setTimeout(function() { Synth.play(i, 'A', 3, 2*f*l)} , (k+7000)*f);//31000
-          setTimeout(function() { Synth.play(i, 'F', 3, 1*f*l)} , (k+8000)*f);//32000
+          setTimeout(function() { Synth.play(i, 'G', 3, 1*f*l)} , (k+5000)*f);//29000
+          setTimeout(function() { Synth.play(i, 'E', 3, 3*f*l)} , (k+6000)*f);//30000
+         
          }
        }
  
 
 
    var playright = function(part){
-        var f = 0.6;
+        var f = 0.54;
          var l = 3.0;
          //intrument piano 0, organ 1, acoustic 2
          var i = 0;
          Synth.setVolume(0.6);
          var k = 0;
       if (part == 0 || part == 1){
-        setTimeout(function() { Synth.play(i, 'F', 4, 1*f*l)} , 1000*f);
-        //setTimeout(function() { Synth.play(i, 'G', 3, 1*f*l)} , 1000*f);
-        setTimeout(function() { Synth.play(i, 'G', 4, 0.5*f*l)} , 2000*f);
-        //setTimeout(function() { Synth.play(i, 'C', 4, 1*f*l)} , 2000*f); 
-        //setTimeout(function() { Synth.play(i, 'G', 4, 0.5*f*l)} , 2500*f);
-        setTimeout(function() { Synth.play(i, 'A', 4, 1*f*l)} , 3000*f);
-        //setTimeout(function() { Synth.play(i, 'B', 3, 1*f*l)} , 3000*f);
+        setTimeout(function() { Synth.play(i, 'G', 4, 1.5*f*l)} , 1000*f);
+    
+        setTimeout(function() { Synth.play(i, 'A', 4, 0.5*f*l)} , 2500*f);
+        
+        setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} , 3000*f);
+    
         setTimeout(function() { Synth.play(i, 'F', 4, 1*f*l)} , 4000*f);
-        //setTimeout(function() { Synth.play(i, 'G', 3, 1*f*l)} , 4000*f);
+        
 
   
-     setTimeout(function() { Synth.play(i, 'F', 4, 0.5*f*l)} , 5000*f); 
-     //setTimeout(function() { Synth.play(i, 'F#', 3, 1*f*l)} , 5000*f);
-     //setTimeout(function() { Synth.play(i, 'D', 5, 0.5*f*l)} , 5500*f);
-     setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} , 6000*f);
-     //setTimeout(function() { Synth.play(i, 'B', 3, 1*f*l)} , 6000*f);
-     setTimeout(function() { Synth.play(i, 'A', 4, 2*f*l)} , 7000*f);
-     //setTimeout(function() { Synth.play(i, 'E', 4, 1*f*l)} , 7000*f);
-     setTimeout(function() { Synth.play(i, 'F', 4, 1*f*l)} , 8000*f);     
+     setTimeout(function() { Synth.play(i, 'E', 4, 1*f*l)} , 5000*f); 
+    
+     setTimeout(function() { Synth.play(i, 'F', 4, 1*f*l)} , 6000*f);
+     
+     setTimeout(function() { Synth.play(i, 'G', 4, 2*f*l)} , 7000*f);
+        
   }
    
      if (part == 0 || part == 2){
        if (part == 0) k = 8000;
-       setTimeout(function() { Synth.play(i, 'A', 4, 1*f*l)} , (k+1000)*f); //9000
-     //setTimeout(function() { Synth.play(i, 'C', 4, 1*f*l)} , (k+1000)*f);  //9000
-     setTimeout(function() { Synth.play(i, 'A#', 4, 0.5*f*l)} ,(k+2000)*f); //10000
-     //setTimeout(function() { Synth.play(i, 'A', 3, 1*f*l)} , (k+2000)*f); //10000
-     //setTimeout(function() { Synth.play(i, 'A', 4, 0.5*f*l)} , (k+2500)*f); //10500
-     setTimeout(function() { Synth.play(i, 'C', 5, 1*f*l)} , (k+3000)*f); //11000
-     //setTimeout(function() { Synth.play(i, 'C#', 4, 1*f*l)} , (k+3000)*f); //11000
-     //setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} , (k+4000)*f); //12000
-     //setTimeout(function() { Synth.play(i, 'A', 3, 1*f*l)} , (k+4000)*f); //12000
-        
-
-
-      
-     setTimeout(function() { Synth.play(i, 'A', 4, 1*f*l)} , (k+5000)*f); //13000
-     //setTimeout(function() { Synth.play(i, 'D', 4, 1*f*l)} , (k+5000)*f);  //13000
-     setTimeout(function() { Synth.play(i, 'A#', 4, 1*f*l)} , (k+6000)*f);  //14000
-     //setTimeout(function() { Synth.play(i, 'A', 3, 1*f*l)} , (k+6000)*f);  //14000
-     setTimeout(function() { Synth.play(i, 'C', 5, 1*f*l)} , (k+7000)*f);  //15000
-     //setTimeout(function() { Synth.play(i, 'D', 4, 1*f*l)} , (k+7000)*f);  //15000
-     //setTimeout(function() { Synth.play(i, 'D', 4, 1*f*l)} , (k+8000)*f);   //16000
-     //setTimeout(function() { Synth.play(i, 'F#', 3, 1*f*l)} , (k+8000)*f);  //16000
+       setTimeout(function() { Synth.play(i, 'D', 4, 1*f*l)} , (k+1000)*f); //9000
+         
+     setTimeout(function() { Synth.play(i, 'E', 4, 1*f*l)} ,(k+2000)*f); //10000
+    
+     setTimeout(function() { Synth.play(i, 'F', 4, 2*f*l)} , (k+3000)*f); //11000
+    
+      setTimeout(function() { Synth.play(i, 'E', 4, 1*f*l)} , (k+5000)*f); //13000
+     
+     setTimeout(function() { Synth.play(i, 'F', 4, 1*f*l)} , (k+6000)*f);  //14000
+    
+     setTimeout(function() { Synth.play(i, 'G', 4, 2*f*l)} , (k+7000)*f);  //15000
+     
         
      }
 
     if (part == 0 || part == 3){
        if (part == 0) k = 16000;
-         setTimeout(function() { Synth.play(i, 'C', 5, 1*f*l)} ,(k+1000)*f);//17000
-        setTimeout(function() { Synth.play(i, 'D', 5, 1*f*l)} , (k+1500)*f);//17500
+         setTimeout(function() { Synth.play(i, 'G', 4, 1.5*f*l)} ,(k+1000)*f);//17000
+        setTimeout(function() { Synth.play(i, 'A', 4, 0.5*f*l)} , (k+2500)*f);//18500
     
-     setTimeout(function() { Synth.play(i, 'C', 5, 0.5*f*l)} , (k+2000)*f);//18000
+     setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} , (k+3000)*f);//19000
     
-     setTimeout(function() { Synth.play(i, 'A#', 4, 0.5*f*l)} , (k+2500)*f);//18500
-     setTimeout(function() { Synth.play(i, 'A', 4, 1*f*l)} , (k+3000)*f);//19000
-     
      setTimeout(function() { Synth.play(i, 'F', 4, 1*f*l)} , (k+4000)*f);//20000
+        
+     setTimeout(function() { Synth.play(i, 'E', 4, 1*f*l)} , (k+5000)*f);//21000
+     
+     setTimeout(function() { Synth.play(i, 'F', 4, 1*f*l)} , (k+6000)*f);//22000
     
 
-     setTimeout(function() { Synth.play(i, 'C', 5, 1*f*l)} , (k+5000)*f);//21000
-     setTimeout(function() { Synth.play(i, 'D', 5, 1*f*l)} , (k+5500)*f);//21500
-        
-     setTimeout(function() { Synth.play(i, 'C', 5, 1*f*l)} , (k+6000)*f);//22000
-     setTimeout(function() { Synth.play(i, 'A#', 4, 1*f*l)} , (k+6500)*f);//22500
-     
-     setTimeout(function() { Synth.play(i, 'A', 4, 1*f*l)} , (k+7000)*f);//23000
+     setTimeout(function() { Synth.play(i, 'G', 4, 2*f*l)} , (k+7000)*f);//23000
     
-     setTimeout(function() { Synth.play(i, 'F', 4, 1*f*l)} , (k+8000)*f);//24000
-     
        }
 
      if (part == 0 || part == 4){
        if (part == 0) k = 24000;
-          setTimeout(function() { Synth.play(i, 'F', 4, 1*f*l)} , (k+1000)*f);//25000
+          setTimeout(function() { Synth.play(i, 'D', 4, 2*f*l)} , (k+1000)*f);//25000
          
-          setTimeout(function() { Synth.play(i, 'C', 4, 1*f*l)} , (k+2000)*f);//26000
+          setTimeout(function() { Synth.play(i, 'G', 4, 2*f*l)} , (k+3000)*f);//27000
           
-          setTimeout(function() { Synth.play(i, 'F', 4, 1*f*l)} , (k+3000)*f);//27000
-          
-          //setTimeout(function() { Synth.play(i, 'E', 4, 0.5*f*l)} , (k+4000)*f);//28000
+          setTimeout(function() { Synth.play(i, 'E', 4, 1*f*l)} , (k+5000)*f);//29000
         
-          setTimeout(function() { Synth.play(i, 'F', 4, 0.5*f*l)} , (k+5000)*f);//29000
+          setTimeout(function() { Synth.play(i, 'C', 4, 3*f*l)} , (k+6000)*f);//30000
  
-          setTimeout(function() { Synth.play(i, 'C', 4, 1*f*l)} , (k+6000)*f);//30000
-          
-          setTimeout(function() { Synth.play(i, 'F', 4, 1*f*l)} , (k+7000)*f);//31000
-         
-          //setTimeout(function() { Synth.play(i, 'G', 4, 2*f*l)} , (k+7000)*f);//31000
           
        }
     }
