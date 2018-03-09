@@ -133,6 +133,14 @@ def londonbridge():
 def londonbridgeprint():
    return render_template('printlondonbridge.html')
 
+@app.route('/piano/rowyourboat')
+def rowyourboat():
+   return render_template('rowyourboat.html')
+
+@app.route('/piano/rowyourboat/print')
+def rowyourboatprint():
+   return render_template('printrowyourboat.html')
+
 @app.route('/confusion')
 def confusion():
    return render_template('confusion.html')

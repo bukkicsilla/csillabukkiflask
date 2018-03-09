@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">	
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <!--<link rel="stylesheet" href="css/vexflow.css">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/vexflow.css') }}">
+   </head>
+   <body onload="hideScore()">
+
+     <div class="container">
+        <div class="row row-content">
+           <div id="vexflow1" class="col-xs-12 col-sm-8"></div>
+          
+	   <div class="col-xs-12 col-sm-4"> 
+
+             <div class="row row-content">
+                <div class="col-xs-12 col-sm-4">
+                   <p></p>
+                   <a id="reserve-link" type="button" class="btn btn-block btn-danger" onclick="playleft(1)"> Play Left </a>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                   <p></p>
+                   <a id="reserve-link" type="button" class="btn btn-block btn-danger" onclick="playright(1)"> Play Right </a>
+                </div>
+          
+                <div class="col-xs-12 col-sm-4">
+                   <p></p>
+                   <a id="reserve-link" type="button" class="btn btn-block btn-danger" onclick="playboth(1)"> Play Both</a>
+                </div>
+              </div>
+             
+                 <div class="row row-content">
+                    <div class="col-xs-12 col-sm-4">
+                       <p></p>
+                       <a id="reserve-link" type="button" class="btn btn-block btn-warning" onclick="shownotes('vexflow1', 'left')"> Show Left </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                       <p></p>
+                       <a id="reserve-link" type="button" class="btn btn-block btn-warning" onclick="shownotes('vexflow1', 'right')"> Show Right </a>
+                    </div>
+                     <div class="col-xs-12 col-sm-4">
+                          <p></p>
+                       <a id="reserve-link" type="button" class="btn btn-block btn-warning" onclick="shownotes('vexflow1', 'both')"> Show Both </a>
+                    </div>
+                   
+                </div>
+           </div> 
+          </div>
+        
+        <div class="row row-content">
+           <div id="vexflow2" class="col-xs-12 col-sm-8"></div>
+          
+	   <div class="col-xs-12 col-sm-4"> 
+
+             <div class="row row-content">
+                <div class="col-xs-12 col-sm-4">
+                   <p></p>
+                   <a id="reserve-link" type="button" class="btn btn-block btn-danger" onclick="playleft(2)"> Play Left </a>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                   <p></p>
+                   <a id="reserve-link" type="button" class="btn btn-block btn-danger" onclick="playright(2)"> Play Right </a>
+                </div>
+          
+                <div class="col-xs-12 col-sm-4">
+                   <p></p>
+                   <a id="reserve-link" type="button" class="btn btn-block btn-danger" onclick="playboth(2)"> Play Both</a>
+                </div>
+              </div>
+             
+                 <div class="row row-content">
+                    <div class="col-xs-12 col-sm-4">
+                       <p></p>
+                       <a id="reserve-link" type="button" class="btn btn-block btn-warning" onclick="shownotes('vexflow2', 'left')"> Show Left </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                       <p></p>
+                       <a id="reserve-link" type="button" class="btn btn-block btn-warning" onclick="shownotes('vexflow2', 'right')"> Show Right </a>
+                    </div>
+                     <div class="col-xs-12 col-sm-4">
+                       <p></p>
+                       <a id="reserve-link" type="button" class="btn btn-block btn-warning" onclick="shownotes('vexflow2', 'both')"> Show Both </a>
+                    </div>
+                    
+                </div>
+           </div> 
+          </div>
+
+       
+
+       <div class="row row-content">
+           <div id="vexflow3" class="col-xs-12 col-sm-8"></div>
+          
+	   <div class="col-xs-12 col-sm-4"> 
+
+             <div class="row row-content">
+                <div class="col-xs-12 col-sm-4">
+                   <p></p>
+                   <a id="reserve-link" type="button" class="btn btn-block btn-danger" onclick="playleft(3)"> Play Left </a>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                   <p></p>
+                   <a id="reserve-link" type="button" class="btn btn-block btn-danger" onclick="playright(3)"> Play Right </a>
+                </div>
+          
+                <div class="col-xs-12 col-sm-4">
+                   <p></p>
+                   <a id="reserve-link" type="button" class="btn btn-block btn-danger" onclick="playboth(3)"> Play Both</a>
+                </div>
+              </div>
+             
+                 <div class="row row-content">
+                    <div class="col-xs-12 col-sm-4">
+                       <p></p>
+                       <a id="reserve-link" type="button" class="btn btn-block btn-warning" onclick="shownotes('vexflow3', 'left')"> Show Left </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                       <p></p>
+                       <a id="reserve-link" type="button" class="btn btn-block btn-warning" onclick="shownotes('vexflow3', 'right')"> Show Right </a>
+                    </div>
+                     <div class="col-xs-12 col-sm-4">
+                       <p></p>
+                       <a id="reserve-link" type="button" class="btn btn-block btn-warning" onclick="shownotes('vexflow3', 'both')"> Show Both </a>
+                    </div>
+                    
+                </div>
+           </div> 
+          </div>
+       
+    <div class="row row-content">
+           <div id="vexflow4" class="col-xs-12 col-sm-8"></div>
+          
+	   <div class="col-xs-12 col-sm-4"> 
+
+             <div class="row row-content">
+                <div class="col-xs-12 col-sm-4">
+                   <p></p>
+                   <a id="reserve-link" type="button" class="btn btn-block btn-danger" onclick="playleft(4)"> Play Left </a>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                   <p></p>
+                   <a id="reserve-link" type="button" class="btn btn-block btn-danger" onclick="playright(4)"> Play Right </a>
+                </div>
+          
+                <div class="col-xs-12 col-sm-4">
+                   <p></p>
+                   <a id="reserve-link" type="button" class="btn btn-block btn-danger" onclick="playboth(4)"> Play Both</a>
+                </div>
+              </div>
+             </div>
+              <div class="col-xs-12 col-sm-4"> 
+              
+                 <div class="row row-content">
+                    <div class="col-xs-12 col-sm-4">
+                       <p></p>
+                       <a id="reserve-link" type="button" class="btn btn-block btn-warning" onclick="shownotes('vexflow4', 'left')"> Show Left </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                       <p></p>
+                       <a id="reserve-link" type="button" class="btn btn-block btn-warning" onclick="shownotes('vexflow4', 'right')"> Show Right </a>
+                    </div>
+                     <div class="col-xs-12 col-sm-4">
+                       <p></p>
+                       <a id="reserve-link" type="button" class="btn btn-block btn-warning" onclick="shownotes('vexflow4', 'both')"> Show Both </a>
+                    </div>
+                    
+                </div>
+           </div> 
+          </div>
+       
+
+        <div class="row row-content">
+           <div id="playall" class="col-xs-12 col-sm-2">
+           <p style="padding:0px;"></p>
+              <a id="reserve-link" type="button" class="btn btn-block btn-success" onclick="playboth(0)"> Play All</a>
+           </div>
+           <!--<div class="col-xs-12 col-sm-1 col-sm-offset-1">
+                 
+           </div>-->
+           <div id="playallleft" class="col-xs-12 col-sm-2">
+           <p style="padding:0px;"></p>
+              <a id="reserve-link" type="button" class="btn btn-block btn-success" onclick="playleft(0)"> Play All Left </a>
+           </div>
+           <div id="playallright" class="col-xs-12 col-sm-2">
+           <p style="padding:0px;"></p>
+              <a id="reserve-link" type="button" class="btn btn-block btn-success" onclick="playright(0)"> Play All Right </a>
+           </div>
+            <div id="piano" class="col-xs-12 col-sm-2">
+           <p style="padding:0px;"></p>
+              <!--<a id="reserve-link" type="button" class="btn btn-block btn-success" href="http://www.keithwhor.com/music/" target="_blank"> Piano </a>-->
+              <a id="reserve-link" type="button" class="btn btn-block btn-success" onclick="hideScore()"> Hide </a>
+           </div>
+           <div id="print" class="col-xs-12 col-sm-2">
+           <p style="padding:0px;"></p>
+              <a id="reserve-link" type="button" class="btn btn-block btn-info" href="#" > Print </a>
+           </div>
+           
+           <div id="home" class="col-xs-12 col-sm-2">
+           <p style="padding:0px;"></p>
+              <a id="reserve-link" type="button" class="btn btn-block btn-info" href="{{ url_for('piano') }}"> Home </a>
+           </div>
+        </div>
+
+      
+
+        <div class="row row-content">
+           <div id="end" class="col-xs-12 col-sm-12">
+           <p style="padding:20px;">  </p>
+            
+           </div>
+         
+        </div>
+
+     </div>
+     <!--<script src="node_modules/vexflow/releases/vexflow-min.js"></script>--> 
+     <!--<script src="js/vexflow-min.js"></script>
+     <script src="js/audiosynth.js"></script>-->
+     <script src="{{ url_for('static', filename='javascript/vexflow-min.js') }}"></script>
+     <script src="{{ url_for('static', filename='javascript/audiosynth.js') }}"></script>
+     <script>
+       //auditory part
+
+      var playleft = function(part){
+         var f = 0.54;
+         var l = 3.0;
+         //intrument piano 0, organ 1, acoustic 2
+         var i = 0;
+         Synth.setVolume(0.6);
+         var k = 0;
+
+         /*if (part == 0 || part == 1){
+        
+        setTimeout(function() { Synth.play(i, 'C', 3, 1.5*f*l)} , 1000*f);
+       
+        setTimeout(function() { Synth.play(i, 'F', 3, 0.5*f*l)} , 2500*f); 
+        
+        
+        setTimeout(function() { Synth.play(i, 'E', 3, 1*f*l)} , 3000*f);
+
+  
+     
+     setTimeout(function() { Synth.play(i, 'D', 3, 1*f*l)} , 4000*f);
+     
+   
+     setTimeout(function() { Synth.play(i, 'C', 3, 1*f*l)} , 5000*f);
+     
+     setTimeout(function() { Synth.play(i, 'D', 3, 1*f*l)} , 6000*f);
+     setTimeout(function() { Synth.play(i, 'E', 3, 2*f*l)} , 7000*f);
+    
+  }*/
+   
+ /*if (part == 0 || part == 2){
+       if (part == 0) k = 8000;
+       
+     setTimeout(function() { Synth.play(i, 'G', 3, 4*f*l)} , (k+1000)*f); //9000
+     setTimeout(function() { Synth.play(i, 'G', 3, 4*f*l)} , (k+5000)*f);  //13000
+        
+     }
+
+          
+     if (part == 0 || part == 3){
+       if (part == 0) k = 16000;
+     setTimeout(function() { Synth.play(i, 'C', 3, 1.5*f*l)} , (k+1000)*f);//17000
+    
+     setTimeout(function() { Synth.play(i, 'F', 3, 0.5*f*l)} , (k+2500)*f);//180500
+     
+     setTimeout(function() { Synth.play(i, 'E', 3, 1*f*l)} , (k+3000)*f);//19000
+     
+     setTimeout(function() { Synth.play(i, 'D', 3, 1*f*l)} , (k+4000)*f);//20000
+     
+     setTimeout(function() { Synth.play(i, 'C', 3, 1*f*l)} , (k+5000)*f);//21000
+     
+     setTimeout(function() { Synth.play(i, 'D', 3, 1*f*l)} , (k+6000)*f);//22000
+        
+     setTimeout(function() { Synth.play(i, 'E', 3, 2*f*l)} , (k+7000)*f);//23000
+         
+ 
+         }
+
+   if (part == 0 || part == 4){
+       if (part == 0) k = 24000;
+          setTimeout(function() { Synth.play(i, 'G', 3, 4*f*l)} , (k+1000)*f);//25000
+ 
+          setTimeout(function() { Synth.play(i, 'G', 3, 1*f*l)} , (k+5000)*f);//29000
+          setTimeout(function() { Synth.play(i, 'E', 3, 3*f*l)} , (k+6000)*f);//30000
+         
+         }*/
+       }
+ 
+
+
+   var playright = function(part){
+        var f = 0.54;
+         var l = 3.0;
+         //intrument piano 0, organ 1, acoustic 2
+         var i = 0;
+         Synth.setVolume(0.6);
+         var k = 0;
+      /*if (part == 0 || part == 1){
+        setTimeout(function() { Synth.play(i, 'G', 4, 1.5*f*l)} , 1000*f);
+    
+        setTimeout(function() { Synth.play(i, 'A', 4, 0.5*f*l)} , 2500*f);
+        
+        setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} , 3000*f);
+    
+        setTimeout(function() { Synth.play(i, 'F', 4, 1*f*l)} , 4000*f);
+        
+
+  
+     setTimeout(function() { Synth.play(i, 'E', 4, 1*f*l)} , 5000*f); 
+    
+     setTimeout(function() { Synth.play(i, 'F', 4, 1*f*l)} , 6000*f);
+     
+     setTimeout(function() { Synth.play(i, 'G', 4, 2*f*l)} , 7000*f);
+        
+  }
+   
+     if (part == 0 || part == 2){
+       if (part == 0) k = 8000;
+       setTimeout(function() { Synth.play(i, 'D', 4, 1*f*l)} , (k+1000)*f); //9000
+         
+     setTimeout(function() { Synth.play(i, 'E', 4, 1*f*l)} ,(k+2000)*f); //10000
+    
+     setTimeout(function() { Synth.play(i, 'F', 4, 2*f*l)} , (k+3000)*f); //11000
+    
+      setTimeout(function() { Synth.play(i, 'E', 4, 1*f*l)} , (k+5000)*f); //13000
+     
+     setTimeout(function() { Synth.play(i, 'F', 4, 1*f*l)} , (k+6000)*f);  //14000
+    
+     setTimeout(function() { Synth.play(i, 'G', 4, 2*f*l)} , (k+7000)*f);  //15000
+     
+        
+     }
+
+    if (part == 0 || part == 3){
+       if (part == 0) k = 16000;
+         setTimeout(function() { Synth.play(i, 'G', 4, 1.5*f*l)} ,(k+1000)*f);//17000
+        setTimeout(function() { Synth.play(i, 'A', 4, 0.5*f*l)} , (k+2500)*f);//18500
+    
+     setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} , (k+3000)*f);//19000
+    
+     setTimeout(function() { Synth.play(i, 'F', 4, 1*f*l)} , (k+4000)*f);//20000
+        
+     setTimeout(function() { Synth.play(i, 'E', 4, 1*f*l)} , (k+5000)*f);//21000
+     
+     setTimeout(function() { Synth.play(i, 'F', 4, 1*f*l)} , (k+6000)*f);//22000
+    
+
+     setTimeout(function() { Synth.play(i, 'G', 4, 2*f*l)} , (k+7000)*f);//23000
+    
+       }
+
+     if (part == 0 || part == 4){
+       if (part == 0) k = 24000;
+          setTimeout(function() { Synth.play(i, 'D', 4, 2*f*l)} , (k+1000)*f);//25000
+         
+          setTimeout(function() { Synth.play(i, 'G', 4, 2*f*l)} , (k+3000)*f);//27000
+          
+          setTimeout(function() { Synth.play(i, 'E', 4, 1*f*l)} , (k+5000)*f);//29000
+        
+          setTimeout(function() { Synth.play(i, 'C', 4, 3*f*l)} , (k+6000)*f);//30000
+ 
+          
+       }*/
+    }
+
+    var playboth = function(part){
+          playright(part);
+          playleft(part);        
+        
+       
+}
+</script>
+
+     <script>
+      //visual part
+
+       //fix numbers for the sheet
+       var r1 = 800;
+       var r2 = 220;
+       var hi = 110;
+       var le = 350;
+       var xx = 5;
+       var yy = 20;
+       var staveBart1, staveBart2;
+       var staveBarb1, staveBarb2;
+       
+
+       function createNote(note_data) {
+            return new Vex.Flow.StaveNote(note_data);
+       }
+
+       VF = Vex.Flow;
+
+       //create row 2 staves
+       function createRow(divname) {
+            document.getElementById(divname).innerHTML = "";
+            var div = document.getElementById(divname);
+            var renderer = new VF.Renderer(div, VF.Renderer.Backends.SVG);
+            renderer.resize(r1, r2);
+            var ctx = renderer.getContext();
+            // bar 1 treble
+            var staveBart1 = new VF.Stave(xx, yy, le);
+            staveBart1.addClef("treble").addKeySignature('C').addTimeSignature('4/4').setContext(ctx).draw();
+            var staveBart2 = new VF.Stave(staveBart1.width + staveBart1.x, staveBart1.y, le);
+            staveBart2.setContext(ctx).draw();
+            var staveBarb1 = new VF.Stave(xx, hi, le);
+            staveBarb1.addClef("bass").addKeySignature('C').addTimeSignature('4/4').setContext(ctx).draw();
+            var staveBarb2 = new VF.Stave(staveBarb1.width + staveBarb1.x, staveBarb1.y, le);
+            staveBarb2.setContext(ctx).draw();   
+            //right 0
+            var brace = new Vex.Flow.StaveConnector(staveBart1, staveBarb1).setType(2);
+            var lineRight = new Vex.Flow.StaveConnector(staveBart1, staveBarb1).setType(0);
+            brace.setContext(ctx).draw();
+            lineRight.setContext(ctx).draw();
+           if (divname == "vexflow4")
+               var lineRight2 = new Vex.Flow.StaveConnector(staveBart2, staveBarb2).setType(6);
+            else
+               var lineRight2 = new Vex.Flow.StaveConnector(staveBart2, staveBarb2).setType(0);
+            var lineLeft2 = new Vex.Flow.StaveConnector(staveBart2, staveBarb2).setType(0);
+            lineLeft2.setContext(ctx).draw();
+            lineRight2.setContext(ctx).draw();
+       }  
+
+       function shownotes(divname, hand){
+           document.getElementById(divname).innerHTML = "";
+            var div = document.getElementById(divname);
+            var renderer = new VF.Renderer(div, VF.Renderer.Backends.SVG);
+            renderer.resize(r1, r2);
+            var ctx = renderer.getContext();
+            var staveBart1 = new VF.Stave(xx, yy, le);
+            staveBart1.addClef("treble").addKeySignature('C').addTimeSignature('6/8').setContext(ctx).draw();
+            var staveBart2 = new VF.Stave(staveBart1.width + staveBart1.x, staveBart1.y, le);
+            staveBart2.setContext(ctx).draw();
+            var staveBarb1 = new VF.Stave(xx, hi, le);
+            staveBarb1.addClef("bass").addKeySignature('C').addTimeSignature('6/8').setContext(ctx).draw();
+            var staveBarb2 = new VF.Stave(staveBarb1.width + staveBarb1.x, staveBarb1.y, le);
+            staveBarb2.setContext(ctx).draw();   
+            //right 0
+            var brace = new Vex.Flow.StaveConnector(staveBart1, staveBarb1).setType(2);
+            var lineRight = new Vex.Flow.StaveConnector(staveBart1, staveBarb1).setType(0);
+            brace.setContext(ctx).draw();
+            lineRight.setContext(ctx).draw();
+            if (divname == "vexflow4")
+               var lineRight2 = new Vex.Flow.StaveConnector(staveBart2, staveBarb2).setType(6);
+            else
+               var lineRight2 = new Vex.Flow.StaveConnector(staveBart2, staveBarb2).setType(0);
+            var lineLeft2 = new Vex.Flow.StaveConnector(staveBart2, staveBarb2).setType(0);
+            lineLeft2.setContext(ctx).draw();
+            lineRight2.setContext(ctx).draw();
+
+       if (divname == "vexflow1"){
+         if (hand == "both" || hand=="right"){
+            var note_t1 = [
+     { keys: ["c/4"], duration: "4"},
+     { keys: ["c/4"], duration: "4"}
+      ];
+       
+      var notesBart1 = note_t1.map(createNote);
+        notesBart1[0].addDotToAll();
+        notesBart1[1].addDotToAll();
+       Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart1, notesBart1);
+       
+       var note_t2 = [
+     { keys: ["c/4"], duration: "q"},
+     { keys: ["d/4"], duration: "8"},
+     { keys: ["e/4"], duration: "q"}
+      ];
+      var notesBart2 = note_t2.map(createNote);
+       notesBart2[2].addDotToAll();
+       
+       Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart2, notesBart2);
+
+        }
+       if (hand == "both" || hand == "left"){
+           var note_b1 = [
+     { clef:'bass', keys: ["e/3"], duration: "q", stem_direction: -1},
+     { clef:"bass", keys: ["f/3"], duration: "q", stem_direction: -1}
+     ];
+           
+      var notesBarb1 = note_b1.map(createNote);
+      notesBarb1[0].addDotToAll();
+      notesBarb1[1].addDotToAll();       
+       Vex.Flow.Formatter.FormatAndDraw(ctx, staveBarb1, notesBarb1);
+      var note_b2 = [
+       { clef:'bass', keys: ["e/3"], duration: "h", stem_direction: -1}
+      ];
+       var notesBarb2 = note_b2.map(createNote);
+           notesBarb2[0].addDotToAll();
+       Vex.Flow.Formatter.FormatAndDraw(ctx, staveBarb2, notesBarb2);
+       
+         }
+       }//if   
+
+     if (divname == "vexflow2"){
+         if (hand == "both" || hand=="right"){
+         
+       var note_t3 = [
+     { keys: ["e/4"], duration: "q"},      
+     { keys: ["d/4"], duration: "8"},
+     { keys: ["e/4"], duration: "q"},
+     { keys: ["f/4"], duration: "8"}
+      ];
+      var notesBart3 = note_t3.map(createNote);
+       Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart1, notesBart3);
+
+
+   var note_t4 = [
+     { keys: ["g/4"], duration: "h"}
+      ];
+      var notesBart4 = note_t4.map(createNote);
+       notesBart4[0].addDotToAll();
+          Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart2, notesBart4);
+      
+         }
+         if (hand == "both" || hand=="left"){
+    
+    var note_b3 = [
+     { clef:'bass', keys: ["g/3"], duration: "q", stem_direction: -1},
+        { clef:'bass', keys: ["a/3"], duration: "q", stem_direction: -1}
+     
+      ];
+      var notesBarb3 = note_b3.map(createNote);
+             notesBarb3[0].addDotToAll();
+             notesBarb3[1].addDotToAll();
+       Vex.Flow.Formatter.FormatAndDraw(ctx, staveBarb1, notesBarb3);
+
+    var note_b4 = [
+     { clef:'bass', keys: ["g/3"], duration: "h", stem_direction: -1}
+      ];
+      var notesBarb4 = note_b4.map(createNote);
+       notesBarb4[0].addDotToAll();
+       Vex.Flow.Formatter.FormatAndDraw(ctx, staveBarb2, notesBarb4);
+         }
+      }//if
+
+       if (divname == "vexflow3"){
+         if (hand == "both" || hand=="right"){
+
+   var note_t1 = [
+     { keys: ["c/5"], duration: "8", stem_direction: -1},
+     { keys: ["c/5"], duration: "8", stem_direction: -1},
+     { keys: ["c/5"], duration: "8", stem_direction: -1},
+     { keys: ["g/4"], duration: "8"},
+     { keys: ["g/4"], duration: "8"},
+     { keys: ["g/4"], duration: "8"}
+      ];
+      var notesBart1 = note_t1.map(createNote);
+      var groupt1 = notesBart1.slice(0, 3);
+      var groupt2 = notesBart1.slice(3,6);         
+       var beamt1 = new Vex.Flow.Beam(groupt1);
+       var beamt2 = new Vex.Flow.Beam(groupt2);
+       var notesBart1 = groupt1.concat(groupt2);
+       Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart1, notesBart1);
+       beamt1.setContext(ctx).draw();
+      beamt2.setContext(ctx).draw();         
+             
+             var note_t2 = [
+     { keys: ["e/4"], duration: "8"},
+     { keys: ["e/4"], duration: "8"},
+     { keys: ["e/4"], duration: "8"},
+     { keys: ["c/4"], duration: "8"},
+     { keys: ["c/4"], duration: "8"},
+     { keys: ["c/4"], duration: "8"}
+     
+      ];
+             
+      var notesBart2 = note_t2.map(createNote);
+             var groupt1 = notesBart2.slice(0, 3);
+      var groupt2 = notesBart2.slice(3,6);         
+       var beamt1 = new Vex.Flow.Beam(groupt1);
+       var beamt2 = new Vex.Flow.Beam(groupt2);
+       var notesBart1 = groupt1.concat(groupt2);
+       Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart2, notesBart2);
+    beamt1.setContext(ctx).draw();
+      beamt2.setContext(ctx).draw(); 
+         }
+           
+           
+     if (hand == "both" || hand=="left"){
+var note_b1 = [
+     { clef:'bass', keys: ["c/4"], duration: "q", stem_direction: -1},
+     { clef:"bass", keys: ["g/3"], duration: "q", stem_direction: -1}
+    ];
+      var notesBarb1 = note_b1.map(createNote);
+      notesBarb1[0].addDotToAll();
+         notesBarb1[1].addDotToAll();
+       Vex.Flow.Formatter.FormatAndDraw(ctx, staveBarb1, notesBarb1);
+
+var note_b2 = [
+       { clef:'bass', keys: ["e/3"], duration: "q", stem_direction: -1},
+       { clef:'bass', keys: ["c/3"], duration: "q"}
+      ];
+       var notesBarb2 = note_b2.map(createNote);
+         notesBarb2[0].addDotToAll();
+         notesBarb2[1].addDotToAll();
+       Vex.Flow.Formatter.FormatAndDraw(ctx, staveBarb2, notesBarb2);
+         }
+      }//if
+
+     if (divname == "vexflow4"){
+         if (hand == "both" || hand=="right"){
+      var note_t3 = [
+     { keys: ["g/4"], duration: "q"},
+     { keys: ["f/4"], duration: "8"},
+       { keys: ["e/4"], duration: "q"},
+     { keys: ["d/4"], duration: "8"}
+      ];
+      var notesBart3 = note_t3.map(createNote);
+      Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart1, notesBart3);
+       
+ 
+   var note_t4 = [
+     { keys: ["c/4"], duration: "h"}
+      ];
+      var notesBart4 = note_t4.map(createNote);
+        notesBart4[0].addDotToAll();     
+       Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart2, notesBart4);
+         }
+       
+         if (hand == "both" || hand=="left"){
+     var note_b3 = [
+     { clef:'bass', keys: ["f/2"], duration: "q"},
+     { clef:'bass', keys: ["g/2"], duration: "q"}
+      ];
+      var notesBarb3 = note_b3.map(createNote);
+             notesBarb3[0].addDotToAll();
+             notesBarb3[1].addDotToAll();
+      Vex.Flow.Formatter.FormatAndDraw(ctx, staveBarb1, notesBarb3);
+    
+             var note_b4 = [
+     { clef:'bass', keys: ["c/3"], duration: "h"}
+      ];
+      var notesBarb4 = note_b4.map(createNote);
+       notesBarb4[0].addDotToAll();
+       Vex.Flow.Formatter.FormatAndDraw(ctx, staveBarb2, notesBarb4);
+    
+         }
+       }//if
+     }
+
+
+function hideScore(){
+
+
+       createRow("vexflow1");
+       createRow("vexflow2");
+       createRow("vexflow3");
+       createRow("vexflow4");
+
+}
+       
+     </script>
+   </body>
+</html>
