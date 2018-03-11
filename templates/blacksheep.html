@@ -196,7 +196,7 @@
            </div>
            <div id="print" class="col-xs-12 col-sm-2">
            <p style="padding:0px;"></p>
-              <a id="reserve-link" type="button" class="btn btn-block btn-info" href="{{ url_for('fivelittleprint') }}"target="_blank" > Print </a>
+              <a id="reserve-link" type="button" class="btn btn-block btn-info" href="{{ url_for('blacksheepprint') }}"target="_blank" > Print </a>
            </div>
            
            <div id="home" class="col-xs-12 col-sm-2">
@@ -229,97 +229,77 @@
          var l = 3.0;
          //intrument piano 0, organ 1, acoustic 2
          var i = 0;
-         Synth.setVolume(0.6);
+         Synth.setVolume(1.0);
          var k = 0;
 
          if (part == 0 || part == 1){
         
-        setTimeout(function() { Synth.play(i, 'G', 3, 1*f*l)} , 1000*f);
+        setTimeout(function() { Synth.play(i, 'D', 3, 2*f*l)} , 1000*f);
        
-        setTimeout(function() { Synth.play(i, 'C', 4, 1*f*l)} , 2000*f); 
+        setTimeout(function() { Synth.play(i, 'F#', 3, 2*f*l)} , 3000*f); 
         
         
-        setTimeout(function() { Synth.play(i, 'B', 3, 1*f*l)} , 3000*f);
+        setTimeout(function() { Synth.play(i, 'G', 3, 2*f*l)} , 5000*f);
         
-        setTimeout(function() { Synth.play(i, 'G', 3, 1*f*l)} , 4000*f);
-
-  
-     
-     setTimeout(function() { Synth.play(i, 'F#', 3, 1*f*l)} , 5000*f);
-     
-   
-     setTimeout(function() { Synth.play(i, 'B', 3, 1*f*l)} , 6000*f);
-     
-     setTimeout(function() { Synth.play(i, 'E', 4, 1*f*l)} , 7000*f);
-     setTimeout(function() { Synth.play(i, 'D', 4, 1*f*l)} , 8000*f);     
+        setTimeout(function() { Synth.play(i, 'F#', 3, 2*f*l)} , 7000*f);    
   }
    
  if (part == 0 || part == 2){
        if (part == 0) k = 8000;
        
-     setTimeout(function() { Synth.play(i, 'C', 4, 1*f*l)} , (k+1000)*f);  //9000
-     //setTimeout(function() { Synth.play(i, 'A', 4, 0.5*f*l)} ,(k+2000)*f); //10000
-     setTimeout(function() { Synth.play(i, 'A', 3, 1*f*l)} , (k+2000)*f); //10000
-     //setTimeout(function() { Synth.play(i, 'A', 4, 0.5*f*l)} , (k+2500)*f); //10500
-     //setTimeout(function() { Synth.play(i, 'A', 4, 1*f*l)} , (k+3000)*f); //11000
-     setTimeout(function() { Synth.play(i, 'C#', 4, 1*f*l)} , (k+3000)*f); //11000
-     //setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} , (k+4000)*f); //12000
-     setTimeout(function() { Synth.play(i, 'A', 3, 1*f*l)} , (k+4000)*f); //12000
+     setTimeout(function() { Synth.play(i, 'A', 2, 1*f*l)} , (k+1000)*f);  //9000
+     
+     setTimeout(function() { Synth.play(i, 'A', 2, 1*f*l)} , (k+2000)*f); //10000
+     
+     setTimeout(function() { Synth.play(i, 'D', 3, 1*f*l)} , (k+3000)*f); //11000
+     
+     setTimeout(function() { Synth.play(i, 'D', 3, 1*f*l)} , (k+4000)*f); //12000
         
-
-
-      
-     //setTimeout(function() { Synth.play(i, 'F#', 4, 1*f*l)} , (k+5000)*f); //13000
-     setTimeout(function() { Synth.play(i, 'D', 4, 1*f*l)} , (k+5000)*f);  //13000
-     //setTimeout(function() { Synth.play(i, 'E', 4, 1*f*l)} , (k+6000)*f);  //14000
-     setTimeout(function() { Synth.play(i, 'A', 3, 1*f*l)} , (k+6000)*f);  //14000
-     //setTimeout(function() { Synth.play(i, 'D', 4, 1*f*l)} , (k+7000)*f);  //15000
-     setTimeout(function() { Synth.play(i, 'D', 4, 1*f*l)} , (k+7000)*f);  //15000
-     //setTimeout(function() { Synth.play(i, 'D', 4, 1*f*l)} , (k+8000)*f);   //16000
-     setTimeout(function() { Synth.play(i, 'F#', 3, 1*f*l)} , (k+8000)*f);  //16000
+     setTimeout(function() { Synth.play(i, 'E', 3, 1*f*l)} , (k+5000)*f);  //13000
+     
+     setTimeout(function() { Synth.play(i, 'A', 2, 1*f*l)} , (k+6000)*f);  //14000
+     
+     setTimeout(function() { Synth.play(i, 'D', 3, 2*f*l)} , (k+7000)*f);  //15000
+    
         
      }
 
      if (part == 0 || part == 3){
        if (part == 0) k = 16000;
-         //setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} ,(k+1000)*f);//17000
-     setTimeout(function() { Synth.play(i, 'G', 3, 1*f*l)} , (k+1000)*f);//17000
-     //setTimeout(function() { Synth.play(i, 'G', 4, 0.5*f*l)} , (k+2000)*f);//18000
-     setTimeout(function() { Synth.play(i, 'C', 4, 1*f*l)} , (k+2000)*f);//18000
-     //setTimeout(function() { Synth.play(i, 'G', 4, 0.5*f*l)} , (k+2500)*f);//18500
-     //setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} , (k+3000)*f);//19000
-     setTimeout(function() { Synth.play(i, 'B', 3, 1*f*l)} , (k+3000)*f);//19000
-     //setTimeout(function() { Synth.play(i, 'B', 4, 1*f*l)} , (k+4000)*f);//20000
-     setTimeout(function() { Synth.play(i, 'G', 3, 1*f*l)} , (k+4000)*f);//20000
+         
+     setTimeout(function() { Synth.play(i, 'D', 3, 2*f*l)} , (k+1000)*f);//17000
+     
+     //setTimeout(function() { Synth.play(i, 'C', 4, 1*f*l)} , (k+2000)*f);//18000
+     
+     setTimeout(function() { Synth.play(i, 'E', 3, 1*f*l)} , (k+3000)*f);//19000
+     
+     setTimeout(function() { Synth.play(i, 'A', 2, 1*f*l)} , (k+4000)*f);//20000
 
-     //setTimeout(function() { Synth.play(i, 'D', 5, 1*f*l)} , (k+5000)*f);//21000
-     setTimeout(function() { Synth.play(i, 'F#', 3, 1*f*l)} , (k+5000)*f);//21000
-     //setTimeout(function() { Synth.play(i, 'B', 4, 1*f*l)} , (k+6000)*f);//22000
-     setTimeout(function() { Synth.play(i, 'B', 3, 1*f*l)} , (k+6000)*f);//22000
-     //setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} , (k+7000)*f);//23000
-     setTimeout(function() { Synth.play(i, 'E', 4, 1*f*l)} , (k+7000)*f);//23000
-     //setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} , (k+8000)*f);//24000
-     setTimeout(function() { Synth.play(i, 'D', 4, 1*f*l)} , (k+8000)*f);//24000   
+     setTimeout(function() { Synth.play(i, 'D', 3, 2*f*l)} , (k+5000)*f);//21000
+     
+     //setTimeout(function() { Synth.play(i, 'B', 3, 1*f*l)} , (k+6000)*f);//22000
+     
+     setTimeout(function() { Synth.play(i, 'A', 2, 2*f*l)} , (k+7000)*f);//23000
+     
+     //setTimeout(function() { Synth.play(i, 'D', 4, 1*f*l)} , (k+8000)*f);//24000   
          }
 
    if (part == 0 || part == 4){
        if (part == 0) k = 24000;
-          //setTimeout(function() { Synth.play(i, 'A', 4, 1*f*l)} , (k+1000)*f);//25000
-          setTimeout(function() { Synth.play(i, 'C', 4, 1*f*l)} , (k+1000)*f);//25000
-          //setTimeout(function() { Synth.play(i, 'A', 4, 1*f*l)} , (k+2000)*f);//26000
-          setTimeout(function() { Synth.play(i, 'A', 3, 1*f*l)} , (k+2000)*f);//26000
-          //setTimeout(function() { Synth.play(i, 'D', 4, 1*f*l)} , (k+3000)*f);//27000
-          setTimeout(function() { Synth.play(i, 'F#', 3, 1*f*l)} , (k+3000)*f); //27000
-          //setTimeout(function() { Synth.play(i, 'E', 4, 0.5*f*l)} , (k+4000)*f);//28000
-          setTimeout(function() { Synth.play(i, 'D', 3, 1*f*l)} , (k+4000)*f);//28000
-          //setTimeout(function() { Synth.play(i, 'F#', 4, 0.5*f*l)} , (k+4500)*f);//28500
- 
-          //setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} , (k+5000)*f);//29000
-          setTimeout(function() { Synth.play(i, 'G', 3, 1*f*l)} , (k+5000)*f);//29000
-          //setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} , (k+6000)*f);//30000
-          setTimeout(function() { Synth.play(i, 'C', 4, 1*f*l)} , (k+6000)*f);//30000
-          //setTimeout(function() { Synth.play(i, 'G', 4, 2*f*l)} , (k+7000)*f);//31000
-          setTimeout(function() { Synth.play(i, 'G', 3, 2*f*l)} , (k+7000)*f);//31000
+          
+          setTimeout(function() { Synth.play(i, 'D', 3, 1*f*l)} , (k+1000)*f);//25000
+          
+          setTimeout(function() { Synth.play(i, 'C', 3, 1*f*l)} , (k+2000)*f);//26000
+          
+          setTimeout(function() { Synth.play(i, 'B', 2, 1*f*l)} , (k+3000)*f); //27000
+          
+          setTimeout(function() { Synth.play(i, 'G', 2, 1*f*l)} , (k+4000)*f);//28000
+          
+          setTimeout(function() { Synth.play(i, 'A', 2, 1*f*l)} , (k+5000)*f);//29000
+        
+          setTimeout(function() { Synth.play(i, 'A', 2, 1*f*l)} , (k+6000)*f);//30000
+        
+          setTimeout(function() { Synth.play(i, 'D', 3, 2*f*l)} , (k+7000)*f);//31000
          }
        }
  
@@ -333,66 +313,63 @@
          Synth.setVolume(0.6);
          var k = 0;
       if (part == 0 || part == 1){
-        setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} , 1000*f);
-
-        setTimeout(function() { Synth.play(i, 'G', 4, 0.5*f*l)} , 2000*f);
+        setTimeout(function() { Synth.play(i, 'D', 4, 1*f*l)} , 1000*f);
         
-        setTimeout(function() { Synth.play(i, 'G', 4, 0.5*f*l)} , 2500*f);
-        setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} , 3000*f);
+        setTimeout(function() { Synth.play(i, 'D', 4, 1*f*l)} , 2000*f);
         
-        setTimeout(function() { Synth.play(i, 'B', 4, 1*f*l)} , 4000*f);
+        setTimeout(function() { Synth.play(i, 'A', 4, 1*f*l)} , 3000*f);
+        setTimeout(function() { Synth.play(i, 'A', 4, 1*f*l)} , 4000*f);
+    
+        setTimeout(function() { Synth.play(i, 'B', 4, 0.5*f*l)} , 5000*f);
 
   
-     setTimeout(function() { Synth.play(i, 'D', 5, 0.5*f*l)} , 5000*f); 
+     setTimeout(function() { Synth.play(i, 'C#', 5, 0.5*f*l)} , 5500*f); 
      
-     setTimeout(function() { Synth.play(i, 'D', 5, 0.5*f*l)} , 5500*f);
-     setTimeout(function() { Synth.play(i, 'B', 4, 1*f*l)} , 6000*f);
+     setTimeout(function() { Synth.play(i, 'D', 5, 0.5*f*l)} , 6000*f);
+     setTimeout(function() { Synth.play(i, 'B', 4, 0.5*f*l)} , 6500*f);
      
-     setTimeout(function() { Synth.play(i, 'G', 4, 2*f*l)} , 7000*f);
-       
+     setTimeout(function() { Synth.play(i, 'A', 4, 2*f*l)} , 7000*f);
+      
   }
    
      if (part == 0 || part == 2){
        if (part == 0) k = 8000;
-       setTimeout(function() { Synth.play(i, 'A', 4, 1*f*l)} , (k+1000)*f); //9000
-     
-     setTimeout(function() { Synth.play(i, 'A', 4, 0.5*f*l)} ,(k+2000)*f); //10000
-     
-     setTimeout(function() { Synth.play(i, 'A', 4, 0.5*f*l)} , (k+2500)*f); //10500
-     setTimeout(function() { Synth.play(i, 'A', 4, 1*f*l)} , (k+3000)*f); //11000
-     
-     setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} , (k+4000)*f); //12000
-     
-     setTimeout(function() { Synth.play(i, 'F#', 4, 1*f*l)} , (k+5000)*f); //13000
+       setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} , (k+1000)*f); //9000
     
+     setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} ,(k+2000)*f); //10000
+     
+     setTimeout(function() { Synth.play(i, 'F#', 4, 1*f*l)} , (k+3000)*f); //11000
+     
+     setTimeout(function() { Synth.play(i, 'F#', 4, 1*f*l)} , (k+4000)*f); //12000
+    
+     setTimeout(function() { Synth.play(i, 'E', 4, 1*f*l)} , (k+5000)*f); //13000
+     
      setTimeout(function() { Synth.play(i, 'E', 4, 1*f*l)} , (k+6000)*f);  //14000
      
-     setTimeout(function() { Synth.play(i, 'D', 4, 1*f*l)} , (k+7000)*f);  //15000
-     
-     setTimeout(function() { Synth.play(i, 'D', 4, 1*f*l)} , (k+8000)*f);   //16000
+     setTimeout(function() { Synth.play(i, 'D', 4, 2*f*l)} , (k+7000)*f);  //15000
      
         
      }
 
     if (part == 0 || part == 3){
        if (part == 0) k = 16000;
-         setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} ,(k+1000)*f);//17000
+         setTimeout(function() { Synth.play(i, 'A', 4, 1*f*l)} ,(k+1000)*f);//17000
     
-     setTimeout(function() { Synth.play(i, 'G', 4, 0.5*f*l)} , (k+2000)*f);//18000
+     setTimeout(function() { Synth.play(i, 'A', 4, 0.5*f*l)} , (k+2000)*f);//18000
     
-     setTimeout(function() { Synth.play(i, 'G', 4, 0.5*f*l)} , (k+2500)*f);//18500
+     setTimeout(function() { Synth.play(i, 'A', 4, 0.5*f*l)} , (k+2500)*f);//18500
      setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} , (k+3000)*f);//19000
      
-     setTimeout(function() { Synth.play(i, 'B', 4, 1*f*l)} , (k+4000)*f);//20000
+     setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} , (k+4000)*f);//20000
     
 
-     setTimeout(function() { Synth.play(i, 'D', 5, 1*f*l)} , (k+5000)*f);//21000
+     setTimeout(function() { Synth.play(i, 'F#', 4, 1*f*l)} , (k+5000)*f);//21000
      
-     setTimeout(function() { Synth.play(i, 'B', 4, 1*f*l)} , (k+6000)*f);//22000
-   
-     setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} , (k+7000)*f);//23000
+     setTimeout(function() { Synth.play(i, 'F#', 4, 0.5*f*l)} , (k+6000)*f);//22000
+
+     setTimeout(function() { Synth.play(i, 'F#', 4, 0.5*f*l)} , (k+6500)*f);//22500
     
-     setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} , (k+8000)*f);//24000
+     setTimeout(function() { Synth.play(i, 'E', 4, 2*f*l)} , (k+7000)*f);//23000
      
        }
 
@@ -400,19 +377,23 @@
        if (part == 0) k = 24000;
           setTimeout(function() { Synth.play(i, 'A', 4, 1*f*l)} , (k+1000)*f);//25000
          
-          setTimeout(function() { Synth.play(i, 'A', 4, 1*f*l)} , (k+2000)*f);//26000
+          setTimeout(function() { Synth.play(i, 'A', 4, 0.5*f*l)} , (k+2000)*f);//26000
           
-          setTimeout(function() { Synth.play(i, 'D', 4, 1*f*l)} , (k+3000)*f);//27000
-          
-          setTimeout(function() { Synth.play(i, 'E', 4, 0.5*f*l)} , (k+4000)*f);//28000
-        
-          setTimeout(function() { Synth.play(i, 'F#', 4, 0.5*f*l)} , (k+4500)*f);//28500
- 
-          setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} , (k+5000)*f);//29000
-          
-          setTimeout(function() { Synth.play(i, 'G', 4, 1*f*l)} , (k+6000)*f);//30000
+          setTimeout(function() { Synth.play(i, 'A', 4, 0.5*f*l)} , (k+2500)*f);//26500
          
-          setTimeout(function() { Synth.play(i, 'G', 4, 2*f*l)} , (k+7000)*f);//31000
+          setTimeout(function() { Synth.play(i, 'G', 4, 0.5*f*l)} , (k+3000)*f);//27000
+         setTimeout(function() { Synth.play(i, 'A', 4, 0.5*f*l)} , (k+3500)*f);//27500
+          
+          setTimeout(function() { Synth.play(i, 'B', 4, 0.5*f*l)} , (k+4000)*f);//28000
+        
+          setTimeout(function() { Synth.play(i, 'G', 4, 0.5*f*l)} , (k+4500)*f);//28500
+ 
+          setTimeout(function() { Synth.play(i, 'F#', 4, 1*f*l)} , (k+5000)*f);//29000
+          
+          setTimeout(function() { Synth.play(i, 'E', 4, 0.5*f*l)} , (k+6000)*f);//30000
+         
+          setTimeout(function() { Synth.play(i, 'E', 4, 0.5*f*l)} , (k+6500)*f);//30500
+         setTimeout(function() { Synth.play(i, 'D', 4, 2*f*l)} , (k+7000)*f);//31000
           
        }
     }
@@ -454,11 +435,11 @@
             var ctx = renderer.getContext();
             // bar 1 treble
             var staveBart1 = new VF.Stave(xx, yy, le);
-            staveBart1.addClef("treble").addKeySignature('G').addTimeSignature('4/4').setContext(ctx).draw();
+            staveBart1.addClef("treble").addKeySignature('D').addTimeSignature('4/4').setContext(ctx).draw();
             var staveBart2 = new VF.Stave(staveBart1.width + staveBart1.x, staveBart1.y, le);
             staveBart2.setContext(ctx).draw();
             var staveBarb1 = new VF.Stave(xx, hi, le);
-            staveBarb1.addClef("bass").addKeySignature('G').addTimeSignature('4/4').setContext(ctx).draw();
+            staveBarb1.addClef("bass").addKeySignature('D').addTimeSignature('4/4').setContext(ctx).draw();
             var staveBarb2 = new VF.Stave(staveBarb1.width + staveBarb1.x, staveBarb1.y, le);
             staveBarb2.setContext(ctx).draw();   
             //right 0
@@ -482,11 +463,11 @@
             renderer.resize(r1, r2);
             var ctx = renderer.getContext();
             var staveBart1 = new VF.Stave(xx, yy, le);
-            staveBart1.addClef("treble").addKeySignature('G').addTimeSignature('4/4').setContext(ctx).draw();
+            staveBart1.addClef("treble").addKeySignature('D').addTimeSignature('4/4').setContext(ctx).draw();
             var staveBart2 = new VF.Stave(staveBart1.width + staveBart1.x, staveBart1.y, le);
             staveBart2.setContext(ctx).draw();
             var staveBarb1 = new VF.Stave(xx, hi, le);
-            staveBarb1.addClef("bass").addKeySignature('G').addTimeSignature('4/4').setContext(ctx).draw();
+            staveBarb1.addClef("bass").addKeySignature('D').addTimeSignature('4/4').setContext(ctx).draw();
             var staveBarb2 = new VF.Stave(staveBarb1.width + staveBarb1.x, staveBarb1.y, le);
             staveBarb2.setContext(ctx).draw();   
             //right 0
@@ -505,50 +486,51 @@
        if (divname == "vexflow1"){
          if (hand == "both" || hand=="right"){
             var note_t1 = [
-     { keys: ["g/4"], duration: "q"},
-     { keys: ["g/4"], duration: "8"},
-     { keys: ["g/4"], duration: "8"},
-     { keys: ["g/4"], duration: "q"},
-     { keys: ["b/4"], duration: "q"}
+     { keys: ["d/4"], duration: "q"},
+     { keys: ["d/4"], duration: "q"},
+     { keys: ["a/4"], duration: "q"},
+     { keys: ["a/4"], duration: "q"}
       ];
        
       var notesBart1 = note_t1.map(createNote);
        
        var groupt1 = notesBart1.slice(1, 3);
-       var beamt1 = new Vex.Flow.Beam(groupt1);
-       var notesBart1 = notesBart1.slice(0,1).concat(groupt1).concat(notesBart1.slice(3,4)).concat(notesBart1.slice(4,5));
+       //var beamt1 = new Vex.Flow.Beam(groupt1);
+       //var notesBart1 = notesBart1.slice(0,1).concat(groupt1).concat(notesBart1.slice(3,4)).concat(notesBart1.slice(4,5));
        Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart1, notesBart1);
-       beamt1.setContext(ctx).draw();
-       var note_t2 = [
+       //beamt1.setContext(ctx).draw();
+       
+            var note_t2 = [
+     { keys: ["b/4"], duration: "8", stem_direction: -1},
+     { keys: ["c/5"], duration: "8", stem_direction: -1},
      { keys: ["d/5"], duration: "8", stem_direction: -1},
-     { keys: ["d/5"], duration: "8", stem_direction: -1},
-     { keys: ["b/4"], duration: "q"},
-     { keys: ["g/4"], duration: "h"}
+     { keys: ["b/4"], duration: "8", stem_direction: -1},
+     { keys: ["a/4"], duration: "h"}
       ];
       var notesBart2 = note_t2.map(createNote);
        
-       var group = notesBart2.slice(0, 2);
-       var beamt = new Vex.Flow.Beam(group);
-       var notesBart2 = group.concat(notesBart2.slice(2,3)).concat(notesBart2.slice(3,4));
+       var group1 = notesBart2.slice(0, 2);
+       var beamt1 = new Vex.Flow.Beam(group1);
+       var group2 = notesBart2.slice(2, 4);
+       var beamt2 = new Vex.Flow.Beam(group2);
+       var notesBart2 = group1.concat(group2).concat(notesBart2.slice(4,5));
        Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart2, notesBart2);
-       beamt.setContext(ctx).draw(); 
+       beamt1.setContext(ctx).draw();
+       beamt2.setContext(ctx).draw();
 
         }
        if (hand == "both" || hand == "left"){
            var note_b1 = [
-     { clef:'bass', keys: ["g/2"], duration: "q"},
-     { clef:"bass", keys: ["c/3"], duration: "q"},
-     { clef:"bass", keys: ["b/2"], duration: "q"},
-     { clef:"bass", keys: ["g/2"], duration: "q"}
+     { clef:'bass', keys: ["d/3"], duration: "h", stem_direction: -1},
+     { clef:"bass", keys: ["f/3"], duration: "h", stem_direction: -1}
       ];
       var notesBarb1 = note_b1.map(createNote);
 
        Vex.Flow.Formatter.FormatAndDraw(ctx, staveBarb1, notesBarb1);
+           
       var note_b2 = [
-       { clef:'bass', keys: ["f/2"], duration: "q", stem_direction: 1},
-       { clef:'bass', keys: ["b/2"], duration: "q", stem_direction: 1},
-       { clef:'bass', keys: ["e/3"], duration: "q", stem_direction: -1},
-       { clef:'bass', keys: ["d/3"], duration: "q", stem_direction: -1}
+       { clef:'bass', keys: ["g/3"], duration: "h", stem_direction: -1},
+       { clef:'bass', keys: ["f/3"], duration: "h", stem_direction: -1}
       ];
        var notesBarb2 = note_b2.map(createNote);
        Vex.Flow.Formatter.FormatAndDraw(ctx, staveBarb2, notesBarb2);
@@ -560,25 +542,20 @@
          if (hand == "both" || hand=="right"){
          
        var note_t3 = [
-     { keys: ["a/4"], duration: "q"},
-     { keys: ["a/4"], duration: "8"},
-     { keys: ["a/4"], duration: "8"},
-     { keys: ["a/4"], duration: "q"},
-     { keys: ["g/4"], duration: "q"}
+     { keys: ["g/4"], duration: "q"},
+     { keys: ["g/4"], duration: "q"},
+     { keys: ["f/4"], duration: "q"},
+     { keys: ["f/4"], duration: "q"}
       ];
       var notesBart3 = note_t3.map(createNote);
        
-       var groupt1 = notesBart3.slice(1, 3);
-       var beamt1 = new Vex.Flow.Beam(groupt1);
-       var notesBart3 = notesBart3.slice(0,1).concat(groupt1).concat(notesBart3.slice(3,4)).concat(notesBart3.slice(4,5));
        Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart1, notesBart3);
-       beamt1.setContext(ctx).draw();
+       
 
    var note_t4 = [
-     { keys: ["f/4"], duration: "q"},
      { keys: ["e/4"], duration: "q"},
-     { keys: ["d/4"], duration: "q"},
-     { keys: ["d/4"], duration: "q"}
+     { keys: ["e/4"], duration: "q"},
+     { keys: ["d/4"], duration: "h"}
       ];
       var notesBart4 = note_t4.map(createNote);
        
@@ -587,20 +564,18 @@
          }
          if (hand == "both" || hand=="left"){
     var note_b3 = [
-     { clef:'bass', keys: ["c/3"], duration: "q"},
+     { clef:'bass', keys: ["a/2"], duration: "q"},
      { clef:"bass", keys: ["a/2"], duration: "q"},
-     { clef:"bass", keys: ["c/3"], duration: "q"},
-     { clef:"bass", keys: ["a/2"], duration: "q"}
+     { clef:"bass", keys: ["d/3"], duration: "q"},
+     { clef:"bass", keys: ["d/3"], duration: "q"}
       ];
       var notesBarb3 = note_b3.map(createNote);
-      notesBarb3[2].addAccidental(0, new VF.Accidental("#"));
        Vex.Flow.Formatter.FormatAndDraw(ctx, staveBarb1, notesBarb3);
 
     var note_b4 = [
-     { clef:'bass', keys: ["d/3"], duration: "q"},
+     { clef:'bass', keys: ["e/3"], duration: "q"},
      { clef:"bass", keys: ["a/2"], duration: "q"},
-     { clef:"bass", keys: ["d/3"], duration: "q"},
-     { clef:"bass", keys: ["d/2"], duration: "q"}
+     { clef:"bass", keys: ["d/3"], duration: "h"}
       ];
       var notesBarb4 = note_b4.map(createNote);
 
@@ -612,11 +587,11 @@
          if (hand == "both" || hand=="right"){
 
 var note_t1 = [
+     { keys: ["a/4"], duration: "q"},
+     { keys: ["a/4"], duration: "8"},
+     { keys: ["a/4"], duration: "8"},
      { keys: ["g/4"], duration: "q"},
-     { keys: ["g/4"], duration: "8"},
-     { keys: ["g/4"], duration: "8"},
-     { keys: ["g/4"], duration: "q"},
-     { keys: ["b/4"], duration: "q"}
+     { keys: ["g/4"], duration: "q"}
       ];
       var notesBart1 = note_t1.map(createNote);
        
@@ -626,32 +601,33 @@ var note_t1 = [
        Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart1, notesBart1);
        beamt1.setContext(ctx).draw();
 var note_t2 = [
-     { keys: ["d/5"], duration: "q", stem_direction: -1},
-     { keys: ["b/4"], duration: "q", stem_direction: 1},
-     { keys: ["g/4"], duration: "q"},
-     { keys: ["g/4"], duration: "q"}
+     { keys: ["f/4"], duration: "q"},
+     { keys: ["f/4"], duration: "8"},
+     { keys: ["f/4"], duration: "8"},
+     { keys: ["e/4"], duration: "h"}
       ];
       var notesBart2 = note_t2.map(createNote);
-       
-     
-       Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart2, notesBart2);
+       var groupt2 = notesBart2.slice(1, 3);
+       var beamt2 = new Vex.Flow.Beam(groupt2);
+       var notesBart2 = notesBart2.slice(0,1).concat(groupt2).concat(notesBart2.slice(3,4));
+     Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart2, notesBart2);
+              beamt2.setContext(ctx).draw();
          }
+           
+           
          if (hand == "both" || hand=="left"){
 var note_b1 = [
-     { clef:'bass', keys: ["g/2"], duration: "q"},
-     { clef:"bass", keys: ["c/3"], duration: "q"},
-     { clef:"bass", keys: ["b/2"], duration: "q"},
-     { clef:"bass", keys: ["g/2"], duration: "q"}
+     { clef:'bass', keys: ["d/3"], duration: "h", stem_direction: -1},
+     { clef:"bass", keys: ["e/3"], duration: "q", stem_direction: -1},
+     { clef:"bass", keys: ["a/2"], duration: "q"}
       ];
       var notesBarb1 = note_b1.map(createNote);
 
        Vex.Flow.Formatter.FormatAndDraw(ctx, staveBarb1, notesBarb1);
 
 var note_b2 = [
-       { clef:'bass', keys: ["f/2"], duration: "q", stem_direction: 1},
-       { clef:'bass', keys: ["b/2"], duration: "q", stem_direction: 1},
-       { clef:'bass', keys: ["e/3"], duration: "q", stem_direction: -1},
-       { clef:'bass', keys: ["d/3"], duration: "q", stem_direction: -1}
+       { clef:'bass', keys: ["d/3"], duration: "h", stem_direction: -1},
+       { clef:'bass', keys: ["a/2"], duration: "h", stem_direction: 1}
       ];
        var notesBarb2 = note_b2.map(createNote);
        Vex.Flow.Formatter.FormatAndDraw(ctx, staveBarb2, notesBarb2);
@@ -662,43 +638,57 @@ var note_b2 = [
          if (hand == "both" || hand=="right"){
       var note_t3 = [
      { keys: ["a/4"], duration: "q"},
-     { keys: ["a/4"], duration: "q"},
-     { keys: ["d/4"], duration: "q"},
-     { keys: ["e/4"], duration: "8"},
-     { keys: ["f/4"], duration: "8"}
+     { keys: ["a/4"], duration: "8"},
+     { keys: ["a/4"], duration: "8"},
+     { keys: ["g/4"], duration: "8"},
+     { keys: ["a/4"], duration: "8"},
+     { keys: ["b/4"], duration: "8"},
+     { keys: ["g/4"], duration: "8"}
       ];
       var notesBart3 = note_t3.map(createNote);
        
-       var groupt1 = notesBart3.slice(3, 5);
+       var groupt1 = notesBart3.slice(1, 3);
+       var groupt2 = notesBart3.slice(3, 5);
+       var groupt3 = notesBart3.slice(5, 7);
        var beamt1 = new Vex.Flow.Beam(groupt1);
-       var notesBart3 = notesBart3.slice(0,1).concat(notesBart3.slice(1,2)).concat(notesBart3.slice(2,3)).concat(groupt1);
+       var beamt2 = new Vex.Flow.Beam(groupt2);
+       var beamt3 = new Vex.Flow.Beam(groupt3);
+       var notesBart3 = notesBart3.slice(0,1).concat(groupt1).concat(groupt2).concat(groupt3);
        Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart1, notesBart3);
        beamt1.setContext(ctx).draw();
+       beamt2.setContext(ctx).draw(); 
+       beamt3.setContext(ctx).draw();     
  
    var note_t4 = [
-     { keys: ["g/4"], duration: "q"},
-     { keys: ["g/4"], duration: "q"},
-     { keys: ["g/4"], duration: "h"}
+     { keys: ["f/4"], duration: "q"},
+     { keys: ["e/4"], duration: "8"},
+     { keys: ["e/4"], duration: "8"},
+     { keys: ["d/4"], duration: "h"}
       ];
       var notesBart4 = note_t4.map(createNote);
-       
+       var group = notesBart4.slice(1,3);
+       var beam = new Vex.Flow.Beam(group);
+       var notesBart4 = notesBart4.slice(0,1).concat(group).concat(notesBart4.slice(3,4))
        Vex.Flow.Formatter.FormatAndDraw(ctx, staveBart2, notesBart4);
+      beam.setContext(ctx).draw();
+             
          }
         if (hand == "both" || hand=="left"){
      var note_b3 = [
-     { clef:'bass', keys: ["c/3"], duration: "q"},
-     { clef:"bass", keys: ["a/2"], duration: "q"},
-     { clef:"bass", keys: ["f/2"], duration: "q"},
-     { clef:"bass", keys: ["d/2"], duration: "q"}
+     { clef:'bass', keys: ["d/3"], duration: "q", stem_direction: -1},
+     { clef:"bass", keys: ["c/3"], duration: "q"},
+     { clef:"bass", keys: ["b/2"], duration: "q"},
+     { clef:"bass", keys: ["g/2"], duration: "q"}
       ];
       var notesBarb3 = note_b3.map(createNote);
        //correct, but not necessary
-      //notesBarb3[2].addAccidental(0, new VF.Accidental("#"));
+       notesBarb3[1].addAccidental(0, new VF.Accidental("n"));
        Vex.Flow.Formatter.FormatAndDraw(ctx, staveBarb1, notesBarb3);
+            
     var note_b4 = [
-     { clef:'bass', keys: ["g/2"], duration: "q"},
-     { clef:"bass", keys: ["c/3"], duration: "q"},
-     { clef:"bass", keys: ["g/2"], duration: "h"}
+     { clef:'bass', keys: ["a/2"], duration: "q"},
+     { clef:"bass", keys: ["a/2"], duration: "q"},
+     { clef:"bass", keys: ["d/3"], duration: "h"}
       ];
       var notesBarb4 = note_b4.map(createNote);
 

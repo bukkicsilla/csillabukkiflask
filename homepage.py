@@ -141,6 +141,15 @@ def rowyourboat():
 def rowyourboatprint():
    return render_template('printrowyourboat.html')
 
+@app.route('/piano/blacksheep')
+def blacksheep():
+   return render_template('blacksheep.html')
+
+@app.route('/piano/blacksheep/print')
+def blacksheepprint():
+   return render_template('printblacksheep.html')
+
+
 @app.route('/confusion')
 def confusion():
    return render_template('confusion.html')
