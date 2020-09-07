@@ -7,23 +7,23 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <title></title>
 
     <!-- Bootstrap -->
-    
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    
+
 </head>
 
 <body>
-       
-    
+
+
 <header class="navbar navbar-inverse" role="navigation>
       <div class="container">
-        
+
              <div class="navbar-header">
 
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -43,25 +43,25 @@
                 </div>
           <div id="navbar" class="navbar-collapse collapse">
            <ul class="menu nav navbar-nav">
-              <li><a href="{{ url_for('classical') }}">Classical</a></li>
-              <li><a href="{{ url_for('study') }}">Study</a></li> 
+              <li><a href="{{ url_for('classical') }}">Certificates</a></li>
+              <li><a href="{{ url_for('study') }}">Study</a></li>
               <li><a href="{{ url_for('interest') }}">Interest</a></li>
                <li><a href="{{ url_for('launch') }}">Launch</a></li>
                <li><a href="{{ url_for('labor') }}">Labor</a></li>
               <li><a href="{{ url_for('about') }}">About</a></li>
-              
+
            </ul>
        </div>
       </div>
     </header>
-   
-  
+
+
 <div class="container">
       {% block content %}
       {% endblock %}
     </div>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-   
+
 </body>
 </html>
