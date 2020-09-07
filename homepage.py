@@ -8,6 +8,18 @@ def classical():
     return render_template('home.html')
     #return render_template('mfps.html')
 
+@app.route('/recordmedicalstatistics')
+def recordmedstat():
+   return render_template('recordmedstat.html')
+
+@app.route('/certificatemedicalstatistics')
+def certificatemedstat():
+   return render_template('certificatemedstat.html')
+
+@app.route('/transcriptstatistics')
+def transcript():
+   return render_template('transcript.html')
+
 @app.route('/labor')
 def labor():
    return render_template('deeplook.html')
