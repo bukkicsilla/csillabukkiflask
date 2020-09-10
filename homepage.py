@@ -32,6 +32,14 @@ def finalexam():
 def diploma():
    return render_template('diploma.html')
 
+@app.route('/germanmedicaldegree')
+def medgermany():
+   return render_template('medgermany.html')
+
+@app.route('/hungarianmedicaldegree')
+def medhungary():
+   return render_template('medhungary.html')
+
 @app.route('/labor')
 def labor():
    return render_template('deeplook.html')
