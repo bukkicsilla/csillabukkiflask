@@ -20,6 +20,18 @@ def certificatemedstat():
 def transcript():
    return render_template('transcript.html')
 
+@app.route('/intermediateexamination')
+def interexam():
+   return render_template('interexam.html')
+
+@app.route('/finalexamination')
+def finalexam():
+   return render_template('finalexam.html')
+
+@app.route('/diploma')
+def diploma():
+   return render_template('diploma.html')
+
 @app.route('/labor')
 def labor():
    return render_template('deeplook.html')
