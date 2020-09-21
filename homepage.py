@@ -40,6 +40,22 @@ def medgermany():
 def medhungary():
    return render_template('medhungary.html')
 
+@app.route('/medstat1unit1')
+def ms1u1():
+   return render_template('MS1U1.html')
+
+@app.route('/medstat1unit2')
+def ms1u2():
+   return render_template('MS1U2.html')
+
+@app.route('/medstat1unit3')
+def ms1u3():
+   return render_template('MS1U3.html')
+
+@app.route('/medstat1unit4')
+def ms1u4():
+   return render_template('MS1U4.html')
+
 @app.route('/labor')
 def labor():
    return render_template('deeplook.html')

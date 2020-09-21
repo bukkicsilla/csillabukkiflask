@@ -23,11 +23,11 @@ body {
    background-color: #49cdf5;
   // background-color: #fdfdfd;
 }
- 
+
 /*
  * Create dark grey header with a white logo
  */
-  
+
 header {
   //background-color: #2B2B2B;
   //background-color: #2590a3;
@@ -39,7 +39,7 @@ header {
   //color: #ff0000;
   margin-bottom: 10px;
 }
- 
+
 h1.owner {
   margin: 0;
   font-size: 1.7em;
@@ -48,21 +48,21 @@ h1.owner {
   text-transform: uppercase;
   float: right;
 }
- 
+
 /*header h1.korlish:hover {
   color: #2590a3;
   text-decoration: none;
 }*/
- 
+
 /*
  * Center the body content
  */
-  
+
 .container {
   width: 940px;
   margin: 0 auto;
 }
- 
+
 div.start {
   padding: 10px 0 30px 0;
   background-color: #eeeeee;
@@ -70,9 +70,9 @@ div.start {
      -moz-border-radius: 6px;
           border-radius: 6px;
 }
- 
+
 h2, h3, h4,h5 {
-  
+
   font-family: myFont;
   margin-top: 40px;
   text-align: center;
@@ -84,9 +84,9 @@ p {
    font-family: myFont;
    font-size: 1.25em;
    color: #0478a0;
-   
+
 }
- 
+
 h2 {
    font-size: 3em;
 }
@@ -133,7 +133,7 @@ img.image {
    margin-left: 40px;
    margin-top:25px;
    margin-bottom:25px;
-   
+
 }
 
 #apps h3{
@@ -145,7 +145,7 @@ color: #49cdf5;
  background-color: #0478a0;
  padding: 20px;
  padding-bottom: 140px;
-} 
+}
 
 .textwrap{
 float:right;
@@ -157,7 +157,7 @@ padding-left: 50px;
   color: #014570;
   font-size: 1.5em;
   font-family: myFontCourier;
-} 
+}
 
 .info{
   margin: 20px;
@@ -171,17 +171,17 @@ padding-left: 50px;
   float: right;
   margin-top: 8px;
 }
- 
+
 .menu li {
   display: inline;
   font-size: 24px;
 }
- 
+
 .menu li + li {
   margin-left: 35px;
-  
+
 }
- 
+
 .menu li a, .info a {
   //color: #46eef4;
    // color: #27abd3;
@@ -199,9 +199,15 @@ padding-left: 50px;
 .infoclassical a {
 text-decoration: none;
 color: #0478a0;
+color: black;
 }
 .infoclassical a:hover{
 text-decoration: underline;
+}
+
+p.medstats {
+font-size: 2.0em;
+color: #000000;
 }
 
 /*.infoclassical a:visited{
