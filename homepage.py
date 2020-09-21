@@ -56,6 +56,38 @@ def ms1u3():
 def ms1u4():
    return render_template('MS1U4.html')
 
+@app.route('/medstat2unit1')
+def ms2u1():
+   return render_template('MS2U1.html')
+
+@app.route('/medstat2unit2')
+def ms2u2():
+   return render_template('MS2U2.html')
+
+@app.route('/medstat2unit3')
+def ms2u3():
+   return render_template('MS2U3.html')
+
+@app.route('/medstat2unit4')
+def ms2u4():
+   return render_template('MS2U4.html')
+
+@app.route('/medstat3unit1')
+def ms3u1():
+   return render_template('MS3U1.html')
+
+@app.route('/medstat3unit2')
+def ms3u2():
+   return render_template('MS3U2.html')
+
+@app.route('/medstat3unit3')
+def ms3u3():
+   return render_template('MS3U3.html')
+
+@app.route('/medstat3unit4')
+def ms3u4():
+   return render_template('MS3U4.html')
+
 @app.route('/labor')
 def labor():
    return render_template('deeplook.html')

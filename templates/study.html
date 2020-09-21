@@ -1,25 +1,25 @@
 {% extends "layout.html" %}
- 
+
 {% block content %}
   <div id="study">
-    
+
     </br> </br> </br> </br>
   <span class="study">
-<a href="{{ url_for('voronoi') }}" name="voronoi" target="_self" > Voronoi Game in 2D and 3D (auf Deutsch)</a></span>  
+<a href="{{ url_for('voronoi') }}" name="voronoi" target="_self" > Voronoi Game in 2D and 3D (auf Deutsch)</a></span>
 
 </br> </br>
 <span class="study">
 <a href="{{ url_for('programming') }}" name="FMM" target="_self" > Programmier Praktikum von Edibe Kalelioglu und Csilla Bukki 	</br> ( in englisch)  </a> </span>
 
- </br> </br>  
-<!--<IMG src="static/images/yosemite.jpg" width="300" height="260" border="0" hspace="30"> 
-<IMG src="static/images/waterfall.jpg" width="300" height="260" border="0" hspace="30">   --> <br><br> 
-<img src="{{ url_for('static', filename='image/yosemite.jpg') }}" width="300" height="260" border="0"> </a> 
-<img src="{{ url_for('static', filename='image/waterfall.jpg') }}" width="300" height="260" border="0"> </a> 
-      
+ </br> </br>
+<!--<IMG src="static/images/yosemite.jpg" width="300" height="260" border="0" hspace="30">
+<IMG src="static/images/waterfall.jpg" width="300" height="260" border="0" hspace="30">   --> <br><br>
+<img src="{{ url_for('static', filename='image/yosemite.jpg') }}" width="300" height="260" border="0">
+<img src="{{ url_for('static', filename='image/waterfall.jpg') }}" width="300" height="260" border="0"> 
+
   </div>
-    
-    
+
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/study.css') }}">
     <!--<script src="{{ url_for('static', filename='javascript/studyscript.js') }}"></script>-->
 {% endblock %}
