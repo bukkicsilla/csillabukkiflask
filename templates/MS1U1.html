@@ -13089,7 +13089,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
@@ -13108,7 +13108,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[2]:</div>
+    <div class="prompt output_prompt">Out[1]:</div>
 
 
 
@@ -13125,7 +13125,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -13139,12 +13139,47 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#It creats a numpy array.</span>
+<span class="n">x_vec</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x_vec</span><span class="p">)</span>
+<span class="n">arr</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([1, 2, 3, 4, 5, 6, 7, 8, 9])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x_vec</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x_vec</span><span class="p">)</span>
-<span class="n">arr</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">z_vec</span> <span class="o">=</span> <span class="n">arr</span><span class="o">*</span><span class="n">arr</span>
+<span class="n">z_vec</span>
 </pre></div>
 
     </div>
@@ -13163,40 +13198,6 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([1, 2, 3, 4, 5, 6, 7, 8, 9])</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">z_vec</span> <span class="o">=</span> <span class="n">arr</span><span class="o">*</span><span class="n">arr</span>
-<span class="n">z_vec</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[5]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
 <pre>array([ 1,  4,  9, 16, 25, 36, 49, 64, 81])</pre>
 </div>
 
@@ -13208,7 +13209,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#plot(x_vec, z_vec)</span>
@@ -13224,7 +13225,8 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x_vec</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#It calculates the average.</span>
+<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x_vec</span><span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">z_vec</span><span class="p">)</span>
 </pre></div>
 
@@ -13255,44 +13257,18 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">iditem</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#It creates a Pandas dataframe object from lists.</span>
+<span class="n">iditem</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
 <span class="c1">#ser = pd.Series(iditem)</span>
 <span class="n">coffee</span> <span class="o">=</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
 <span class="n">varsity</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">milk</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">ma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">iditem</span><span class="p">,</span> <span class="n">coffee</span><span class="p">,</span> <span class="n">varsity</span><span class="p">,</span> <span class="n">milk</span><span class="p">]))</span>
 <span class="n">dfsmall</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">ma</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;coffee&quot;</span><span class="p">,</span> <span class="s2">&quot;varsity&quot;</span><span class="p">,</span> <span class="s2">&quot;milk&quot;</span><span class="p">])</span>
-<span class="c1">#</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#import classdata.xlsx file</span>
-<span class="n">classdata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;classdata.xlsx&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">classdata</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1">#proc print data= in SAS, head(classdata) in R</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ma</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13305,7 +13281,57 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[11]:</div>
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[[ 1 16  0  6]
+ [ 2  0  1  0]
+ [ 3  2  1  0]
+ [ 4  0  1  0]
+ [ 5  2  0  0]]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#It imports classdata.xlsx file</span>
+<span class="n">classdata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;classdata.xlsx&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#It displays the first 3 rows in the dataframe.</span>
+<span class="n">classdata</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1">#proc print data= in SAS, head(classdata) in R</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[19]:</div>
 
 
 
@@ -13339,7 +13365,6 @@ div#notebook {
       <th>obama</th>
       <th>bushjr</th>
       <th>...</th>
-      <th>reagan</th>
       <th>carter</th>
       <th>Mathlove</th>
       <th>WritingLove</th>
@@ -13349,6 +13374,7 @@ div#notebook {
       <th>IsBookSmart</th>
       <th>homework</th>
       <th>healthcare</th>
+      <th>mean_dems</th>
     </tr>
   </thead>
   <tbody>
@@ -13365,7 +13391,6 @@ div#notebook {
       <td>40.0</td>
       <td>70.0</td>
       <td>...</td>
-      <td>70.0</td>
       <td>49.0</td>
       <td>25.0</td>
       <td>65.0</td>
@@ -13375,6 +13400,7 @@ div#notebook {
       <td>1.0</td>
       <td>15.0</td>
       <td>35.0</td>
+      <td>53.000000</td>
     </tr>
     <tr>
       <th>1</th>
@@ -13389,7 +13415,6 @@ div#notebook {
       <td>72.0</td>
       <td>24.0</td>
       <td>...</td>
-      <td>64.0</td>
       <td>62.0</td>
       <td>50.0</td>
       <td>48.0</td>
@@ -13399,6 +13424,7 @@ div#notebook {
       <td>1.0</td>
       <td>20.0</td>
       <td>68.0</td>
+      <td>70.000000</td>
     </tr>
     <tr>
       <th>2</th>
@@ -13413,7 +13439,6 @@ div#notebook {
       <td>85.0</td>
       <td>0.0</td>
       <td>...</td>
-      <td>20.0</td>
       <td>40.0</td>
       <td>65.0</td>
       <td>10.0</td>
@@ -13423,10 +13448,11 @@ div#notebook {
       <td>1.0</td>
       <td>40.0</td>
       <td>70.0</td>
+      <td>72.333333</td>
     </tr>
   </tbody>
 </table>
-<p>3 rows × 22 columns</p>
+<p>3 rows × 23 columns</p>
 </div>
 </div>
 
@@ -13441,17 +13467,63 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#classdata.info() #proc contents data= in SAS, str(classdata) in R</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">classdata</span><span class="o">.</span><span class="n">info</span><span class="p">()</span> <span class="c1">#proc contents data= in SAS, str(classdata) in R</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 50 entries, 0 to 49
+Data columns (total 22 columns):
+ #   Column       Non-Null Count  Dtype  
+---  ------       --------------  -----  
+ 0   ID           50 non-null     int64  
+ 1   coffee       50 non-null     int64  
+ 2   varsity      50 non-null     int64  
+ 3   milk         49 non-null     float64
+ 4   exercise     50 non-null     float64
+ 5   wakeup       50 non-null     float64
+ 6   politics     48 non-null     float64
+ 7   fruitveg     50 non-null     int64  
+ 8   obama        49 non-null     float64
+ 9   bushjr       49 non-null     float64
+ 10  clinton      45 non-null     float64
+ 11  bushsr       42 non-null     float64
+ 12  reagan       43 non-null     float64
+ 13  carter       38 non-null     float64
+ 14  Mathlove     47 non-null     float64
+ 15  WritingLove  47 non-null     float64
+ 16  optimism     49 non-null     float64
+ 17  alcohol      50 non-null     int64  
+ 18  sleep        50 non-null     float64
+ 19  IsBookSmart  49 non-null     float64
+ 20  homework     49 non-null     float64
+ 21  healthcare   47 non-null     float64
+dtypes: float64(17), int64(5)
+memory usage: 8.7 KB
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&#39;&#39;&#39;tail(classdata)</span>
@@ -13459,9 +13531,9 @@ div#notebook {
 <span class="sd">colnames(classdata)</span>
 <span class="sd">nrow(classdata)</span>
 <span class="sd">ncol(classdata)</span>
-<span class="sd">dim(classdata)&#39;&#39;&#39;</span>
+<span class="sd">dim(classdata) from R&#39;&#39;&#39;</span>
 
-<span class="n">classdata</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">classdata</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1">#last 5 rows in the DataFrame</span>
 <span class="n">classdata</span><span class="o">.</span><span class="n">index</span> <span class="c1">#names of the rows</span>
 <span class="n">classdata</span><span class="o">.</span><span class="n">columns</span> <span class="c1">#names of the columns</span>
 <span class="c1">#list(classdata) #names of columns</span>
@@ -13480,7 +13552,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[13]:</div>
+    <div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -13501,10 +13573,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;mean_dems&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;carter&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;clinton&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;obama&#39;</span><span class="p">])</span><span class="o">/</span><span class="mi">3</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#It calculates the mean of the categories: carter, clinton and obama for all respondents separately.</span>
+<span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;mean_dems&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;carter&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;clinton&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;obama&#39;</span><span class="p">])</span><span class="o">/</span><span class="mi">3</span>
 </pre></div>
 
     </div>
@@ -13514,11 +13587,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#ma_pol = np.transpose(np.array([classdata[&#39;ID&#39;], classdata[&#39;carter&#39;], classdata[&#39;clinton&#39;], classdata[&#39;obama&#39;], classdata[&#39;mean_dems&#39;]]))</span>
-<span class="c1">#politics = pd.DataFrame(data=ma_pol)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#It creates a dataframe with a subset of categories from the classdata dataframe.</span>
 <span class="n">politics</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">classdata</span><span class="p">[[</span><span class="s1">&#39;ID&#39;</span><span class="p">,</span> <span class="s1">&#39;carter&#39;</span><span class="p">,</span> <span class="s1">&#39;clinton&#39;</span><span class="p">,</span> <span class="s1">&#39;obama&#39;</span><span class="p">,</span> <span class="s1">&#39;mean_dems&#39;</span><span class="p">]])</span>
 <span class="n">politics</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
@@ -13533,7 +13605,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[15]:</div>
+    <div class="prompt output_prompt">Out[20]:</div>
 
 
 
@@ -13593,11 +13665,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#classdata[&#39;optimism_cat&#39;] = 0</span>
-<span class="c1">#classdata[classdata[&#39;optimism&#39;]&gt;50]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#It creates a new category optimism_cat for the classdata dataframe </span>
+<span class="c1">#based on the category optimism.</span>
 <span class="n">classdata</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;optimism&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;optimism&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">25</span><span class="p">),</span> <span class="s1">&#39;optimism_cat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">classdata</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;optimism&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">25</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;optimism&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">50</span><span class="p">),</span> <span class="s1">&#39;optimism_cat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">classdata</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;optimism&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;optimism&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">75</span><span class="p">),</span> <span class="s1">&#39;optimism_cat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
@@ -13611,10 +13683,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">health</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">classdata</span><span class="p">[[</span><span class="s1">&#39;optimism&#39;</span><span class="p">,</span> <span class="s1">&#39;optimism_cat&#39;</span><span class="p">]])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#It creates the health dataframe and it shows the first 3 row in the health dataframe.</span>
+<span class="n">health</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">classdata</span><span class="p">[[</span><span class="s1">&#39;optimism&#39;</span><span class="p">,</span> <span class="s1">&#39;optimism_cat&#39;</span><span class="p">]])</span>
 <span class="n">health</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 
@@ -13628,7 +13701,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[17]:</div>
+    <div class="prompt output_prompt">Out[28]:</div>
 
 
 
@@ -13684,13 +13757,14 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;aud&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#without this, result will be floting point</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#It creates a new category aud for the classdata dataframe </span>
+<span class="c1">#based on the category alcohol</span>
+<span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;aud&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#without this, result will be floting point</span>
 <span class="n">classdata</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;alcohol&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;aud&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">classdata</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;alcohol&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;alcohol&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">7</span><span class="p">),</span> <span class="s1">&#39;aud&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="c1">#classdata.head(20)</span>
 <span class="n">healthalcohol</span> <span class="o">=</span> <span class="n">classdata</span><span class="p">[[</span><span class="s1">&#39;aud&#39;</span><span class="p">,</span> <span class="s1">&#39;alcohol&#39;</span><span class="p">]]</span>
 <span class="n">healthalcohol</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
 </pre></div>
@@ -13705,7 +13779,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[18]:</div>
+    <div class="prompt output_prompt">Out[30]:</div>
 
 
 
@@ -13791,10 +13865,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#It generates 10 random numbers from the normal distribution with mean=25 and standard deviation=5. </span>
 <span class="c1">#np.random.normal(mean, std, size)</span>
 <span class="n">random_num</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">random_num</span><span class="p">)</span>
@@ -13815,21 +13889,21 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[25.18719485 23.57116013 19.05507361 27.61508264 24.54601914 25.43553541
- 21.8715007  23.55268952 20.00406371 26.70291882]
+<pre>[24.00671232 20.6584152  12.99388743 15.75657278 22.52425122 24.13190451
+ 28.67132586 18.64482004 28.07518463 28.03368802]
 </pre>
 </div>
 </div>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[19]:</div>
+    <div class="prompt output_prompt">Out[36]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>23.75412385348333</pre>
+<pre>22.349676200949506</pre>
 </div>
 
 </div>
@@ -13840,10 +13914,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">samplemean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#This loop generates 10 random numbers as before for 20 times and it calculates the sample mean in each iteration step.</span>
+<span class="n">samplemean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span> 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">):</span>
     <span class="n">random_num</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
     <span class="n">samplemean</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">random_num</span><span class="p">)</span>
@@ -13860,16 +13935,16 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[20]:</div>
+    <div class="prompt output_prompt">Out[35]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([25.90699239, 22.99098439, 25.63866092, 24.25264256, 22.6569009 ,
-       23.41084679, 26.3440212 , 25.97340453, 22.4975159 , 21.34278486,
-       26.33724746, 23.0727255 , 26.22580077, 24.344637  , 26.06155781,
-       20.27445814, 23.93104957, 26.58586843, 23.71294449, 23.88638051])</pre>
+<pre>array([25.64472418, 24.36936357, 25.19660762, 25.26770161, 26.03015831,
+       25.32568817, 25.74432471, 27.6684024 , 27.47165441, 25.27445345,
+       24.4868144 , 26.42925078, 24.45184077, 27.72206899, 25.48822589,
+       26.40477569, 26.60781221, 26.07066656, 23.43844581, 25.00471805])</pre>
 </div>
 
 </div>
@@ -13880,10 +13955,12 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#First we define the number of random numbers, how many times we iterate, the mean and the standard devation.</span>
+<span class="c1">#Next we do similar calculations as in the previous cell.</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">repeats</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">truemean</span> <span class="o">=</span> <span class="mi">50</span>
 <span class="n">truesd</span> <span class="o">=</span> <span class="mi">3</span>
@@ -13891,7 +13968,7 @@ div#notebook {
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">repeats</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">random_num</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">truemean</span><span class="p">,</span><span class="n">truesd</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
     <span class="n">samplemean</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">random_num</span><span class="p">)</span>
-<span class="n">samplemean</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">samplemean</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span> <span class="c1">#The first 10 numbers in the samplemean array.</span>
 </pre></div>
 
     </div>
@@ -13904,14 +13981,14 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[21]:</div>
+    <div class="prompt output_prompt">Out[37]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([50.30780041, 49.71237156, 50.08153581, 49.70686707, 49.46471774,
-       49.95559778, 50.01994474, 50.19295158, 49.68355024, 50.05128022])</pre>
+<pre>array([49.82755363, 50.15912229, 49.83778611, 50.17380189, 49.90980714,
+       49.95511914, 49.64256877, 49.40475342, 50.30709386, 49.44352514])</pre>
 </div>
 
 </div>
