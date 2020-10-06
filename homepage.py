@@ -1,3 +1,4 @@
+#source venv/bin/activate
 import os
 from flask import Flask, render_template
 
@@ -234,6 +235,9 @@ def blacksheepprint():
 def confusion():
    return render_template('confusion.html')
 
+@app.route('/saspyr')
+def saspyr():
+   return render_template('saspyr.html')
 
 @app.route('/study')
 def study():
@@ -250,6 +254,10 @@ def programming():
 @app.route('/about')
 def about():
   return render_template('about.html')
+
+@app.route('/adventure')
+def adventure():
+  return render_template('adventure.html')
 
 
 

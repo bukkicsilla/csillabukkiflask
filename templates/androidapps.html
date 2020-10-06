@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
  <!--<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">-->
- 
+
 {% block content %}
   <div id="apps">
     <h3>Apps on Google Play</h3>
@@ -8,29 +8,32 @@
      </div>
 
    <div class="appblock">
-   <a href="https://play.google.com/store/apps/details?id=org.magic.am&hl=en" name="actormovie" target="_blank"> <img src="{{ url_for('static', filename='image/googleplay.png/') }}"  width="144" height="144" border="0" class="textwrap"> </a> 
+   <img src="{{ url_for('static', filename='image/googleplay.png/') }}"  width="144" height="144" border="0" class="textwrap">
+   <!--<a href="https://play.google.com/store/apps/details?id=org.magic.am&hl=en" name="actormovie" target="_blank"> <img src="{{ url_for('static', filename='image/googleplay.png/') }}"  width="144" height="144" border="0" class="textwrap"> </a>-->
    <span class="info">
    A new actor movie library, where you can store your own favorite actors with theirs movies. If you need help, you can visit <a href="{{ url_for('amhelp') }}" name="help" target="_self">  this page </a>.
    </span
    </div>
-</br></br></br>
+<br><br><br>
            <div class="appblock">
-         <a href="https://play.google.com/store/apps/details?id=org.education.rememberpattern&hl=en" name="remember" target="_blank"> <img src="{{ url_for('static', filename='image/remember.png/') }}"  width="120" height="120" border="0" class="textwrap"> </a> 
-  <spin class="info">
+   <img src="{{ url_for('static', filename='image/remember.png/') }}"  width="120" height="120" border="0" class="textwrap">
+         <!--<a href="https://play.google.com/store/apps/details?id=org.education.rememberpattern&hl=en" name="remember" target="_blank"> <img src="{{ url_for('static', filename='image/remember.png/') }}"  width="120" height="120" border="0" class="textwrap"> </a>-->
+  <span class="info">
 The objective of the game is about remembering different patterns. There is a helping grid during the game play, although the patterns are shown without a grid for the first time. The first grid is 5x5 and grows gradually throughout the levels. The game works on both phones and tablets.
 </span>
-  
+
   </div>
-  </br></br><br>   
+  <br><br><br>
   <div class="appblock">
-       <a href="https://play.google.com/store/apps/details?id=org.photos.demoneyes&hl=en" name="daemoneyes" target="_blank"> <img src="{{ url_for('static', filename='image/launcher.png/') }}" width="144" height="144" border="0" class="textwrap"> </a> 
+       <img src="{{ url_for('static', filename='image/launcher.png/') }}" width="144" height="144" border="0" class="textwrap">
+       <!--<a href="https://play.google.com/store/apps/details?id=org.photos.demoneyes&hl=en" name="daemoneyes" target="_blank"> <img src="{{ url_for('static', filename='image/launcher.png/') }}" width="144" height="144" border="0" class="textwrap"> </a>-->
        <span class="info">
        Ever thought there is an inner demon in everyone? Well, we can now tell you, it’s true! And here is how to show it.
        </span>
        </div>
-       
+
   </div>
-    
-    
+
+
     <!--<script src="{{ url_for('static', filename='javascript/deepscript.js') }}"></script>-->
 {% endblock %}
