@@ -13089,7 +13089,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -13097,6 +13097,8 @@ div#notebook {
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
 <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels.stats.api</span> <span class="k">as</span> <span class="nn">sms</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
 </pre></div>
 
     </div>
@@ -13124,7 +13126,9 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;IsBookSmart&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;homework&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">classdata</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Boxplot with the outcome variable: homework and the predictor variable IsBookSmart (binary variable).</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;IsBookSmart&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;homework&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">classdata</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
+<span class="c1">#It plots individual data points.</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">swarmplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;IsBookSmart&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;homework&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">classdata</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Street Smart=0, Book Smart=1&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;18&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Homework hours per week&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;16&#39;</span><span class="p">)</span>
@@ -13175,8 +13179,10 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#formal test of normality</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Formal test of normality</span>
 <span class="c1">#shapiro.test(classdata$homework) in R</span>
+<span class="c1">#The null assumption is that homework is normally distributed. p-value is statistically significant, so</span>
+<span class="c1">#normality is violated. See non-parametric test later.</span>
 <span class="n">classdata</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;homework&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">s</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">shapiro</span><span class="p">(</span><span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;homework&#39;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;p value is </span><span class="si">{p}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -13207,10 +13213,12 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">classdata</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;IsBookSmart&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#It deletes rows from the classdata where IsBookSmart is missing.</span>
+<span class="n">classdata</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;IsBookSmart&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1">#We create 2 subsets of the dataframe classdata.</span>
 <span class="n">BookSmart</span> <span class="o">=</span> <span class="n">classdata</span><span class="p">[</span><span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;IsBookSmart&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
 <span class="n">StreetSmart</span> <span class="o">=</span> <span class="n">classdata</span><span class="p">[</span><span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;IsBookSmart&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
 </pre></div>
@@ -13222,79 +13230,12 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#with unpooled variance?</span>
-<span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">BookSmart</span><span class="p">[</span><span class="s1">&#39;homework&#39;</span><span class="p">],</span> <span class="n">StreetSmart</span><span class="p">[</span><span class="s1">&#39;homework&#39;</span><span class="p">],</span> <span class="n">equal_var</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[7]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>Ttest_indResult(statistic=-0.9419477280007629, pvalue=0.37173524557667836)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#with pooled variance</span>
-<span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">BookSmart</span><span class="p">[</span><span class="s1">&#39;homework&#39;</span><span class="p">],</span> <span class="n">StreetSmart</span><span class="p">[</span><span class="s1">&#39;homework&#39;</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[8]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>Ttest_indResult(statistic=-1.1387791635683375, pvalue=0.26069124362136703)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#anova test</span>
-<span class="n">stats</span><span class="o">.</span><span class="n">f_oneway</span><span class="p">(</span><span class="n">BookSmart</span><span class="p">[</span><span class="s1">&#39;homework&#39;</span><span class="p">],</span> <span class="n">StreetSmart</span><span class="p">[</span><span class="s1">&#39;homework&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#2 sample  t test with unpooled variance: equal_var is false. We compare </span>
+<span class="c1">#homework by IsBookSmart. We have two independent groups.</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">BookSmart</span><span class="p">[</span><span class="s1">&#39;homework&#39;</span><span class="p">],</span> <span class="n">StreetSmart</span><span class="p">[</span><span class="s1">&#39;homework&#39;</span><span class="p">],</span> <span class="n">equal_var</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13313,7 +13254,7 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>F_onewayResult(statistic=1.2968179833774018, pvalue=0.26069124362136714)</pre>
+<pre>Ttest_indResult(statistic=-0.9419477280007629, pvalue=0.37173524557667836)</pre>
 </div>
 
 </div>
@@ -13324,11 +13265,12 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[127]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#wilcox test, there are ties</span>
-<span class="n">stats</span><span class="o">.</span><span class="n">ranksums</span><span class="p">(</span><span class="n">BookSmart</span><span class="p">[</span><span class="s1">&#39;homework&#39;</span><span class="p">],</span> <span class="n">StreetSmart</span><span class="p">[</span><span class="s1">&#39;homework&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#It computes the 95 percent confidence interval.</span>
+<span class="n">cm</span> <span class="o">=</span> <span class="n">sms</span><span class="o">.</span><span class="n">CompareMeans</span><span class="p">(</span><span class="n">sms</span><span class="o">.</span><span class="n">DescrStatsW</span><span class="p">(</span><span class="n">StreetSmart</span><span class="p">[</span><span class="s1">&#39;homework&#39;</span><span class="p">]),</span> <span class="n">sms</span><span class="o">.</span><span class="n">DescrStatsW</span><span class="p">(</span><span class="n">BookSmart</span><span class="p">[</span><span class="s1">&#39;homework&#39;</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cm</span><span class="o">.</span><span class="n">tconfint_diff</span><span class="p">(</span><span class="n">usevar</span><span class="o">=</span><span class="s1">&#39;unequal&#39;</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13341,13 +13283,46 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[10]:</div>
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(-6.547963951769336, 15.797963951769336)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[128]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#2 sample t test with pooled variance: equal_var is true by default. We compare</span>
+<span class="c1">#homework by IsBookSmart. We have two independent groups. </span>
+<span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">BookSmart</span><span class="p">[</span><span class="s1">&#39;homework&#39;</span><span class="p">],</span> <span class="n">StreetSmart</span><span class="p">[</span><span class="s1">&#39;homework&#39;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[128]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>RanksumsResult(statistic=-0.885253336275981, pvalue=0.3760200115733052)</pre>
+<pre>Ttest_indResult(statistic=-1.1387791635683375, pvalue=0.26069124362136703)</pre>
 </div>
 
 </div>
@@ -13358,13 +13333,164 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[129]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#paired ttest</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#It computes the mean difference in the two groups. We do it by hand.</span>
+<span class="n">mean_booksmart</span> <span class="o">=</span> <span class="n">BookSmart</span><span class="p">[</span><span class="s1">&#39;homework&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">mean_streetsmart</span> <span class="o">=</span> <span class="n">StreetSmart</span><span class="p">[</span><span class="s1">&#39;homework&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">diff_mean</span> <span class="o">=</span> <span class="n">mean_streetsmart</span> <span class="o">-</span> <span class="n">mean_booksmart</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean difference &#39;</span><span class="p">,</span> <span class="n">diff_mean</span><span class="p">)</span>
+<span class="c1">#It computes the 95 percent confidence interval.</span>
+<span class="n">N1</span> <span class="o">=</span> <span class="n">StreetSmart</span><span class="p">[</span><span class="s1">&#39;homework&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="n">N2</span> <span class="o">=</span> <span class="n">BookSmart</span><span class="p">[</span><span class="s1">&#39;homework&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="n">std_streetsmart</span> <span class="o">=</span> <span class="n">StreetSmart</span><span class="p">[</span><span class="s1">&#39;homework&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">std_booksmart</span> <span class="o">=</span> <span class="n">BookSmart</span><span class="p">[</span><span class="s1">&#39;homework&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">N1</span> <span class="o">+</span> <span class="n">N2</span> <span class="o">-</span> <span class="mi">2</span>
+<span class="n">std_N1N2</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(((</span><span class="n">N1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">std_streetsmart</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">N2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">std_booksmart</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">df</span><span class="p">)</span> 
+<span class="c1">#Margin of Error</span>
+<span class="n">MoE</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.975</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span> <span class="o">*</span> <span class="n">std_N1N2</span> <span class="o">*</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">N1</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="n">N2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;margin of error &#39;</span><span class="p">,</span> <span class="n">MoE</span><span class="p">)</span>
+<span class="n">upperlimit</span> <span class="o">=</span> <span class="n">diff_mean</span> <span class="o">+</span> <span class="n">MoE</span>
+<span class="n">lowerlimit</span> <span class="o">=</span> <span class="n">diff_mean</span> <span class="o">-</span> <span class="n">MoE</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;95% CI (</span><span class="si">{lowerlimit}</span><span class="s1">, </span><span class="si">{upperlimit}</span><span class="s1">)&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>mean difference  4.625
+margin of error  8.175107541541182
+95% CI (-3.5501075415411822, 12.800107541541182)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[130]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Another way to get the 95 percent confidence interval with pooled variance.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cm</span><span class="o">.</span><span class="n">tconfint_diff</span><span class="p">(</span><span class="n">usevar</span><span class="o">=</span><span class="s1">&#39;pooled&#39;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(-3.5501075415411787, 12.800107541541179)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[131]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Anova test, same results as in t test with pooled variance. </span>
+<span class="n">stats</span><span class="o">.</span><span class="n">f_oneway</span><span class="p">(</span><span class="n">BookSmart</span><span class="p">[</span><span class="s1">&#39;homework&#39;</span><span class="p">],</span> <span class="n">StreetSmart</span><span class="p">[</span><span class="s1">&#39;homework&#39;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[131]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>F_onewayResult(statistic=1.2968179833774018, pvalue=0.26069124362136714)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[132]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#non-parametric test</span>
+<span class="c1">#Wilcoxon test, there are ties</span>
+<span class="c1">#stats.ranksums(BookSmart[&#39;homework&#39;], StreetSmart[&#39;homework&#39;]) #It does not handle ties</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">mannwhitneyu</span><span class="p">(</span><span class="n">BookSmart</span><span class="p">[</span><span class="s1">&#39;homework&#39;</span><span class="p">],</span> <span class="n">StreetSmart</span><span class="p">[</span><span class="s1">&#39;homework&#39;</span><span class="p">],</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;two-sided&#39;</span><span class="p">)</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[132]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>MannwhitneyuResult(statistic=128.0, pvalue=0.3803510897684381)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[133]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#paired ttest, groups are related: we compare Mathlove and WritingLove of the same person. </span>
 <span class="n">classdata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;classdata.xlsx&#39;</span><span class="p">)</span>
-<span class="n">classdata</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Mathlove&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">classdata</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;WritingLove&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">classdata</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Mathlove&#39;</span><span class="p">,</span> <span class="s1">&#39;WritingLove&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">stats</span><span class="o">.</span><span class="n">ttest_rel</span><span class="p">(</span><span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;Mathlove&#39;</span><span class="p">],</span> <span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;WritingLove&#39;</span><span class="p">])</span>
 </pre></div>
 
@@ -13378,7 +13504,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[11]:</div>
+    <div class="prompt output_prompt">Out[133]:</div>
 
 
 
@@ -13395,19 +13521,72 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[134]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Mean difference</span>
+<span class="c1">#math_love = classdata[&#39;Mathlove&#39;].mean()</span>
+<span class="c1">#writing_love = classdata[&#39;WritingLove&#39;].mean()</span>
+<span class="c1">#diff_mean_love = math_love - writing_love</span>
+<span class="c1">#print(&#39;mean difference &#39;, diff_mean_love)</span>
+<span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;LoveDiff&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;Mathlove&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;WritingLove&#39;</span><span class="p">]</span>
+<span class="n">diff_mean_love</span> <span class="o">=</span> <span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;LoveDiff&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean difference &#39;</span><span class="p">,</span> <span class="n">diff_mean_love</span><span class="p">)</span>
+<span class="c1">#95 percent confidence interval</span>
+<span class="n">std_love</span> <span class="o">=</span> <span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;LoveDiff&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;LoveDiff&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="n">df_love</span> <span class="o">=</span> <span class="n">M</span><span class="o">-</span><span class="mi">1</span>
+<span class="n">MoE</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.975</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span> <span class="o">*</span> <span class="n">std_love</span> <span class="o">*</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">M</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;margin of error &#39;</span><span class="p">,</span> <span class="n">MoE</span><span class="p">)</span>
+<span class="n">upperlimit</span> <span class="o">=</span> <span class="n">diff_mean_love</span> <span class="o">+</span> <span class="n">MoE</span>
+<span class="n">lowerlimit</span> <span class="o">=</span> <span class="n">diff_mean_love</span> <span class="o">-</span> <span class="n">MoE</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;95% CI (</span><span class="si">{lowerlimit}</span><span class="s1">, </span><span class="si">{upperlimit}</span><span class="s1">)&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>mean difference  7.533333333333333
+margin of error  8.990250832648039
+95% CI (-1.4569174993147058, 16.523584165981372)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[142]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#contingency table</span>
 <span class="n">classdata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;classdata.xlsx&#39;</span><span class="p">)</span>
 <span class="n">tab</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;varsity&#39;</span><span class="p">],</span> <span class="n">classdata</span><span class="p">[</span><span class="s1">&#39;IsBookSmart&#39;</span><span class="p">])</span>
+<span class="c1">#Chi square test, test of independence</span>
 <span class="n">c</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">dof</span><span class="p">,</span> <span class="n">expected</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">chi2_contingency</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;tab </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">tab</span><span class="p">)</span>
 <span class="n">table</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">Table</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">table_orig</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">fittedvalues</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1">#percentag</span>
+<span class="c1">#print(table.table_orig, &quot;\n&quot;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">fittedvalues</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1">#percentage, like prob.table() in R</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p value &quot;</span> <span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;X-squared &#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;degrees of freedom &#39;</span><span class="p">,</span> <span class="n">dof</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;It does not look like these variables are significantly related.&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13429,17 +13608,15 @@ div#notebook {
 varsity              
 0              5   15
 1              4   25
-IsBookSmart  0.0  1.0
-varsity              
-0              5   15
-1              4   25 
-
 IsBookSmart       0.0        1.0
 varsity                         
 0            3.673469  16.326531
 1            5.326531  23.673469 
 
 p value  0.5349794027685393
+X-squared  0.38492456896551736
+degrees of freedom  1
+It does not look like these variables are significantly related.
 </pre>
 </div>
 </div>
@@ -13450,11 +13627,13 @@ p value  0.5349794027685393
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[147]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Fisher exact test</span>
-<span class="n">stats</span><span class="o">.</span><span class="n">fisher_exact</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#We have sparse data,s so we use the Fisher exact test.</span>
+<span class="n">oddr</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">fisher_exact</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;p value &#39;</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;odds ratio &#39;</span><span class="p">,</span> <span class="n">oddr</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13467,15 +13646,14 @@ p value  0.5349794027685393
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[13]:</div>
+    <div class="prompt"></div>
 
 
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>(2.0833333333333335, 0.4563568292660439)</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>p value  0.4563568292660439
+odds ratio  2.0833333333333335
+</pre>
 </div>
-
 </div>
 
 </div>
@@ -13484,17 +13662,19 @@ p value  0.5349794027685393
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[155]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tacum</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">Table2x2</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">tacum</span><span class="p">)</span>
 <span class="c1">#These don&#39;t give the right answers for RR and CI</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RR &quot;</span><span class="p">,</span> <span class="n">tacum</span><span class="o">.</span><span class="n">riskratio</span><span class="p">)</span> <span class="c1">#??</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RR CI&quot;</span><span class="p">,</span> <span class="n">tacum</span><span class="o">.</span><span class="n">riskratio_confint</span><span class="p">())</span> <span class="c1">#??</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Risk Ratio &quot;</span><span class="p">,</span> <span class="n">tacum</span><span class="o">.</span><span class="n">riskratio</span><span class="p">)</span> <span class="c1">#??</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Risk Ratio Confidence Interval&quot;</span><span class="p">,</span> <span class="n">tacum</span><span class="o">.</span><span class="n">riskratio_confint</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Risk ratio and CI are different here as in R. The question is why?&quot;</span><span class="p">)</span>
 <span class="c1">#These are good.</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;OR &quot;</span><span class="p">,</span> <span class="n">tacum</span><span class="o">.</span><span class="n">oddsratio</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;OR CI &quot;</span><span class="p">,</span> <span class="n">tacum</span><span class="o">.</span><span class="n">oddsratio_confint</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Odds Ratio &quot;</span><span class="p">,</span> <span class="n">tacum</span><span class="o">.</span><span class="n">oddsratio</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Odds Ratio Confidence Interval &quot;</span><span class="p">,</span> <span class="n">tacum</span><span class="o">.</span><span class="n">oddsratio_confint</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Odds Ratio and CI are similar as in R.&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13514,10 +13694,12 @@ p value  0.5349794027685393
 <pre>A 2x2 contingency table with counts:
 [[ 5. 15.]
  [ 4. 25.]]
-RR  1.8125
-RR CI (0.5541896360103743, 5.927855803385147)
-OR  2.0833333333333335
-OR CI  (0.4826990680229928, 8.991684602902593)
+Risk Ratio  1.8125
+Risk Ratio Confidence Interval (0.5541896360103743, 5.927855803385147)
+Risk ratio and CI are different here as in R. The question is why?
+Odds Ratio  2.0833333333333335
+Odds Ratio Confidence Interval  (0.4826990680229928, 8.991684602902593)
+Odds Ratio and CI are similar as in R.
 </pre>
 </div>
 </div>
@@ -13528,17 +13710,18 @@ OR CI  (0.4826990680229928, 8.991684602902593)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[152]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#RR is calculated by hand</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Risk Ratio is calculated by hand</span>
 <span class="n">n1</span> <span class="o">=</span> <span class="n">tab</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">tab</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">n2</span> <span class="o">=</span> <span class="n">tab</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">tab</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">p1</span> <span class="o">=</span> <span class="n">tab</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">n1</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">tab</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">n2</span>
 <span class="c1">#rr = tab[1][1]/(tab[0][1]+tab[1][1])*(tab[0][0] + tab[1][0])/tab[1][0]</span>
 <span class="n">rr</span> <span class="o">=</span> <span class="n">p1</span><span class="o">/</span><span class="n">p2</span>
-<span class="n">rr</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Risk ratio &#39;</span><span class="p">,</span> <span class="n">rr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Same risk ratio as in R.&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13551,15 +13734,14 @@ OR CI  (0.4826990680229928, 8.991684602902593)
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[15]:</div>
+    <div class="prompt"></div>
 
 
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>1.1494252873563218</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Risk ratio  1.1494252873563218
+Same risk ratio as in R.
+</pre>
 </div>
-
 </div>
 
 </div>
@@ -13568,10 +13750,10 @@ OR CI  (0.4826990680229928, 8.991684602902593)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[153]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##CI for RR calculated by hand</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Confidence Interval for Risk Ratio calculated by hand, same result as in R.</span>
 <span class="n">lnrr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">rr</span><span class="p">)</span>
 <span class="n">z</span> <span class="o">=</span> <span class="mf">2.5</span> <span class="c1"># why not 1.96?</span>
 <span class="n">sq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p1</span><span class="p">)</span><span class="o">/</span><span class="n">n1</span><span class="o">*</span><span class="n">p1</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p2</span><span class="p">)</span><span class="o">/</span><span class="n">n2</span><span class="o">*</span><span class="n">p2</span><span class="p">)</span>
