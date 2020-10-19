@@ -1,17 +1,40 @@
 {% extends "layout.html" %}
-
 {% block content %}
   <div id="study">
 
-    <br> <br> 
+    <br> <br>
 
-    <h3> Biostatistical data analysis in SAS, Python and R. </h3>
+    <h3> Statistical data analysis in SAS, Python and R. </h3>
 <!--<img src="{{ url_for('static', filename='image/yosemite.jpg') }}" width="300" height="260" border="0">
 <img src="{{ url_for('static', filename='image/waterfall.jpg') }}" width="300" height="260" border="0">-->
+</div>
 
+  <div>
+  <br><br>
+  <div class="infoclassical">
+  <p >Medical Statistics I SAS and R codeing in Python (Stanford University): </p>
+  <p align=center><a href="{{ url_for('ms1u1') }}"> Unit 1 </a></p>
+  <p align=center><a href="{{ url_for('ms1u2') }}"> Unit 2 </a></p>
+  <p align=center><a href="{{ url_for('ms1u3') }}"> Unit 3 </a></p>
+  <p align=center><a href="{{ url_for('ms1u4') }}"> Unit 4 </a></p>
   </div>
 
+  <div class="infoclassical">
+  <p>Medical Statistics II SAS and R codeing in Python (Stanford University): </p>
+  <p align=center><a href="{{ url_for('ms2u1') }}"> Unit 1 </a></p>
+  <p align=center><a href="{{ url_for('ms2u2') }}"> Unit 2 </a></p>
+  <p align=center><a href="{{ url_for('ms2u3') }}"> Unit 3 </a></p>
+  <p align=center><a href="{{ url_for('ms2u4') }}"> Unit 4 </a></p>
+  </div>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/study.css') }}">
+  <div class="infoclassical">
+  <p>Medical Statistics III SAS and R codeing in Python (Stanford University): </p>
+  <p align=center><a href="{{ url_for('ms3u1') }}"> Unit 1 </a></p>
+  <p align=center><a href="{{ url_for('ms3u2') }}"> Unit 2 </a></p>
+  <p align=center><a href="{{ url_for('ms3u3') }}"> Unit 3 </a></p>
+  <p align=center><a href="{{ url_for('ms3u4') }}"> Unit 4 </a></p>
+  </div>
+</div>
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename='css/study.css') }}">-->
     <!--<script src="{{ url_for('static', filename='javascript/studyscript.js') }}"></script>-->
 {% endblock %}

@@ -206,9 +206,8 @@ color: black;
 text-decoration: underline;
 }
 
-p.medstats {
-font-size: 2.0em;
-color: #000000;
+.infoclassical > p:first-child {
+  color: #880000;
 }
 
 /*.infoclassical a:visited{

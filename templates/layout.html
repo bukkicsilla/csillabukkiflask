@@ -14,7 +14,6 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 
 </head>
 
@@ -45,12 +44,11 @@
            <ul class="menu nav navbar-nav">
               <li><a href="{{ url_for('classical') }}">Certificates</a></li>
               <!--<li><a href="{{ url_for('study') }}">Study</a></li>-->
-              <li><a href="{{ url_for('saspyr') }}">Saspyr</a></li>
+              <li><a href="{{ url_for('saspyr') }}">SaspyrLab</a></li>
               <li><a href="{{ url_for('interest') }}">Interest</a></li>
                <li><a href="{{ url_for('launch') }}">Launch</a></li>
                <li><a href="{{ url_for('labor') }}">Labor</a></li>
-              <!--<li><a href="{{ url_for('about') }}">About</a></li>-->
-              <li><a href="{{ url_for('adventure')}}"> Adventure</a></li>
+              <li><a href="{{ url_for('about') }}">About</a></li>
 
            </ul>
        </div>
@@ -62,8 +60,8 @@
       {% block content %}
       {% endblock %}
     </div>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 </body>
 </html>
