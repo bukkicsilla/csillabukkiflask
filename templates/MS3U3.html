@@ -13097,6 +13097,7 @@ div#notebook {
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
 <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">plotnine</span> <span class="kn">import</span> <span class="o">*</span>
@@ -13110,7 +13111,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#import classdata.xlsx file</span>
@@ -13125,7 +13126,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Is there an interaction betwwen booksmart and politics for the outcome Obama? Whether the relationship</span>
@@ -13162,13 +13163,13 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[11]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;ggplot: (7016868717)&gt;</pre>
+<pre>&lt;ggplot: (7007103809)&gt;</pre>
 </div>
 
 </div>
@@ -13179,7 +13180,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#General linear model with interaction term</span>
@@ -13196,7 +13197,6 @@ div#notebook {
 <span class="n">isbooksmart</span><span class="p">,</span> <span class="n">politics</span><span class="p">,</span> <span class="n">interaction</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">reg</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reg</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 <span class="n">intercept</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">intercept_</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;intercept is {intercept:.</span><span class="si">{5}</span><span class="s1">}, isbooksmart coef is {isbooksmart:.</span><span class="si">{5}</span><span class="s1">}, politics coef is {politics:.</span><span class="si">{5}</span><span class="s1">}, interaction is {interaction:.</span><span class="si">{4}</span><span class="s1">}&#39;</span><span class="p">)</span>
-<span class="c1">#P-values, SEs?</span>
 </pre></div>
 
     </div>
@@ -13214,6 +13214,60 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>intercept is 7.2706, isbooksmart coef is 26.509, politics coef is 0.99619, interaction is -0.4042
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Another way to do the linear regression with interaction term. In that case we get the p-values and </span>
+<span class="c1">#the confindence intervals too</span>
+<span class="n">formula</span> <span class="o">=</span> <span class="s1">&#39;obama~IsBookSmart+politics+BSPol&#39;</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">glm</span><span class="p">(</span><span class="n">formula</span> <span class="o">=</span> <span class="n">formula</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">classdata</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="n">sm</span><span class="o">.</span><span class="n">families</span><span class="o">.</span><span class="n">Gaussian</span><span class="p">())</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:                  obama   No. Observations:                   47
+Model:                            GLM   Df Residuals:                       43
+Model Family:                Gaussian   Df Model:                            3
+Link Function:               identity   Scale:                          83.103
+Method:                          IRLS   Log-Likelihood:                -168.47
+Date:                Mon, 19 Oct 2020   Deviance:                       3573.4
+Time:                        19:00:45   Pearson chi2:                 3.57e+03
+No. Iterations:                     3                                         
+Covariance Type:            nonrobust                                         
+===============================================================================
+                  coef    std err          z      P&gt;|z|      [0.025      0.975]
+-------------------------------------------------------------------------------
+Intercept       7.2706     12.425      0.585      0.558     -17.083      31.624
+IsBookSmart    26.5095     14.172      1.871      0.061      -1.266      54.285
+politics        0.9962      0.170      5.871      0.000       0.664       1.329
+BSPol          -0.4042      0.192     -2.109      0.035      -0.780      -0.029
+===============================================================================
 </pre>
 </div>
 </div>
