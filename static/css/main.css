@@ -126,6 +126,7 @@ img.image {
 
 #deeplook {
  background-color: #dddddd;
+ padding-top: 15px;
 }
 
 
@@ -210,6 +211,10 @@ text-decoration: underline;
   color: #880000;
 }
 
+
+#about  > img{
+  object-fit: cover;
+}
 /*.infoclassical a:visited{
 color: #FF00FF;
 }*/
