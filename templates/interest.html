@@ -2,51 +2,60 @@
 
 {% block content %}
       <br><br>
-
+     <div class="projects">
+       <h3> Coding Projects </h3>
+       <br><br>
       <div class="infoclassical">
+        <h4 class="topic">Python: </h4>
       <p><a href="{{ url_for('saspyr') }}" target="_blank"> Programming exercises of Medical Statistics at Standord University  </a></p>
       </div>
-      <!--<br><br>
-      <div class="infoclassical">
-      <p class="medstats">Medical Statistics I SAS and R codeing in Python (Stanford University): </p>
-      <p align=center><a href="{{ url_for('ms1u1') }}"> Unit 1 </a></p>
-      <p align=center><a href="{{ url_for('ms1u2') }}"> Unit 2 </a></p>
-      <p align=center><a href="{{ url_for('ms1u3') }}"> Unit 3 </a></p>
-      <p align=center><a href="{{ url_for('ms1u4') }}"> Unit 4 </a></p>
-      </div>
-
-      <div class="infoclassical">
-      <p class="medstats">Medical Statistics II SAS and R codeing in Python (Stanford University): </p>
-      <p align=center><a href="{{ url_for('ms2u1') }}"> Unit 1 </a></p>
-      <p align=center><a href="{{ url_for('ms2u2') }}"> Unit 2 </a></p>
-      <p align=center><a href="{{ url_for('ms2u3') }}"> Unit 3 </a></p>
-      <p align=center><a href="{{ url_for('ms2u4') }}"> Unit 4 </a></p>
-      </div>
-
-      <div class="infoclassical">
-      <p class="medstats">Medical Statistics III SAS and R codeing in Python (Stanford University): </p>
-      <p align=center><a href="{{ url_for('ms3u1') }}"> Unit 1 </a></p>
-      <p align=center><a href="{{ url_for('ms3u2') }}"> Unit 2 </a></p>
-      <p align=center><a href="{{ url_for('ms3u3') }}"> Unit 3 </a></p>
-      <p align=center><a href="{{ url_for('ms3u4') }}"> Unit 4 </a></p>
-      </div>-->
 
       <br><br>
-      <span class="infoclassical">
+      <div class="infoclassical">
+        <h4 class="topic"> Javascript: </h4>
       <p><a href="https://nutrifacts.herokuapp.com/" target="_blank"> Nutrition facts </a></p>
-      </span>
-      <span class="infoclassical">
       <p><a href="https://tutorialsandexercises.herokuapp.com/meanweb/crudandmongodb#S5" target="_blank"> CRUD Tutorial </a></p>
-      </span>
-      <span class="infoclassical">
       <p><a href="https://warm-shore-61492.herokuapp.com/" target="_blank"> Naturalization 100 Q&amp;A </a></p>
-      </span>
-      <span class="infoclassical">
       <p><a href="{{ url_for('mfp') }}" target="_blank"> Math facts practice </a></p>
-      </span>
-       <span class="infoclassical">
       <p><a href="{{ url_for('piano') }}" target="_blank"> Piano practice (only working on computer or laptop)</a></p>
-      </span>
+      </div>
+   </div>
+  <br><br><br>
+   <div class="resources">
+
+      <h3> Resources of getting Knowledge</h3>
+      <br><br>
+      <div class="infoclassical">
+        <h4 class="topic"> Articles: </h4>
+      <p><a href="https://www.digitalocean.com/community/tutorials/build-a-to-do-application-using-django-and-react" target="_blank">
+      Django-React ToDo Application  </a></p>
+      <p><a href="https://code.tutsplus.com/tutorials/an-introduction-to-pythons-flask-framework--net-28822" target="_blank"> Flask Framework </a></p>
+      <p><a href="https://www.w3schools.com/angular/" target="_blank"> AngularJS </a></p>
+      <p><a href="https://github.com/0xfe/vexflow/wiki/The-VexFlow-Tutorial" target="_blank"> VexFlow </a></p>
+      </div>
+
+     <br><br>
+      <div class="infoclassical">
+        <h4 class="topic"> Learning Platforms: </h4>
+      <p><a href="https://www.udemy.com/" target="_blank"> Udemy </a></p>
+      <p><a href="https://www.coursera.org/" target="_blank"> Coursera </a></p>
+      <p><a href="https://online.stanford.edu/" target="_blank"> Stanford University </a></p>
+      <p><a href="https://www.codecademy.com/" target="_blank"> Code Academy </a></p>
+      </div>
+
+
+     <!--<br><br>
+      <div class="infoclassical">
+        <h4 class="topic"> Books: </h4>
+        <p> Python Tricks </p>
+        <img src="{{ url_for('static', filename='image/python.jpg/') }}"  width="200" border="0">
+        <p> ES6 </p>
+        <img src="{{ url_for('static', filename='image/js.jpg/') }}"  width="200" border="0">
+      <p> Getting Mean </p>
+      <img src="{{ url_for('static', filename='image/mean.jpg/') }}"  width="200" border="0">
+      </div>-->
+      </div>
+
 
     <!--<link rel="stylesheet" href="{{ url_for('static', filename='css/icebreaker.css') }}">-->
     <!--<script src="{{ url_for('static', filename='javascript/studyscript.js') }}"></script>-->

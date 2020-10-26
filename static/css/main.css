@@ -215,6 +215,10 @@ text-decoration: underline;
 #about  > img{
   object-fit: cover;
 }
+
+.topic {
+  color: #800080;
+}
 /*.infoclassical a:visited{
 color: #FF00FF;
 }*/
