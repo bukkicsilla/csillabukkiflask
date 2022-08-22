@@ -113,6 +113,9 @@ def amhelp():
 #@app.route('/money/countpenny')
 #def countpenny():
 #   return render_template('countpenny.html')
+@app.route('/outschool')
+def outschool():
+    return render_template('outschool')
 
 @app.route('/interest')
 def interest():
